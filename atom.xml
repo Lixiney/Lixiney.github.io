@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Lixiney&#39;s Blog</title>
+  
+  
+  <link href="http://lixiney.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://lixiney.github.io/"/>
+  <updated>2021-08-15T01:52:40.443Z</updated>
+  <id>http://lixiney.github.io/</id>
+  
+  <author>
+    <name>Lixiney</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本地web环境搭建(一)</title>
+    <link href="http://lixiney.github.io/2021/08/15/%E6%9C%AC%E5%9C%B0web%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E4%B8%80/"/>
+    <id>http://lixiney.github.io/2021/08/15/%E6%9C%AC%E5%9C%B0web%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E4%B8%80/</id>
+    <published>2021-08-15T01:43:28.000Z</published>
+    <updated>2021-08-15T01:52:40.443Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://public.xp.cn/upgrades/phpStudy_64.zip(https://public.xp.cn/upgrades/phpStudy_64.zip"> phpstudy </a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://public.xp.cn/upgrades/phpStudy_64.zip(https://public.</summary>
+      
+    
+    
+    
+    
+    <category term="Web安全" scheme="http://lixiney.github.io/tags/Web%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="网站搭建" scheme="http://lixiney.github.io/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+</feed>
