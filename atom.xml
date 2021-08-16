@@ -6,7 +6,7 @@
   <link href="http://lixiney.github.io/atom.xml" rel="self"/>
   
   <link href="http://lixiney.github.io/"/>
-  <updated>2021-08-15T01:52:40.443Z</updated>
+  <updated>2021-08-16T10:04:41.377Z</updated>
   <id>http://lixiney.github.io/</id>
   
   <author>
@@ -21,14 +21,15 @@
     <link href="http://lixiney.github.io/2021/08/15/%E6%9C%AC%E5%9C%B0web%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E4%B8%80/"/>
     <id>http://lixiney.github.io/2021/08/15/%E6%9C%AC%E5%9C%B0web%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E4%B8%80/</id>
     <published>2021-08-15T01:43:28.000Z</published>
-    <updated>2021-08-15T01:52:40.443Z</updated>
+    <updated>2021-08-16T10:04:41.377Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://public.xp.cn/upgrades/phpStudy_64.zip(https://public.xp.cn/upgrades/phpStudy_64.zip"> phpstudy </a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul><li><a href="https://public.xp.cn/upgrades/phpStudy_64.zip"> phpstudy </a></li><li><a href="https://tj.mycodes.net/201009/bluecms_1.6.zip">BlueCMS</a></li></ul><h2 id="安装PHPstudy"><a href="#安装PHPstudy" class="headerlink" title="安装PHPstudy"></a>安装PHPstudy</h2><p>下载之后，解压，双击运行<code>phpstudy.exe</code>这个文件</p><p>选择<code>立即安装</code></p><p><img src="https://lixiney.github.io/img/post/phpstudy.png" alt="phpstudy"></p><p>点击WNMP后面的运行即可</p><p><img src="https://lixiney.github.io/img/post/phpstudy1.png" alt="phpstudy1"></p><h2 id="安装BlueCMS"><a href="#安装BlueCMS" class="headerlink" title="安装BlueCMS"></a>安装BlueCMS</h2><p>下载BlueCMS压缩包，将里面uploads目录下面的所有文件解压到phpstudy目录下面的WWW目录</p><p>如下图：</p><p><img src="https://lixiney.github.io/img/post/bluecms.png" alt="blueCMS"></p><p>下一步，打开浏览器，在地址栏中输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1/uploads/install</span><br></pre></td></tr></table></figure><p><img src="https://lixiney.github.io/img/post/bluecms1.png" alt="bluecms1"></p><p>点击继续</p><p><img src="https://lixiney.github.io/img/post/bluecms2.png" alt="bluecms2"></p><p>这里数据库名称自己随意，数据库用户名和密码一般都是<code>root</code></p><p>点击下一步完成安装</p><p>进入主页面。。。</p><p><img src="https://lixiney.github.io/img/post/bluecms3.png" alt="bluecms3"></p><p>完成安装。。。。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://public.xp.cn/upgrades/phpStudy_64.zip(https://public.</summary>
+    <summary type="html">&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://public.xp.cn/upgrades/phpStudy_64.zip&quot;&gt; phpstud</summary>
       
     
     
