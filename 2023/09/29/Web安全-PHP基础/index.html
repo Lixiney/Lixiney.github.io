@@ -110,7 +110,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2023-10-30T12:23:40.000Z" itemprop="dateUpdated">2023-10-30</time>
+              <time  class="article-updated" datetime="2024-03-25T12:14:57.074Z" itemprop="dateUpdated">2024-03-25</time>
             </h2>
           
           
@@ -123,7 +123,7 @@
   
     <li><a href="/tags/PHP/">🏷️ PHP</a></li>
   
-    <li><a href="/tags/web%E5%AE%89%E5%85%A8/">🏷️ web安全</a></li>
+    <li><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">🏷️ 计算机</a></li>
   
 </ul>
         </div>
@@ -147,13 +147,55 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="一、后端基础PHP"><a href="#一、后端基础PHP" class="headerlink" title="一、后端基础PHP"></a>一、后端基础PHP</h2><p><em>啥也不想写，贴个代码</em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=&#x27;UTF-8&#x27; /&gt;</span><br><span class="line">&lt;form action=&quot;1.php&quot; method=&quot;GET&quot;&gt;</span><br><span class="line">&lt;input type=&#x27;text&#x27; name=&#x27;username&#x27; /&gt;账号</span><br><span class="line">&lt;input type=&#x27;text&#x27; name=&#x27;password&#x27; /&gt;密码</span><br><span class="line">&lt;input type=&#x27;submit&#x27; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;?php </span><br><span class="line">    $uname = $_REQUEST[&#x27;username&#x27;];</span><br><span class="line">    $pass = $_REQUEST[&#x27;password&#x27;];</span><br><span class="line">    $conn = mysqli_connect(&#x27;127.0.0.1&#x27;,&#x27;root&#x27;,&#x27;root&#x27;,&#x27;qi13&#x27;);</span><br><span class="line">    $sql = &quot;select *from admin where username=&#x27;$uname&#x27; and password=&#x27;$pass&#x27;&quot;;</span><br><span class="line">    $query = mysqli_query($conn,$sql);</span><br><span class="line">    if(mysqli_num_rows($query) &gt; 0)&#123;</span><br><span class="line">        echo &quot;登录成功&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        echo &quot;登录失败&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+        <p>[TOC]</p>
+<h1 id="1-PHP-简述"><a href="#1-PHP-简述" class="headerlink" title="1. PHP 简述"></a>1. PHP 简述</h1><p>php，超文本预处理器，是一种通用的开源脚本语言</p>
+<p>在一个 php 文件中可以包括以下内容：</p>
+<ul>
+<li>php 文件可以包含文本、html、JavaScript代码和 PHP 代码</li>
+<li>php 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器</li>
+<li>php 文件的默认文件扩展名为 “PHP”</li>
+</ul>
+<p><strong>php 的使用</strong></p>
+<ol>
+<li>可以生成动态页面内容</li>
+<li>可以创建、打开、读取、写入、关闭服务器上的文件</li>
+<li>可以收集表单数据</li>
+<li>可以发送和接收 cookies</li>
+<li>可以添加、删除、修改数据库中的数据</li>
+<li>可以限制用户访问网站上的一些页面</li>
+<li>可以加密数据</li>
+</ol>
+<h1 id="2-基本语法格式"><a href="#2-基本语法格式" class="headerlink" title="2. 基本语法格式"></a>2. 基本语法格式</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="title function_ invoke__">phpinfo</span>();</span><br><span class="line">	<span class="comment">//php语句	（单行注释）</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	多行注释</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>至于SQL基础，可以看看下面这篇文章</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41112238/article/details/103400224">【超全必看】MySQL基础学习总结笔记（附示例代码）_mysql笔记_2020GetGoodOffer的博客-CSDN博客</a></p>
-<p>！！！没有基础，后面的也不用看了，因为你看不懂！！！</p>
-<h2 id="二、正则表达式-PHP"><a href="#二、正则表达式-PHP" class="headerlink" title="二、正则表达式(PHP)"></a>二、正则表达式(PHP)</h2><h3 id="2-1基本函数"><a href="#2-1基本函数" class="headerlink" title="2.1基本函数"></a>2.1基本函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">preg_match_all</span>(<span class="string">&#x27;/正则代码/&#x27;</span>,<span class="string">&#x27;字符串&#x27;</span>) <span class="comment">//匹配字符串</span></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>变量的命名规范</strong></p>
+<p>1、必须以 $ 开始，后面跟变量名</p>
+<p>2、必须以字母或者下划线开始</p>
+<p>3、变量名智能包含数字字母和下划线</p>
+<p>4、 变量名不能包含空格</p>
+<p><strong>static 关键字的作用</strong></p>
+<p>当一个函数完成时，它里面所有的变量通常都会被删除。</p>
+<p>然而有时候你会希望其中某一个局部变量不会被删除。</p>
+<p>要做到这一点，就可以在第一次声明这个变量时加一个 static</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="built_in">static</span> <span class="variable">$a</span> =<span class="number">1</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-数据类型、常量以及字符串"><a href="#3-数据类型、常量以及字符串" class="headerlink" title="3. 数据类型、常量以及字符串"></a>3. 数据类型、常量以及字符串</h1><p>php 中有5种数据类型： String（字符型）、Interger（整型）、Float（浮点型），Booean（布尔型）、Array（数组）、Object（对象）、NULL（空值）</p>
+<p><strong>常量</strong></p>
+<p>常量是一个简单的标识符。该值在脚本中不会改变（在整个脚本中都能使用）</p>
+<p>一个常量由英文字母，下划线和数字组成，但数字不能作为首字母出现（常量名前不需要加 $ 符号）</p>
+<p>用 <code>define()</code>函数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> <span class="title function_ invoke__">define</span>(<span class="keyword">string</span> <span class="variable">$name</span>,<span class="keyword">mixed</span> <span class="variable">$value</span>,[<span class="keyword">bool</span> <span class="variable">$case_insensitive</span> = <span class="literal">false</span>])</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	该函数有三个参数</span></span><br><span class="line"><span class="comment">	name ： 必选参数，常量名称</span></span><br><span class="line"><span class="comment">	value： 必选参数，常量的值</span></span><br><span class="line"><span class="comment">	case_insensitive: 可选参数，如果设置为 true ，该常量则 大小写不敏感 默认为 true</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>预定义常量</strong></p>
+<p>php 中预定义了许多常量，这些常量无需使用 define() 函数定义，可直接在程序中使用。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. <span class="keyword">__FILE__</span>      <span class="comment">//当前正在处理的脚本文件名，若使用在一个被引用的文件中(include 或者 require)，那么 它的值就是被引用的文件，而不是引用它的文件。</span></span><br><span class="line"><span class="number">2</span>. <span class="keyword">__LINE__</span>      <span class="comment">//正在处理的脚本文件当前行数</span></span><br><span class="line"><span class="number">3</span>. PHP_VERSION   <span class="comment">//当前php预处理器的版本 如：5.4.16</span></span><br><span class="line"><span class="number">4</span>. PHP_OS        <span class="comment">//PHP当前所在操作系统的类型。如linux</span></span><br><span class="line"><span class="number">5</span>. <span class="literal">TRUE</span> 		 <span class="comment">//逻辑真</span></span><br><span class="line"><span class="number">6</span>. <span class="literal">FALSE</span> 		 <span class="comment">//逻辑假</span></span><br><span class="line"><span class="number">7</span>. <span class="literal">NULL</span>			 <span class="comment">//表示没有值或者不确定</span></span><br><span class="line"><span class="number">8</span>. DIRECTORY_SEPARATOR <span class="comment">//表示目录分隔符，UNIX或者Linux系统中 为“/”。 windows 中为“\”</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="10-正则表达式-PHP"><a href="#10-正则表达式-PHP" class="headerlink" title="10. 正则表达式(PHP)"></a>10. 正则表达式(PHP)</h1><h3 id="2-1基本函数"><a href="#2-1基本函数" class="headerlink" title="2.1基本函数"></a>2.1基本函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">preg_match_all</span>(<span class="string">&#x27;/正则代码/&#x27;</span>,<span class="string">&#x27;字符串&#x27;</span>) <span class="comment">//匹配字符串</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/正则代码/&#x27;</span>,<span class="string">&#x27;替换字符串&#x27;</span>,<span class="string">&#x27;字符串&#x27;</span> )  <span class="comment">//替换字符串</span></span><br></pre></td></tr></table></figure>
 
@@ -285,7 +327,7 @@
         <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
 </svg>
-        18
+        19
       </div>
     </div>
   </div>
@@ -342,7 +384,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/C/" style="font-size: 12.5px;" class="tags-cloud-3">C++</a> <a href="/tags/JS/" style="font-size: 12.5px;" class="tags-cloud-3">JS</a> <a href="/tags/PHP/" style="font-size: 10px;" class="tags-cloud-0">PHP</a> <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="font-size: 10px;" class="tags-cloud-0">SQL注入</a> <a href="/tags/Sql%E6%B3%A8%E5%85%A5/" style="font-size: 15px;" class="tags-cloud-5">Sql注入</a> <a href="/tags/Web%E5%AE%89%E5%85%A8/" style="font-size: 20px;" class="tags-cloud-10">Web安全</a> <a href="/tags/css/" style="font-size: 10px;" class="tags-cloud-0">css</a> <a href="/tags/html/" style="font-size: 10px;" class="tags-cloud-0">html</a> <a href="/tags/sql/" style="font-size: 10px;" class="tags-cloud-0">sql</a> <a href="/tags/web%E5%AE%89%E5%85%A8/" style="font-size: 12.5px;" class="tags-cloud-3">web安全</a> <a href="/tags/www%E7%BD%91%E7%AB%99/" style="font-size: 10px;" class="tags-cloud-0">www网站</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" style="font-size: 10px;" class="tags-cloud-0">信息搜集</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;" class="tags-cloud-3">前端</a> <a href="/tags/%E5%91%A8%E6%98%93/" style="font-size: 12.5px;" class="tags-cloud-3">周易</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;" class="tags-cloud-0">数据库</a> <a href="/tags/%E6%98%93%E7%BB%8F/" style="font-size: 12.5px;" class="tags-cloud-3">易经</a> <a href="/tags/%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B0/" style="font-size: 17.5px;" class="tags-cloud-8">梅花易数</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12.5px;" class="tags-cloud-3">算法</a>
+      <a href="/tags/C/" style="font-size: 12.5px;" class="tags-cloud-3">C++</a> <a href="/tags/JS/" style="font-size: 12.5px;" class="tags-cloud-3">JS</a> <a href="/tags/PHP/" style="font-size: 10px;" class="tags-cloud-0">PHP</a> <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="font-size: 10px;" class="tags-cloud-0">SQL注入</a> <a href="/tags/Sql%E6%B3%A8%E5%85%A5/" style="font-size: 15px;" class="tags-cloud-5">Sql注入</a> <a href="/tags/Web%E5%AE%89%E5%85%A8/" style="font-size: 20px;" class="tags-cloud-10">Web安全</a> <a href="/tags/css/" style="font-size: 10px;" class="tags-cloud-0">css</a> <a href="/tags/html/" style="font-size: 10px;" class="tags-cloud-0">html</a> <a href="/tags/sql/" style="font-size: 10px;" class="tags-cloud-0">sql</a> <a href="/tags/web%E5%AE%89%E5%85%A8/" style="font-size: 10px;" class="tags-cloud-0">web安全</a> <a href="/tags/www%E7%BD%91%E7%AB%99/" style="font-size: 10px;" class="tags-cloud-0">www网站</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" style="font-size: 10px;" class="tags-cloud-0">信息搜集</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;" class="tags-cloud-3">前端</a> <a href="/tags/%E5%91%A8%E6%98%93/" style="font-size: 12.5px;" class="tags-cloud-3">周易</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;" class="tags-cloud-0">数据库</a> <a href="/tags/%E6%98%93%E7%BB%8F/" style="font-size: 12.5px;" class="tags-cloud-3">易经</a> <a href="/tags/%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B0/" style="font-size: 17.5px;" class="tags-cloud-8">梅花易数</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12.5px;" class="tags-cloud-3">算法</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;" class="tags-cloud-0">计算机</a>
     </div>
   </div>
 </section>
