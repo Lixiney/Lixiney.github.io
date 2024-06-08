@@ -6,7 +6,7 @@
   <link href="https://lixey.top/atom.xml" rel="self"/>
   
   <link href="https://lixey.top/"/>
-  <updated>2023-12-07T11:57:59.966Z</updated>
+  <updated>2024-06-08T15:05:08.824Z</updated>
   <id>https://lixey.top/</id>
   
   <author>
@@ -17,15 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SQL注入-(Head注入)</title>
-    <link href="https://lixey.top/2023/12/07/SQL%E6%B3%A8%E5%85%A5-Head%E6%B3%A8%E5%85%A5/"/>
-    <id>https://lixey.top/2023/12/07/SQL%E6%B3%A8%E5%85%A5-Head%E6%B3%A8%E5%85%A5/</id>
-    <published>2023-12-07T11:57:59.000Z</published>
-    <updated>2023-12-07T11:57:59.966Z</updated>
+    <title>hexo 使用相对路径引入图片</title>
+    <link href="https://lixey.top/2024/06/08/hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/"/>
+    <id>https://lixey.top/2024/06/08/hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/</id>
+    <published>2024-06-08T14:59:17.000Z</published>
+    <updated>2024-06-08T15:05:08.824Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用相对路径引入图片"><a href="#使用相对路径引入图片" class="headerlink" title="使用相对路径引入图片"></a>使用相对路径引入图片</h2><ul><li>首先在 hexo 根目录下的 config.yml 文件中，找到 post_asset_folder ，并将其后面的值设为 true</li></ul><p><img src="/./hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20240608225941.png"></p><ul><li>设置编辑器中 图像的引入方式 设置为相对路径</li></ul><p><img src="/./hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20240608230153.png"></p><ul><li>当下一次 使用 hexo new命令的时候会自动创建一个跟 文章名相同的目录</li></ul><p><img src="/./hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20240608230438.png"></p><ul><li>将图片保存在该目录中引用即可</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;使用相对路径引入图片&quot;&gt;&lt;a href=&quot;#使用相对路径引入图片&quot; class=&quot;headerlink&quot; title=&quot;使用相对路径引入图片&quot;&gt;&lt;/a&gt;使用相对路径引入图片&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;首先在 hexo 根目录下的 config.yml 文件中，找到</summary>
+      
     
     
     
     
+    <category term="hexo" scheme="https://lixey.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python————Flask模板基础</title>
+    <link href="https://lixey.top/2024/06/06/Python%E2%80%94%E2%80%94%E2%80%94%E2%80%94Flask%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80/"/>
+    <id>https://lixey.top/2024/06/06/Python%E2%80%94%E2%80%94%E2%80%94%E2%80%94Flask%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80/</id>
+    <published>2024-06-06T14:50:45.000Z</published>
+    <updated>2024-06-08T14:50:43.862Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Flask-基础"><a href="#Flask-基础" class="headerlink" title="Flask 基础"></a>Flask 基础</h1><h4 id="Flask-下载"><a href="#Flask-下载" class="headerlink" title="Flask 下载"></a>Flask 下载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install flask</span><br></pre></td></tr></table></figure><h4 id="创建一个flask实例"><a href="#创建一个flask实例" class="headerlink" title="创建一个flask实例"></a>创建一个flask实例</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">flask_test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello world&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.debug = <span class="literal">True</span>    // 开启flask调试，这样修改完代码后就不必再重启程序</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure><h4 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h4><p>route 中的字符串表示拼接到 <a href="http://localhost:5000/">http://localhost:5000</a> 后面的参数</p><p>例如 参数为 ‘&#x2F;‘ 那么就会访问 <a href="http://localhost:5000/">http://localhost:5000/</a></p><p>我们也可以这样定义</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> flask</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/dt/&lt;name&gt;&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">flask_dt</span>(<span class="params">name</span>):</span><br><span class="line"><span class="keyword">return</span> name+<span class="string">&quot;, hello&quot;</span></span><br></pre></td></tr></table></figure><p>&lt;&gt; 里面的参数可以带入到页面中</p><ul><li>main 入口</li></ul><p><code>当 python 文件被直接执行时，if __name__ == &#39;__main__&#39; 之下的代码块将被运行；当 python 文件以模块形式被导入时,其下面的代码块不被运行</code></p><h4 id="HTTP-方法"><a href="#HTTP-方法" class="headerlink" title="HTTP 方法"></a>HTTP 方法</h4><ul><li>首先引入 request</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,request</span><br></pre></td></tr></table></figure><ul><li>GET 方式接受传参</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.args.get(<span class="string">&#x27;传参变量名&#x27;</span>)</span><br></pre></td></tr></table></figure><ul><li>POST 方式接受传参</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.form[<span class="string">&#x27;传参变量名&#x27;</span>]</span><br></pre></td></tr></table></figure><ul><li>eg:</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/method&#x27;</span>,methods=[<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;POST&#x27;</span>]</span>) </span></span><br><span class="line">// methods 表示可以接受的传参方式</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">method</span>():</span><br><span class="line"><span class="keyword">if</span> request.method == <span class="string">&#x27;GET&#x27;</span>:</span><br><span class="line">        name = requset.args.get(<span class="string">&#x27;name&#x27;</span>)</span><br><span class="line"><span class="keyword">return</span> <span class="string">&quot;GET !!!&quot;</span> + name</span><br><span class="line"><span class="keyword">elif</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        name = request.form[<span class="string">&#x27;name&#x27;</span>]</span><br><span class="line"><span class="keyword">return</span> <span class="string">&quot;POST !!!&quot;</span> + name</span><br></pre></td></tr></table></figure><h4 id="Redirect-重定向"><a href="#Redirect-重定向" class="headerlink" title="Redirect 重定向"></a>Redirect 重定向</h4><ul><li>引入 redirect 和 url_for</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,request,redirect,url_for</span><br></pre></td></tr></table></figure><ul><li>eg:</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/login&#x27;</span>,method=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>():</span><br><span class="line">key = <span class="string">&quot;123456&quot;</span></span><br><span class="line">UserKey = request.args.get(<span class="string">&#x27;key&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> UserKey == key:</span><br><span class="line"><span class="keyword">return</span> redirect(url_for(<span class="string">&#x27;login_ed&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/login_ed&#x27;</span>,method=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line">//定义一个新的页面</span><br></pre></td></tr></table></figure><h4 id="模板渲染"><a href="#模板渲染" class="headerlink" title="模板渲染"></a>模板渲染</h4><h5 id="外部文件"><a href="#外部文件" class="headerlink" title="外部文件"></a>外部文件</h5><ul><li>在外部新建一个 templates 文件夹，新建 index.html 文件</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    &#123;&#123;name&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>引入 render_template</li><li></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Flask-基础&quot;&gt;&lt;a href=&quot;#Flask-基础&quot; class=&quot;headerlink&quot; title=&quot;Flask 基础&quot;&gt;&lt;/a&gt;Flask 基础&lt;/h1&gt;&lt;h4 id=&quot;Flask-下载&quot;&gt;&lt;a href=&quot;#Flask-下载&quot; class=&quot;head</summary>
+      
+    
+    
+    
+    
+    <category term="ssti注入" scheme="https://lixey.top/tags/ssti%E6%B3%A8%E5%85%A5/"/>
     
   </entry>
   
@@ -42,32 +74,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;布尔型盲注&quot;&gt;&lt;a href=&quot;#布尔型盲注&quot; class=&quot;headerlink&quot; title=&quot;布尔型盲注&quot;&gt;&lt;/a&gt;布尔型盲注&lt;/h1&gt;&lt;h5 id=&quot;首先简单描述一下什么情况下是盲注&quot;&gt;&lt;a href=&quot;#首先简单描述一下什么情况下是盲注&quot; class=&quot;</summary>
-      
-    
-    
-    
-    <category term="计算机" scheme="https://lixey.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Sql注入" scheme="https://lixey.top/tags/Sql%E6%B3%A8%E5%85%A5/"/>
-    
-    <category term="Web安全" scheme="https://lixey.top/tags/Web%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL注入-(POST注入)</title>
-    <link href="https://lixey.top/2023/12/07/SQL%E6%B3%A8%E5%85%A5-POST%E6%B3%A8%E5%85%A5/"/>
-    <id>https://lixey.top/2023/12/07/SQL%E6%B3%A8%E5%85%A5-POST%E6%B3%A8%E5%85%A5/</id>
-    <published>2023-12-07T11:56:56.000Z</published>
-    <updated>2023-12-12T15:52:53.861Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="POST注入"><a href="#POST注入" class="headerlink" title="POST注入"></a>POST注入</h1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;POST注入&quot;&gt;&lt;a href=&quot;#POST注入&quot; class=&quot;headerlink&quot; title=&quot;POST注入&quot;&gt;&lt;/a&gt;POST注入&lt;/h1&gt;</summary>
       
     
     
