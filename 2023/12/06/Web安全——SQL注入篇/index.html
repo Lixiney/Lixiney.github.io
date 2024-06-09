@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang=ch>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Web安全——SQL注入篇 | Lixiney&#39;s Blog</title>
+  <meta name="description" content="[TOC] 漏洞描述Web 程序代码中对于用户提交的参数未做过滤就直接放到 SQL 语句中执行，导致参数中的特殊字符打 破了 SQL 语句原有逻辑，黑客可以利用该漏洞执行任意 SQL 语句，如查询数据、下载数据、写入 webshell 、执行系统命令以及绕过登录限制等。 测试方法代码层最佳防御 sql 漏洞方案：采用 sql 语句预编译和绑定变量，是防御 sql 注入的最佳方法。 1234567（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web安全——SQL注入篇">
+<meta property="og:url" content="https://lixey.top/2023/12/06/Web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94SQL%E6%B3%A8%E5%85%A5%E7%AF%87/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:description" content="[TOC] 漏洞描述Web 程序代码中对于用户提交的参数未做过滤就直接放到 SQL 语句中执行，导致参数中的特殊字符打 破了 SQL 语句原有逻辑，黑客可以利用该漏洞执行任意 SQL 语句，如查询数据、下载数据、写入 webshell 、执行系统命令以及绕过登录限制等。 测试方法代码层最佳防御 sql 漏洞方案：采用 sql 语句预编译和绑定变量，是防御 sql 注入的最佳方法。 1234567（">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-12-06T11:50:08.000Z">
+<meta property="article:modified_time" content="2024-06-05T12:14:06.138Z">
+<meta property="article:author" content="Lixiney">
+<meta property="article:tag" content="Web安全">
+<meta property="article:tag" content="SQL注入">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://lixey.top/2023/12/06/Web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94SQL%E6%B3%A8%E5%85%A5%E7%AF%87/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Lixiney&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Lixiney" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Lixiney</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">CTFer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 济南, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/Archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/Categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/Tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/About">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Lixiney" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Web安全——SQL注入篇" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Web安全——SQL注入篇
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/12/06/Web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94SQL%E6%B3%A8%E5%85%A5%E7%AF%87/" class="article-date">
+	  <time datetime="2023-12-06T11:50:08.000Z" itemprop="datePublished">2023-12-06</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>►<a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/CTF/">CTF</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/SQL%E6%B3%A8%E5%85%A5/" rel="tag">SQL注入</a>, <a class="article-tag-link-link" href="/tags/Web%E5%AE%89%E5%85%A8/" rel="tag">Web安全</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/12/06/Web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94SQL%E6%B3%A8%E5%85%A5%E7%AF%87/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述"></a>漏洞描述</h2><p>Web 程序代码中对于用户提交的参数未做过滤就直接放到 SQL 语句中执行，导致参数中的特殊字符打 破了 SQL 语句原有逻辑，黑客可以利用该漏洞执行任意 SQL 语句，如查询数据、下载数据、写入 webshell 、执行系统命令以及绕过登录限制等。</p>
+<h2 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h2><p>代码层最佳防御 sql 漏洞方案：采用 sql 语句预编译和绑定变量，是防御 sql 注入的最佳方法。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（ 1 ）所有的查询语句都使用数据库提供的参数化查询接口，参数化的语句使用参数而不是将用户输入变量嵌入到 SQL 语句中。当前几乎所有的数据库系统都提供了参数化 SQL 语句执行接口，使用此接口可以非常有效的防止 SQL 注入攻击。</span><br><span class="line">（ 2 ）对进入数据库的特殊字符（ &#x27; &lt;&gt;<span class="built_in">&amp;</span>*; 等）进行转义处理，或编码转换。</span><br><span class="line">（ 3 ）确认每种数据的类型，比如数字型的数据就必须是数字，数据库中的存储字段必须对应为 int 型。</span><br><span class="line">（ 4 ）数据长度应该严格规定，能在一定程度上防止比较长的 SQL 注入语句无法正确执行。</span><br><span class="line">（ 5 ）网站每个数据层的编码统一，建议全部使用 UTF-8 编码，上下层编码不一致有可能导致一些过滤模型被绕过。</span><br><span class="line">（ 6 ）严格限制网站用户的数据库的操作权限，给此用户提供仅仅能够满足其工作的权限，从而最大限度的减少注入攻击对数据库的危害。</span><br><span class="line">（ 7 ）避免网站显示 SQL 错误信息，比如类型错误、字段不匹配等，防止攻击者利用这些错误信息进行一些判断。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="与-Mysql-注入相关的知识"><a href="#与-Mysql-注入相关的知识" class="headerlink" title="与 Mysql 注入相关的知识"></a>与 Mysql 注入相关的知识</h2><p>在 Mysql5 版本之后，mysql 增加了一个叫 information_schema 的数据库，这个数据库里面有很多表，里面记录着用户新建的数据库以及数据表的信息。</p>
+<p>在 SQL 注入中，我们重点关注的表有如下几个，因为主要利用这几个表来获取数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schemata: 提供了当前mysql数据库中所有数据库的信息，其中 schema_name 字段保存了所有的数据库名。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tables: 提供了关于数据库中的表的信息，详细描述了某个表属于哪个库，表类型，表引擎，创建时间等信息，其中 table_name 字段保存了所有列名信息。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">columns: 提供了表中的列信息，详细描述了某张表的所有列以及每个列的信息，其中column_name 保存了所有的字段信息.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Mysql-注入的白盒分析"><a href="#Mysql-注入的白盒分析" class="headerlink" title="Mysql 注入的白盒分析"></a>Mysql 注入的白盒分析</h2><p>一下给出一个登录验证的php代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    <span class="variable">$username</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;username&#x27;</span>];</span><br><span class="line">	<span class="variable">$password</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;password&#x27;</span>];</span><br><span class="line">	<span class="variable">$sql</span> = <span class="string">&quot;select * from user where username = &#x27;<span class="subst">$username</span>&#x27; and password = &#x27;<span class="subst">$password</span>&#x27;&quot;</span>;</span><br><span class="line">	<span class="variable">$conn</span> = <span class="title function_ invoke__">mysqli_connect</span>(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;login&quot;</span>);</span><br><span class="line">	<span class="variable">$result</span> = <span class="title function_ invoke__">mysqli_query</span>(<span class="variable">$conn</span>,<span class="variable">$sql</span>);</span><br><span class="line">	<span class="keyword">if</span>(<span class="title function_ invoke__">mysqli_num_rows</span>(<span class="variable">$result</span>) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;登录成功&quot;</span>; </span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;登录失败&quot;</span>;</span><br><span class="line">    &#125;<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="sql注入的本质"><a href="#sql注入的本质" class="headerlink" title="sql注入的本质"></a>sql注入的本质</h4><p>sql注入的本质是什么，无非就是将用户输入的参数拼接到sql语句中带入到数据库当作了sql代码执行。</p>
+<p>那么我们就把重点放在sql语句上面</p>
+<p>假如我们输入的用户名和密码为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">admin </span><br><span class="line">admin123</span><br></pre></td></tr></table></figure>
+
+<p>那么它拼接到sql语句中时是不是就变成了：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username <span class="operator">=</span> <span class="string">&#x27;admin&#x27;</span> <span class="keyword">and</span> password <span class="operator">=</span> <span class="string">&#x27;admin123&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>那么假如我们输入的是</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; #</span></span><br></pre></td></tr></table></figure>
+
+<p>带入到sql语句中就变成了</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> #<span class="string">&#x27; and  password = &#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们输入的第一个引号和sql语句中原有的引号闭合了，后面那半个引号被孤立了起来，username 后面的参数为空，输入的井号被当成了注释符号，所以后面的语句被注释掉了。</p>
+<h2 id="SQL注入的一般流程"><a href="#SQL注入的一般流程" class="headerlink" title="SQL注入的一般流程"></a>SQL注入的一般流程</h2><ul>
+<li>是否存在注入并且判断注入类型</li>
+<li>判断字段数         order by</li>
+<li>确定回显点         union select 1,2</li>
+<li>查询数据库信息     @@version            @@datadir</li>
+<li>查询用户名，数据库名          user()         database()</li>
+<li>文件读取      union select 1,load_file(‘C:\\windows\\win.ini’)</li>
+<li>写入webshell                  select  …into    outfile…</li>
+</ul>
+<p><i>使用 sql 注入遇到专转义字符串的单引号或双引号，可以使用HEX编码绕过</i></p>
+<h2 id="显错注入的白盒分析"><a href="#显错注入的白盒分析" class="headerlink" title="显错注入的白盒分析"></a>显错注入的白盒分析</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    <span class="variable">$id</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;id&#x27;</span>];</span><br><span class="line">    <span class="variable">$sql</span> = <span class="string">&quot;select content from article where id = <span class="subst">$id</span>&quot;</span>;</span><br><span class="line">    <span class="variable">$conn</span> = <span class="title function_ invoke__">mysqli_connect</span>(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;test&quot;</span>);</span><br><span class="line">    <span class="variable">$result</span> = <span class="title function_ invoke__">mysqli_query</span>(<span class="variable">$conn</span>,<span class="variable">$sql</span>);</span><br><span class="line">    <span class="variable">$row</span> = <span class="title function_ invoke__">mysqli_fetch_array</span>(<span class="variable">$result</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;<span class="subst">$row</span>[content]&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>问： 为什么要判断字段数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">首先要明白<span class="keyword">union</span>联合查询的必要条件是什么，字段数必须要相同</span><br><span class="line"><span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>问： 为什么要写 and 1&#x3D;2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1 参数后面不加上 and 1=2 的话的不是 id=1 的数据就显示出来了，那么我们要的是利用sql注入得到我们想要的东西，如果不让id=1 的数据显示异常，那么将会对我们后续的操作造成一些不必要的麻烦</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>payload</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> <span class="number">1</span><span class="operator">=</span><span class="number">2</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,group_concat(table_name) <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span>database()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> <span class="number">1</span><span class="operator">=</span><span class="number">2</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,group_concat(column_name) <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name<span class="operator">=</span><span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://lixey.top/2023/12/06/Web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94SQL%E6%B3%A8%E5%85%A5%E7%AF%87/" title="Web安全——SQL注入篇" target="_blank" rel="external">https://lixey.top/2023/12/06/Web安全——SQL注入篇/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Lixiney" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Lixiney" target="_blank"><span class="text-dark">Lixiney</span><small class="ml-1x">CTFer</small></a></h3>
+        <div>上士闻道，勤而行之。中士闻道，若存若忘。下士闻道，大小之，不笑不足以为道。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2023/12/06/SQL%E6%B3%A8%E5%85%A5%E7%AF%87%EF%BC%88GET%E6%B3%A8%E5%85%A5%EF%BC%89/" title="SQL注入篇（显错注入）"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2023/11/05/Javascript%E5%9F%BA%E7%A1%80/" title="Javascript基础"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Lixiney" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
