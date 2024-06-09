@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang=ch>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Web安全-信息搜集篇 | Lixiney&#39;s Blog</title>
+  <meta name="description" content="三、信息收集知己知彼，百战不殆 3.1 whois信息 得到注册人的信息 ​	邮箱 ​	电话号码 ​	姓名   有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破    whois网站 whois.com    站长之家 http:&#x2F;&#x2F;whois.chinaz.com&#x2F;   3.2 子域名 谷歌语法  site: 指定域名   在线平台  ip反">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web安全-信息搜集篇">
+<meta property="og:url" content="https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:description" content="三、信息收集知己知彼，百战不殆 3.1 whois信息 得到注册人的信息 ​	邮箱 ​	电话号码 ​	姓名   有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破    whois网站 whois.com    站长之家 http:&#x2F;&#x2F;whois.chinaz.com&#x2F;   3.2 子域名 谷歌语法  site: 指定域名   在线平台  ip反">
+<meta property="og:locale">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230912100346.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201555.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201640.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201712.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203535.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203705.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203713.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203914.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813205533.png">
+<meta property="og:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813210242.png">
+<meta property="article:published_time" content="2023-09-29T14:54:54.000Z">
+<meta property="article:modified_time" content="2023-09-29T15:06:02.000Z">
+<meta property="article:author" content="Lixiney">
+<meta property="article:tag" content="web安全">
+<meta property="article:tag" content="信息搜集">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230912100346.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Lixiney&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Lixiney" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Lixiney</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">CTFer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 济南, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/Archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/Categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/Tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/About">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Lixiney" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Web安全-信息搜集篇" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Web安全-信息搜集篇
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/" class="article-date">
+	  <time datetime="2023-09-29T14:54:54.000Z" itemprop="datePublished">2023-09-29</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a>, <a class="article-tag-link-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" rel="tag">信息搜集</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="三、信息收集"><a href="#三、信息收集" class="headerlink" title="三、信息收集"></a>三、信息收集</h2><p><em>知己知彼，百战不殆</em></p>
+<h3 id="3-1-whois信息"><a href="#3-1-whois信息" class="headerlink" title="3.1 whois信息"></a>3.1 whois信息</h3><ul>
+<li><p>得到注册人的信息</p>
+<p>​	邮箱</p>
+<p>​	电话号码</p>
+<p>​	姓名</p>
+</li>
+</ul>
+<p><em>有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破</em></p>
+<table>
+<thead>
+<tr>
+<th>whois网站</th>
+<th>whois.com</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>站长之家</td>
+<td><a target="_blank" rel="noopener" href="http://whois.chinaz.com/">http://whois.chinaz.com/</a></td>
+</tr>
+</tbody></table>
+<h3 id="3-2-子域名"><a href="#3-2-子域名" class="headerlink" title="3.2 子域名"></a>3.2 子域名</h3><ul>
+<li><p>谷歌语法</p>
+<ul>
+<li>site: 指定域名</li>
+</ul>
+</li>
+<li><p>在线平台</p>
+<ul>
+<li><p>ip反查域名</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://dns.aizhan.com/">https://dns.aizhan.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://reverseip.domaintools.com/">https://reverseip.domaintools.com/</a></li>
+</ul>
+</li>
+<li><p>微步社区</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
+</ul>
+</li>
+<li><p>站长工具</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://tool.chinaz.com/subdomain/">http://tool.chinaz.com/subdomain/</a></li>
+</ul>
+</li>
+<li><p>潮汐指纹</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://finger.tidesec.com/">http://finger.tidesec.com/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用工具爆破DNS服务器</p>
+<ul>
+<li><p>PYthon</p>
+<ul>
+<li><p>subDomainsBrute</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/lijiejie/subDomainsBrute">https://github.com/lijiejie/subDomainsBrute</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>exe工具</p>
+<ul>
+<li>Layer.exe</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>网页内蜘蛛爬虫</p>
+<ul>
+<li>等待后续…..</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-1-google-hacking"><a href="#3-2-1-google-hacking" class="headerlink" title="3.2.1 google hacking"></a>3.2.1 google hacking</h4><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>site:</td>
+<td>指定站点，查找子域名</td>
+</tr>
+<tr>
+<td>filetype：</td>
+<td>指定文件的格式</td>
+</tr>
+<tr>
+<td>inurl:</td>
+<td>指定存在于url链接里面的字符串</td>
+</tr>
+<tr>
+<td>intext:</td>
+<td>指定存在于网页之中的内容</td>
+</tr>
+<tr>
+<td>intitle:</td>
+<td>指定存在于网页&lt;title&gt;&lt;&#x2F;title&gt;标签之中的内容</td>
+</tr>
+<tr>
+<td>allintitle:</td>
+<td>用法和intitle相似可以指定多个词</td>
+</tr>
+<tr>
+<td>allinurl:</td>
+<td>和inurl相似 可以指定多个词</td>
+</tr>
+<tr>
+<td>link:</td>
+<td>将返回所有包含指向 指定链接 的网页</td>
+</tr>
+<tr>
+<td>related:</td>
+<td>返回和指定网页布局相似的网页</td>
+</tr>
+<tr>
+<td>cache:</td>
+<td>网页快照</td>
+</tr>
+<tr>
+<td>info:</td>
+<td>返回站点的指定信息</td>
+</tr>
+<tr>
+<td>define:</td>
+<td>返回某个词语的定义</td>
+</tr>
+</tbody></table>
+<p>举个栗子</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230912100346.png"></p>
+<h3 id="3-3-端口探测"><a href="#3-3-端口探测" class="headerlink" title="3.3 端口探测"></a>3.3 端口探测</h3><p><em>危险端口可以直接爆破入侵，一个ip可能搭建了多个网站，分布在不同的端口</em></p>
+<p>常用的端口探测方法:</p>
+<ul>
+<li>nmap工具				<a target="_blank" rel="noopener" href="https://nmap.org/">https://nmap.org/</a>   &#x2F;&#x2F;自己去下</li>
+<li>在线工具        	       <a target="_blank" rel="noopener" href="https://tool.chinaz.com/port/">https://tool.chinaz.com/port/</a>   &#x2F;&#x2F;站长之家</li>
+</ul>
+<h4 id="3-3-1-Nmap使用方法"><a href="#3-3-1-Nmap使用方法" class="headerlink" title="3.3.1 Nmap使用方法"></a>3.3.1 Nmap使用方法</h4><table>
+<thead>
+<tr>
+<th align="left">基础命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-p</td>
+<td>指定端口扫描</td>
+</tr>
+<tr>
+<td align="left">-v</td>
+<td>显示扫描过程</td>
+</tr>
+<tr>
+<td align="left">-Pn</td>
+<td>跳过主机发现过程直接端口扫描 [目标禁Ping时]</td>
+</tr>
+<tr>
+<td align="left">-O</td>
+<td>探测主机操作系统</td>
+</tr>
+<tr>
+<td align="left">-A</td>
+<td>全面扫描包括一切探测</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>端口扫描状态</p>
+<ul>
+<li>Opend	端口开放</li>
+<li>Closed    端口关闭</li>
+<li>Filtered   端口被过滤</li>
+</ul>
+</li>
+<li><p>利用永恒之蓝直接拿下服务器</p>
+<ul>
+<li>链接： <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1m5F-7vLC3lpVYOcNcIpLwA">https://pan.baidu.com/s/1m5F-7vLC3lpVYOcNcIpLwA</a> </li>
+<li>提取码：zkaq</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-旁站"><a href="#3-4-旁站" class="headerlink" title="3.4 旁站"></a>3.4 旁站</h3><p>旁站指的是同一台服务器上还有其他网站，很多时候，有些网站可能不是那么容易入侵。那么，可以查看该网站所在服务器上是否还有其他网站。如果有其他网站，可以先拿下其他网站的webshell，然后再提权拿到服务器的权限，最后自然就可以拿下网站了</p>
+<ul>
+<li>在线工具<ul>
+<li><a target="_blank" rel="noopener" href="http://stool.chinaz.com/same">http://stool.chinaz.com/same</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.webscan.cc/">https://www.webscan.cc/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-C段"><a href="#3-5-C段" class="headerlink" title="3.5 C段"></a>3.5 C段</h3><p>C段指的是同一内网段内的其他服务器，每个IP有ABCD四个段，举个例子，192.168.0.1，A段就是192，B段是168，C段是0，D段是1，而C段嗅探的意思就是拿下它同一C段中的其中一台服务器，也就是说是D段1-255中的一台服务器，然后利用工具嗅探拿下该服务器</p>
+<ul>
+<li>可以使用在线工具，如fofa<ul>
+<li><a target="_blank" rel="noopener" href="https://fofa.info/">https://fofa.info</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="3-5-1-FoFa使用查C段"><a href="#3-5-1-FoFa使用查C段" class="headerlink" title="3.5.1 FoFa使用查C段"></a>3.5.1 FoFa使用查C段</h4><ul>
+<li><p>进入fofa</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201555.png"></p>
+<p>ip&#x3D;”[IP地址]&#x2F;24”</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201640.png"></p>
+</li>
+<li><p>回车，然后页面里面的就是我们想要的</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201712.png"></p>
+</li>
+</ul>
+<p>注：如果单纯的输入 ip&#x3D;”[ip地址]”  则会搜索该ip开放的端口</p>
+<h3 id="3-6-目录扫描"><a href="#3-6-目录扫描" class="headerlink" title="3.6 目录扫描"></a>3.6 目录扫描</h3><ul>
+<li><p>御剑扫描</p>
+<ul>
+<li>小技巧： 看看君子协议robots.txt</li>
+</ul>
+<p>eg： <a target="_blank" rel="noopener" href="https://www.baodu.com/robots.txt">https://www.baodu.com/robots.txt</a></p>
+<p><em>大部分网站都会有，防止网络爬虫乱爬用的</em></p>
+</li>
+</ul>
+<h3 id="3-7-指纹识别"><a href="#3-7-指纹识别" class="headerlink" title="3.7 指纹识别"></a>3.7 指纹识别</h3><p><em>再此引入一种概念，有些网站为了节省开发的时间，他们会套用一种模板（CMS），将安装程序放到服务器上直接运行，安装程序会自动将网站搭建好，但是CMS并非绝对安全，相反，一旦模板爆出漏洞，那么使用这种模板搭建的网站都会存在这种漏洞，即所谓的 ”通杀漏洞“</em></p>
+<p>CMS的种类数不胜数，所以指纹识别可以快速分析出该网站是那种CMS</p>
+<ul>
+<li><p>网站源码</p>
+<ul>
+<li><em>有些CMS会写在源码里面或者可以从一些标志中判断</em></li>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203535.png"></li>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203705.png"></li>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203713.png"></li>
+</ul>
+</li>
+<li><p>在线工具</p>
+<ul>
+<li><p>在线指纹识别</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://whatweb.bugscaner.com/">http://whatweb.bugscaner.com/</a></li>
+</ul>
+</li>
+<li><p>微步社区</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
+</ul>
+</li>
+<li><p>潮汐指纹</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://finger.tidesec.com/">http://finger.tidesec.com/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>浏览器插件</p>
+<ul>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203914.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-8-伪静态"><a href="#3-8-伪静态" class="headerlink" title="3.8 伪静态"></a>3.8 伪静态</h3><p>伪静态是相对真实静态来讲的，真实静态会生成一个html或htm后缀的文件，访客能够访问到真实存在的静态页面，而伪静态则没有生成实体静态页面文件，而仅仅是以.html一类的静态页面形式，但其实是用PHP程序动态脚本来处理的，这就是伪静态。</p>
+<p>控制台输入 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">javascript</span>:<span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">lastModified</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果网站是个html,但是显示的却是现在的时间，就是伪静态页面</p>
+<ul>
+<li>在网页中按f12</li>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813205533.png"></li>
+</ul>
+<h3 id="3-9-CDN"><a href="#3-9-CDN" class="headerlink" title="3.9 CDN"></a>3.9 CDN</h3><p>内容分发网络（CDN）是指一组分布在不同地理位置的服务器，协同工作以提供互联网内容的快速交付。</p>
+<p>也就是说 CDN 不负责承载任何内容</p>
+<p>举一个很简单的例子，我们访问百度，他的主站虽然只有一个，但是如果我们从全国不同的地点去ping baidu.com   我们返回的ip是不一样的</p>
+<p>就比如下面这个，我用多地ping 之后</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813210242.png"></p>
+<h4 id="3-9-1-CDN绕过"><a href="#3-9-1-CDN绕过" class="headerlink" title="3.9.1 CDN绕过"></a>3.9.1 CDN绕过</h4><p>懒得打字，在此附上一篇文章</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/0x7e/p/13710650.html">绕过CDN查找真实IP的方法 - 0X7e - 博客园 (cnblogs.com)</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/" title="Web安全-信息搜集篇" target="_blank" rel="external">https://lixey.top/2023/09/29/Web安全-信息搜集篇/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Lixiney" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Lixiney" target="_blank"><span class="text-dark">Lixiney</span><small class="ml-1x">CTFer</small></a></h3>
+        <div>上士闻道，勤而行之。中士闻道，若存若忘。下士闻道，大小之，不笑不足以为道。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2023/09/29/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%BF%AB%E9%80%9F%E8%87%AA%E5%BB%BAweb%E7%8E%AF%E5%A2%83/" title="虚拟机快速自建web环境"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2023/09/29/Web%E5%AE%89%E5%85%A8-PHP%E5%9F%BA%E7%A1%80/" title="Web安全-PHP基础"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Lixiney" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
