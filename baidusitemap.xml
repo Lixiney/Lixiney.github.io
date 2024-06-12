@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://lixey.top/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2024-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://lixey.top/2024/06/12/PHP-MySQL-%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2024-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://lixey.top/2023/10/05/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2024-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://lixey.top/2023/12/06/Web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94SQL%E6%B3%A8%E5%85%A5%E7%AF%87/</loc>
+    <lastmod>2024-06-12</lastmod>
+  </url>
+  <url>
     <loc>https://lixey.top/2024/06/08/hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2024-06-09</lastmod>
   </url>
   <url>
-    <loc>https://lixey.top/2024/06/06/Python%E2%80%94%E2%80%94%E2%80%94%E2%80%94Flask%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-06-08</lastmod>
-  </url>
-  <url>
     <loc>https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-PHP%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-06-05</lastmod>
-  </url>
-  <url>
-    <loc>https://lixey.top/2023/12/06/Web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94SQL%E6%B3%A8%E5%85%A5%E7%AF%87/</loc>
     <lastmod>2024-06-05</lastmod>
   </url>
   <url>
@@ -23,14 +31,6 @@
   <url>
     <loc>https://lixey.top/2023/12/07/SQL%E6%B3%A8%E5%85%A5-%E7%9B%B2%E6%B3%A8/</loc>
     <lastmod>2023-12-12</lastmod>
-  </url>
-  <url>
-    <loc>https://lixey.top/2023/12/06/SQL%E6%B3%A8%E5%85%A5%E7%AF%87%EF%BC%88GET%E6%B3%A8%E5%85%A5%EF%BC%89/</loc>
-    <lastmod>2023-12-11</lastmod>
-  </url>
-  <url>
-    <loc>https://lixey.top/2023/10/05/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-10-27</lastmod>
   </url>
   <url>
     <loc>https://lixey.top/2023/10/22/C-STL%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89Pair-x-y/</loc>

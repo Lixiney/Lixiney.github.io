@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Python————Flask模板基础 | Lixiney&#39;s Blog</title>
-  <meta name="description" content="Flask 基础Flask 下载1pip install flask  创建一个flask实例12345678910from flask import Flaskapp &#x3D; Flask(__name__)@app.route(&#x27;&#x2F;&#x27;)def flask_test():    return &quot;hello world&quot;if __name__ &#x3D;&#x3D; &#x27;_">
+  <title>Python-Flask模板 | Lixiney&#39;s Blog</title>
+  <meta name="description" content="Flask 下载1pip install flask  创建一个flask实例12345678910from flask import Flaskapp &#x3D; Flask(__name__)@app.route(&#x27;&#x2F;&#x27;)def flask_test():    return &quot;hello world&quot;if __name__ &#x3D;&#x3D; &#x27;__main__&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python————Flask模板基础">
-<meta property="og:url" content="https://lixey.top/2024/06/06/Python%E2%80%94%E2%80%94%E2%80%94%E2%80%94Flask%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="Python-Flask模板">
+<meta property="og:url" content="https://lixey.top/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="Flask 基础Flask 下载1pip install flask  创建一个flask实例12345678910from flask import Flaskapp &#x3D; Flask(__name__)@app.route(&#x27;&#x2F;&#x27;)def flask_test():    return &quot;hello world&quot;if __name__ &#x3D;&#x3D; &#x27;_">
+<meta property="og:description" content="Flask 下载1pip install flask  创建一个flask实例12345678910from flask import Flaskapp &#x3D; Flask(__name__)@app.route(&#x27;&#x2F;&#x27;)def flask_test():    return &quot;hello world&quot;if __name__ &#x3D;&#x3D; &#x27;__main__&amp;">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-06-06T14:50:45.000Z">
-<meta property="article:modified_time" content="2024-06-08T14:50:43.862Z">
+<meta property="article:published_time" content="2024-06-12T11:49:38.000Z">
+<meta property="article:modified_time" content="2024-06-12T11:50:20.978Z">
 <meta property="article:author" content="Lixiney">
-<meta property="article:tag" content="ssti注入">
+<meta property="article:tag" content="ssti 注入">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lixey.top/2024/06/06/Python%E2%80%94%E2%80%94%E2%80%94%E2%80%94Flask%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80/index.html">
+  <link rel="canonical" href="https://lixey.top/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Lixiney&#39;s Blog" type="application/atom+xml">
   
@@ -167,14 +167,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Python————Flask模板基础" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Python-Flask模板" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Python————Flask模板基础
+      Python-Flask模板
     </h1>
   
 
@@ -182,29 +182,29 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2024/06/06/Python%E2%80%94%E2%80%94%E2%80%94%E2%80%94Flask%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80/" class="article-date">
-	  <time datetime="2024-06-06T14:50:45.000Z" itemprop="datePublished">2024-06-06</time>
+	<a href="/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/" class="article-date">
+	  <time datetime="2024-06-12T11:49:38.000Z" itemprop="datePublished">2024-06-12</time>
 	</a>
 </span>
         
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/ssti%E6%B3%A8%E5%85%A5/" rel="tag">ssti注入</a>
+	<a class="article-tag-link-link" href="/tags/ssti-%E6%B3%A8%E5%85%A5/" rel="tag">ssti 注入</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/06/06/Python%E2%80%94%E2%80%94%E2%80%94%E2%80%94Flask%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="Flask-基础"><a href="#Flask-基础" class="headerlink" title="Flask 基础"></a>Flask 基础</h1><h4 id="Flask-下载"><a href="#Flask-下载" class="headerlink" title="Flask 下载"></a>Flask 下载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install flask</span><br></pre></td></tr></table></figure>
+        <h2 id="Flask-下载"><a href="#Flask-下载" class="headerlink" title="Flask 下载"></a>Flask 下载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install flask</span><br></pre></td></tr></table></figure>
 
-<h4 id="创建一个flask实例"><a href="#创建一个flask实例" class="headerlink" title="创建一个flask实例"></a>创建一个flask实例</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">flask_test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello world&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.debug = <span class="literal">True</span>    // 开启flask调试，这样修改完代码后就不必再重启程序</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<h2 id="创建一个flask实例"><a href="#创建一个flask实例" class="headerlink" title="创建一个flask实例"></a>创建一个flask实例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">flask_test</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello world&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.debug = <span class="literal">True</span>    // 开启flask调试，这样修改完代码后就不必再重启程序</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
 
 <h4 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h4><p>route 中的字符串表示拼接到 <a target="_blank" rel="noopener" href="http://localhost:5000/">http://localhost:5000</a> 后面的参数</p>
 <p>例如 参数为 ‘&#x2F;‘ 那么就会访问 <a target="_blank" rel="noopener" href="http://localhost:5000/">http://localhost:5000/</a></p>
@@ -216,7 +216,7 @@
 <li>main 入口</li>
 </ul>
 <p><code>当 python 文件被直接执行时，if __name__ == &#39;__main__&#39; 之下的代码块将被运行；当 python 文件以模块形式被导入时,其下面的代码块不被运行</code></p>
-<h4 id="HTTP-方法"><a href="#HTTP-方法" class="headerlink" title="HTTP 方法"></a>HTTP 方法</h4><ul>
+<h2 id="HTTP-方法"><a href="#HTTP-方法" class="headerlink" title="HTTP 方法"></a>HTTP 方法</h2><ul>
 <li>首先引入 request</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,request</span><br></pre></td></tr></table></figure>
@@ -236,9 +236,7 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/method&#x27;</span>,methods=[<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;POST&#x27;</span>]</span>) </span></span><br><span class="line">// methods 表示可以接受的传参方式</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">method</span>():</span><br><span class="line">	<span class="keyword">if</span> request.method == <span class="string">&#x27;GET&#x27;</span>:</span><br><span class="line">        name = requset.args.get(<span class="string">&#x27;name&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;GET !!!&quot;</span> + name</span><br><span class="line">	<span class="keyword">elif</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        name = request.form[<span class="string">&#x27;name&#x27;</span>]</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;POST !!!&quot;</span> + name</span><br></pre></td></tr></table></figure>
 
-
-
-<h4 id="Redirect-重定向"><a href="#Redirect-重定向" class="headerlink" title="Redirect 重定向"></a>Redirect 重定向</h4><ul>
+<h2 id="Redirect-重定向"><a href="#Redirect-重定向" class="headerlink" title="Redirect 重定向"></a>Redirect 重定向</h2><ul>
 <li>引入 redirect 和 url_for</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,request,redirect,url_for</span><br></pre></td></tr></table></figure>
@@ -248,16 +246,13 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/login&#x27;</span>,method=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>():</span><br><span class="line">	key = <span class="string">&quot;123456&quot;</span></span><br><span class="line">	UserKey = request.args.get(<span class="string">&#x27;key&#x27;</span>)</span><br><span class="line">	<span class="keyword">if</span> UserKey == key:</span><br><span class="line">		<span class="keyword">return</span> redirect(url_for(<span class="string">&#x27;login_ed&#x27;</span>))</span><br><span class="line">		</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/login_ed&#x27;</span>,method=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line">	//定义一个新的页面</span><br></pre></td></tr></table></figure>
 
-
-
-<h4 id="模板渲染"><a href="#模板渲染" class="headerlink" title="模板渲染"></a>模板渲染</h4><h5 id="外部文件"><a href="#外部文件" class="headerlink" title="外部文件"></a>外部文件</h5><ul>
+<h2 id="模板渲染"><a href="#模板渲染" class="headerlink" title="模板渲染"></a>模板渲染</h2><h3 id="外部文件"><a href="#外部文件" class="headerlink" title="外部文件"></a>外部文件</h3><ul>
 <li>在外部新建一个 templates 文件夹，新建 index.html 文件</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    &#123;&#123;name&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>引入 render_template</li>
-<li></li>
 </ul>
 
       
@@ -268,7 +263,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lixey.top/2024/06/06/Python%E2%80%94%E2%80%94%E2%80%94%E2%80%94Flask%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80/" title="Python————Flask模板基础" target="_blank" rel="external">https://lixey.top/2024/06/06/Python————Flask模板基础/</a>
+      <a href="https://lixey.top/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/" title="Python-Flask模板" target="_blank" rel="external">https://lixey.top/2024/06/12/Python-Flask模板/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -288,7 +283,7 @@
       </div>
       <div class="media-body">
         <h3 class="media-heading"><a href="https://github.com/Lixiney" target="_blank"><span class="text-dark">Lixiney</span><small class="ml-1x">CTFer</small></a></h3>
-        <div>上士闻道，勤而行之。中士闻道，若存若忘。下士闻道，大小之，不笑不足以为道。</div>
+        <div>上士闻道，勤而行之。中士闻道，若存若亡。下士闻道，大笑之，不笑不足以为道。</div>
       </div>
     </figure>
   </div>
@@ -312,13 +307,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2024/06/08/hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/" title="hexo 使用相对路径引入图片"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2023/12/07/SQL%E6%B3%A8%E5%85%A5-%E7%9B%B2%E6%B3%A8/" title="SQL注入-(布尔型盲注)"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2024/06/12/PHP-MySQL-%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" title="PHP&amp;MySQL-登录功能实现"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
