@@ -18,15 +18,15 @@
   
   
   <title>Web安全-PHP基础 | Lixiney&#39;s Blog</title>
-  <meta name="description" content="[TOC] 1. PHP 简述php，超文本预处理器，是一种通用的开源脚本语言 在一个 php 文件中可以包括以下内容：  php 文件可以包含文本、html、JavaScript代码和 PHP 代码 php 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器 php 文件的默认文件扩展名为 “PHP”  php 的使用  可以生成动态页面内容 可以创建、打开、读取、写入、关闭服务器上的文件">
+  <meta name="description" content="1. PHP 简述php，超文本预处理器，是一种通用的开源脚本语言 在一个 php 文件中可以包括以下内容：  php 文件可以包含文本、html、JavaScript代码和 PHP 代码 php 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器 php 文件的默认文件扩展名为 “PHP”  php 的使用  可以生成动态页面内容 可以创建、打开、读取、写入、关闭服务器上的文件 可以收集表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web安全-PHP基础">
 <meta property="og:url" content="https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-PHP%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="[TOC] 1. PHP 简述php，超文本预处理器，是一种通用的开源脚本语言 在一个 php 文件中可以包括以下内容：  php 文件可以包含文本、html、JavaScript代码和 PHP 代码 php 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器 php 文件的默认文件扩展名为 “PHP”  php 的使用  可以生成动态页面内容 可以创建、打开、读取、写入、关闭服务器上的文件">
+<meta property="og:description" content="1. PHP 简述php，超文本预处理器，是一种通用的开源脚本语言 在一个 php 文件中可以包括以下内容：  php 文件可以包含文本、html、JavaScript代码和 PHP 代码 php 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器 php 文件的默认文件扩展名为 “PHP”  php 的使用  可以生成动态页面内容 可以创建、打开、读取、写入、关闭服务器上的文件 可以收集表">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-09-29T14:33:49.000Z">
-<meta property="article:modified_time" content="2024-06-05T12:22:16.040Z">
+<meta property="article:modified_time" content="2024-06-15T04:19:38.694Z">
 <meta property="article:author" content="Lixiney">
 <meta property="article:tag" content="PHP">
 <meta property="article:tag" content="计算机">
@@ -208,8 +208,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="1-PHP-简述"><a href="#1-PHP-简述" class="headerlink" title="1. PHP 简述"></a>1. PHP 简述</h1><p>php，超文本预处理器，是一种通用的开源脚本语言</p>
+        <h1 id="1-PHP-简述"><a href="#1-PHP-简述" class="headerlink" title="1. PHP 简述"></a>1. PHP 简述</h1><p>php，超文本预处理器，是一种通用的开源脚本语言</p>
 <p>在一个 php 文件中可以包括以下内容：</p>
 <ul>
 <li>php 文件可以包含文本、html、JavaScript代码和 PHP 代码</li>
@@ -257,7 +256,7 @@
 <h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="number">120</span>; <span class="comment">//十进制</span></span><br><span class="line"><span class="variable">$a</span> = <span class="number">0b110</span>; <span class="comment">//二进制</span></span><br><span class="line"><span class="variable">$a</span> = <span class="number">0120</span>; <span class="comment">//八进制</span></span><br><span class="line"><span class="variable">$a</span> = <span class="number">0x120</span>; <span class="comment">//十六进制</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">decbin</span>(); <span class="comment">//十进制转二进制</span></span><br><span class="line"><span class="title function_ invoke__">decoct</span>(); <span class="comment">//十进制转八进制</span></span><br><span class="line"><span class="title function_ invoke__">dechex</span>(); <span class="comment">//十进制转十六进制</span></span><br><span class="line"><span class="title function_ invoke__">bindec</span>(); <span class="comment">//二进制转十进制</span></span><br><span class="line"><span class="title function_ invoke__">bin2hex</span>(); <span class="comment">//二进制转十六进制</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>字符串</strong>变量用于存储并处理为文本</p>
-<h1 id="10-正则表达式-PHP"><a href="#10-正则表达式-PHP" class="headerlink" title="10. 正则表达式(PHP)"></a>10. 正则表达式(PHP)</h1><h3 id="2-1基本函数"><a href="#2-1基本函数" class="headerlink" title="2.1基本函数"></a>2.1基本函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">preg_match_all</span>(<span class="string">&#x27;/正则代码/&#x27;</span>,<span class="string">&#x27;字符串&#x27;</span>) <span class="comment">//匹配字符串</span></span><br></pre></td></tr></table></figure>
+<h1 id="10-正则表达式-PHP"><a href="#10-正则表达式-PHP" class="headerlink" title="10. 正则表达式(PHP)"></a>10. 正则表达式(PHP)</h1><h3 id="2-1基本函数"><a href="#2-1基本函数" class="headerlink" title="2.1基本函数"></a>2.1基本函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">preg_match_all</span>(<span class="string">&#x27;/正则代码/&#x27;</span>,<span class="string">&#x27;字符串&#x27;</span>,匹配到的东西放入数组) <span class="comment">//匹配字符串</span></span><br><span class="line">    <span class="comment">//返回匹配的次数</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/正则代码/&#x27;</span>,<span class="string">&#x27;替换字符串&#x27;</span>,<span class="string">&#x27;字符串&#x27;</span> )  <span class="comment">//替换字符串</span></span><br></pre></td></tr></table></figure>
 
