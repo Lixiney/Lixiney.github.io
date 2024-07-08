@@ -6,7 +6,7 @@
   <link href="https://lixey.top/atom.xml" rel="self"/>
   
   <link href="https://lixey.top/"/>
-  <updated>2024-06-24T01:12:03.571Z</updated>
+  <updated>2024-06-15T04:59:08.910Z</updated>
   <id>https://lixey.top/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>昊曈实训</title>
-    <link href="https://lixey.top/2024/06/24/%E6%98%8A%E6%9B%88%E5%AE%9E%E8%AE%AD/"/>
-    <id>https://lixey.top/2024/06/24/%E6%98%8A%E6%9B%88%E5%AE%9E%E8%AE%AD/</id>
-    <published>2024-06-24T01:11:32.000Z</published>
-    <updated>2024-06-24T01:12:03.571Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GuessNumberGame</span> &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"><span class="type">Random</span> <span class="variable">rand</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>( );</span><br><span class="line"><span class="type">int</span> <span class="variable">secretNumber</span> <span class="operator">=</span> rand.nextInt(<span class="number">100</span>) +<span class="number">1</span>; <span class="comment">// 生成1到100之间的随机数 Scanner scanner = new Scanner(System.in); System.out.println(&quot;欢迎来到猜数字游戏!&quot;);</span></span><br><span class="line">System.out.println(<span class="string">&quot;我已经想好了一个1到100之间的数字，你能猜到吗?&quot;</span>); <span class="type">int</span> guess;</span><br><span class="line"><span class="type">int</span> <span class="variable">attempts</span> <span class="operator">=</span> <span class="number">0</span>; <span class="keyword">do</span>&#123;</span><br><span class="line">System.out.print(<span class="string">&quot;请输入你的猜测:&quot;</span>); guess = scanner.nextInt(); attempts++;</span><br><span class="line"><span class="keyword">if</span> (guess &lt; secretNumber) &#123;</span><br><span class="line">System.out.println(<span class="string">&quot;你猜的数字太小了!&quot;</span>);&#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess&gt; secretNumber) &#123;</span><br><span class="line">System.out.println(<span class="string">&quot;你猜的数字太大了!&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">while</span> (guess !=secretNumber);</span><br><span class="line">System.out.println(<span class="string">&quot;恭喜你，你猜对了!数字是&quot;</span>+ secretNumber); System.out.println(<span class="string">&quot;你一共尝试了&quot;</span>+ attempts + <span class="string">&quot; 次。&quot;</span>); scanner.close();&#125;&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>Web安全-文件上传绕过</title>
