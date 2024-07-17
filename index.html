@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="ch" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Lixiney's Blog - 真常应物，真常得性。常应常静，常清静矣。</title><meta name="author" content="Lixiney"><meta name="copyright" content="Lixiney"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Lixiney&#39;s Blog">
+<meta property="og:url" content="https://lixey.top/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:locale">
+<meta property="og:image" content="https://lixey.top/img/avator.jpg">
+<meta property="article:author" content="Lixiney">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lixey.top/img/avator.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lixey.top/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Lixiney\'s Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-07-17 09:41:24'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Lixiney's Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avator.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/index_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Lixiney's Blog"><span class="site-name">Lixiney's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Lixiney's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/15/Web%E5%AE%89%E5%85%A8-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%95%E8%BF%87/" title="Web安全-文件上传绕过">Web安全-文件上传绕过</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-15T03:34:54.000Z" title="Created 2024-06-15 11:34:54">2024-06-15</time></span></div><div class="content">客户端验证绕过简单来说就是在浏览器端进行过滤，用户可以自行修改
+
+按 F12 审计网页元素，将 函数删除
+
+
+
+禁用网页 JS
+先上传 常规文件，使用 Burp 抓包，再将后缀名修改为可执行的脚本文件
+
+
+
+服务端验证绕过Content-Type 绕过有些服务端会对传入的文件类型头进行检测，如果是如果是图片，则允许上传，否则进行拦截
+
+可以修改为：
+12Content-Type: image/pngContent-Type: image/jpeg
+
+
+
+黑名单绕过有些脚本会写黑名单限制，在上传文件时获取文件的后缀名，然后在黑名单列表中进行检测，如果文件后缀在黑名单中，则拦截上传的文件
+绕过方法： 修改文件后缀
+
+
+
+中间件
+脚本语言
+后缀名
+
+
+
+IIS
+asp
+.asp .cer .cdx .ashx
+
+
+Apache &#x2F; Nginx
+php
+.php .pht .phpt .phtml .php3 .php4 .php5 .php6
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/14/CTF-MISC-%E6%9D%82%E9%A1%B9/" title="CTF-MISC 杂项">CTF-MISC 杂项</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-14T11:14:40.000Z" title="Created 2024-06-14 19:14:40">2024-06-14</time></span></div><div class="content">1. MISC 杂项1.1 文件的操作1.1.1 文件类型识别
+file 命令	使用场景：不知道文件名，无法打开文件
+winhex          使用场景：windows下通过文件头信息判断文件类型
+
+常见文件头、文件尾
+
+
+
+文件格式
+文件头
+文件尾
+
+
+
+JPEG (jpg)文件头
+FFD8FF
+FF D9
+
+
+PNG (png)文件头
+89504E47
+AE 42 60 82
+
+
+GIF (gif) 文件头
+47494638
+00 3B
+
+
+TIFF (tif)文件头
+49492A00
+
+
+
+XML (xml)文件头
+3C3F786D6C
+
+
+
+HTML (html)文件头
+68746D6C3E
+
+
+
+Adobe Acrobat (pdf)文件头
+255044462D312E
+
+
+
+ZIP Archive (zip)文件头
+504B0304
+504B
+
+
+TAR （tar.gz）文件头
+1F8B0800
+
+
+
+RAR Archive (rar)文件头
+526172211A0700 C43D7B00400700
+C43D7B00400700
+
+
+Wave (wav)文件头
+57 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/" title="Python-Flask模板">Python-Flask模板</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-12T11:49:38.000Z" title="Created 2024-06-12 19:49:38">2024-06-12</time></span></div><div class="content">Flask 下载1pip install flask
+
+创建一个flask实例12345678910from flask import Flaskapp = Flask(__name__)@app.route(&#x27;/&#x27;)def flask_test():    return &quot;hello world&quot;if __name__ == &#x27;__main__&#x27;:    app.debug = True    // 开启flask调试，这样修改完代码后就不必再重启程序    app.run()
+
+代码解析route 中的字符串表示拼接到 http://localhost:5000 后面的参数
+例如 参数为 ‘&#x2F;‘ 那么就会访问 http://localhost:5000/
+我们也可以这样定义
+12345import flask@app.route(&#x27;/dt/&lt;name&gt;&#x27;)def flask_dt(name):	return name+&quot;, hello&quot;
+
+&lt;&gt; 里面 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/12/PHP-MySQL-%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" title="PHP&amp;MySQL-登录功能实现">PHP&amp;MySQL-登录功能实现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-12T10:59:08.000Z" title="Created 2024-06-12 18:59:08">2024-06-12</time></span></div><div class="content">基础函数
+mysqli_connect 函数
+
+12mysqli_connect(&quot;HOST&quot;,&quot;username&quot;,&quot;password&quot;,&quot;dbname&quot;);//如果使用 sqli_select_db 函数，则最后一个参数可以省略
+
+
+mysqli_select_db 函数
+
+12$conn = mysqli_connect(&quot;HOST&quot;,&quot;username&quot;,&quot;password&quot;);mysqli_select_db($conn,&quot;dbname&quot;);
+
+
+mysqli_query 函数
+
+SQL 执行函数
+123$sql = &quot;SELECT * FROM test WHERE ...&quot;;mysqli_query($conn,$sql);// 会返回执行的结果
+
+
+mysqli_fetch_array 函数
+
+12$reault=mysqli_query();  // 声明一个变量接受sql语句执行的结果my ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/08/hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/" title="hexo 使用相对路径引入图片">hexo 使用相对路径引入图片</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-08T14:59:17.000Z" title="Created 2024-06-08 22:59:17">2024-06-08</time></span></div><div class="content">使用相对路径引入图片
+首先在 hexo 根目录下的 config.yml 文件中，找到 post_asset_folder ，并将其后面的值设为 true
+
+
+
+设置编辑器中 图像的引入方式 设置为相对路径
+
+
+
+当下一次 使用 hexo new命令的时候会自动创建一个跟 文章名相同的目录
+
+
+
+将图片保存在该目录中引用即可
+在 Typora 中 ，使用快捷键 Ctrl + Shift + I ,在路径中直接填入图片名称
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/12/07/SQL%E6%B3%A8%E5%85%A5-%E7%9B%B2%E6%B3%A8/" title="SQL注入-(布尔型盲注)">SQL注入-(布尔型盲注)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-12-07T11:57:33.000Z" title="Created 2023-12-07 19:57:33">2023-12-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="content">布尔型盲注首先简单描述一下什么情况下是盲注之前有一篇文章写的是显错注入 , and 1&#x3D;2  让页面显示异常，然后在构造sql语句让页面来告诉我们想要的数据
+盲注简单来说就是一个哑巴，它不会告诉我们任何东西，只会点头或者摇头，也就是正确显示正常，错误显示异常
+所用到的函数
+if 函数
+
+1if(&#x27;判断语句&#x27;,&#x27;正确时执行的东西&#x27;,&#x27;错误时执行的东西&#x27;)
+
+举个例子
+12select if(1 &gt; 2,1,0);# 判断1 是否大于2 如果正确则将中间那条语句拼接到select后面执行，如果错误则将最后一个语句拼接到select后。
+
+
+length() 函数
+
+1length(&#x27;string&#x27;);    #计算字符串的长度
+
+
+substr() 函数
+
+1substr(&#x27;字符串&#x27;,&#x27;位置&#x27;,&#x27;长度&#x27;)   #字符串截取函数
+
+举个例子：
+123substr(database(),1,2);#首先执行database()函数，查看当前 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/12/06/Web%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94SQL%E6%B3%A8%E5%85%A5%E7%AF%87/" title="Web安全——SQL注入篇">Web安全——SQL注入篇</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-12-06T11:50:08.000Z" title="Created 2023-12-06 19:50:08">2023-12-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/CTF/">CTF</a></span></div><div class="content">漏洞描述Web 程序代码中对于用户提交的参数未做过滤就直接放到 SQL 语句中执行，导致参数中的特殊字符打 破了 SQL 语句原有逻辑，黑客可以利用该漏洞执行任意 SQL 语句，如查询数据、下载数据、写入 webshell 、执行系统命令以及绕过登录限制等。
+测试方法代码层最佳防御 sql 漏洞方案：采用 sql 语句预编译和绑定变量，是防御 sql 注入的最佳方法。
+1234567（ 1 ）所有的查询语句都使用数据库提供的参数化查询接口，参数化的语句使用参数而不是将用户输入变量嵌入到 SQL 语句中。当前几乎所有的数据库系统都提供了参数化 SQL 语句执行接口，使用此接口可以非常有效的防止 SQL 注入攻击。（ 2 ）对进入数据库的特殊字符（ &#x27; &lt;&gt;&amp;*; 等）进行转义处理，或编码转换。（ 3 ）确认每种数据的类型，比如数字型的数据就必须是数字，数据库中的存储字段必须对应为 int 型。（ 4 ）数据长度应该严格规定，能在一定程度上防止比较长的 SQL 注入语句无法正确执行。（ 5 ）网站每个数据层的编码统一，建议全部使用 UTF-8 编码，上下层编码 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/05/Javascript%E5%9F%BA%E7%A1%80/" title="Javascript基础">Javascript基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-11-05T04:04:18.000Z" title="Created 2023-11-05 12:04:18">2023-11-05</time></span></div><div class="content">概述javascript 是目前web开发中必不可少的脚本语言，js不需要编译即可运行
+运行在客户端，需要通过浏览器来解析执行 javascript 代码
+
+常用于（1）修改 html 以及css代码（2）验证表单
+1.嵌入方法1.1 内嵌式理论上js可以写在任一个地方，但是一般写在head标签里或者body下
+
+1234&lt;script type=&quot;application/javascript&quot;&gt;alert(&quot;内嵌式&quot;);&lt;/script&gt;&lt;script&gt;alert(&quot;内嵌式&quot;)&lt;/script&gt;
+
+1.2 外链式首先新建一个文件类型为js的文件，然后在该文件中写js语句，通过script标签对引入到html页面中
+
+1&lt;script src=&quot;js文件路径地址&quot;&gt;这里不能写js语句&lt;/script&gt;
+
+1.3 行内式字节书写在标签身上，是一个简写的事件，所以又称之为事件属性。
+比如： onclick     单击事件
+
+123&lt; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/22/C-STL%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89Pair-x-y/" title="C++-STL库（二）Pair[x,y]">C++-STL库（二）Pair[x,y]</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-10-22T11:10:40.000Z" title="Created 2023-10-22 19:10:40">2023-10-22</time></span></div><div class="content">Pair[x,y]12可以理解为（x,y）数学中的坐标表示小技巧：使用typedef定义 typedef pair&lt;int,int&gt; PII
+
+
+
+头文件1#include&lt;utility&gt;	
+
+
+
+初始化123// 两种方法初始化pair&lt;string,int&gt; p(&quot;hello&quot;,1);p = make_pair(&quot;hello&quot;,1);
+
+
+
+first() 和 second()123p(&quot;hello&quot;,1);p.first; //第一个元素 = hello;p.second; // 第二个元素 = 1;
+
+
+
+嵌套（套娃）1vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt;  //与vector结合再写个vector结合即可
+
+12//套娃操作 用pair 存储3个数据pair&lt;int,pair&lt;int,int&gt;&gt; p(1,&#123;2,3&#125;);
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/22/C-STL%E5%BA%93%EF%BC%88%E4%B8%80%EF%BC%89Vector%E3%80%90%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E3%80%91/" title="C++-STL库（一）Vector【动态数组】">C++-STL库（一）Vector【动态数组】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-10-22T05:58:48.000Z" title="Created 2023-10-22 13:58:48">2023-10-22</time></span></div><div class="content">Vector（动态数组）头文件1#include&lt;vector&gt;
+
+初始化
+定义一个vector  未初始化 输出 0
+1vector&lt;int&gt; a;	
+
+定义一个长度为3 的vector 未初始化 输出 0
+1vector&lt;int&gt; a(3);	
+
+定义一个长度为10 的vector 每个数赋值为 3
+1vector&lt;int&gt; a(10,3);	
+
+将向量b中从下标 0 1 2（共三个）的元素赋值给a ，a 的类型为int型
+1vector&lt;int&gt; a(b.begin(),b.begin+3);	
+
+从数组中获得初始值
+12int b[7] = &#123;1,2,3,4,5,6,7&#125;vector&lt;int&gt; a(b,b+7);	
+
+输出
+1234for(auto x:a)&#123;	cout &lt;&lt; x &lt;&lt; &quot; &quot;;&#125;
+
+size()1a.size()    // 返回元素个数
+
+
+
+resize()1a.resize()    // 改变大小
+ ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avator.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lixiney</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/15/Web%E5%AE%89%E5%85%A8-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%95%E8%BF%87/" title="Web安全-文件上传绕过">Web安全-文件上传绕过</a><time datetime="2024-06-15T03:34:54.000Z" title="Created 2024-06-15 11:34:54">2024-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/14/CTF-MISC-%E6%9D%82%E9%A1%B9/" title="CTF-MISC 杂项">CTF-MISC 杂项</a><time datetime="2024-06-14T11:14:40.000Z" title="Created 2024-06-14 19:14:40">2024-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/" title="Python-Flask模板">Python-Flask模板</a><time datetime="2024-06-12T11:49:38.000Z" title="Created 2024-06-12 19:49:38">2024-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/12/PHP-MySQL-%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" title="PHP&amp;MySQL-登录功能实现">PHP&amp;MySQL-登录功能实现</a><time datetime="2024-06-12T10:59:08.000Z" title="Created 2024-06-12 18:59:08">2024-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/08/hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/" title="hexo 使用相对路径引入图片">hexo 使用相对路径引入图片</a><time datetime="2024-06-08T14:59:17.000Z" title="Created 2024-06-08 22:59:17">2024-06-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%8E%84%E5%AD%A6/"><span class="card-category-list-name">玄学</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><span class="card-category-list-name">网络安全</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/CTF/"><span class="card-category-list-name">CTF</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><span class="card-category-list-name">计算机</span><span class="card-category-list-count">6</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/www%E7%BD%91%E7%AB%99/" style="font-size: 1.1em; color: #999">www网站</a> <a href="/tags/MISC/" style="font-size: 1.1em; color: #999">MISC</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.1em; color: #999">数据库</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="font-size: 1.1em; color: #999">文件上传</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 1.1em; color: #999">计算机</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: #99a1ac">算法</a> <a href="/tags/css/" style="font-size: 1.1em; color: #999">css</a> <a href="/tags/C/" style="font-size: 1.3em; color: #99a1ac">C++</a> <a href="/tags/PHP/" style="font-size: 1.3em; color: #99a1ac">PHP</a> <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="font-size: 1.1em; color: #999">SQL注入</a> <a href="/tags/sql/" style="font-size: 1.1em; color: #999">sql</a> <a href="/tags/web%E5%AE%89%E5%85%A8/" style="font-size: 1.1em; color: #999">web安全</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.3em; color: #99a1ac">前端</a> <a href="/tags/%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B0/" style="font-size: 1.3em; color: #99a1ac">梅花易数</a> <a href="/tags/Sql%E6%B3%A8%E5%85%A5/" style="font-size: 1.1em; color: #999">Sql注入</a> <a href="/tags/ssti-%E6%B3%A8%E5%85%A5/" style="font-size: 1.1em; color: #999">ssti 注入</a> <a href="/tags/Web%E5%AE%89%E5%85%A8/" style="font-size: 1.5em; color: #99a9bf">Web安全</a> <a href="/tags/html/" style="font-size: 1.1em; color: #999">html</a> <a href="/tags/CTF/" style="font-size: 1.3em; color: #99a1ac">CTF</a> <a href="/tags/JS/" style="font-size: 1.3em; color: #99a1ac">JS</a> <a href="/tags/MySQL/" style="font-size: 1.1em; color: #999">MySQL</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" style="font-size: 1.1em; color: #999">信息搜集</a> <a href="/tags/%E6%98%93%E7%BB%8F/" style="font-size: 1.3em; color: #99a1ac">易经</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">June 2024</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">December 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">November 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">October 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">September 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">May 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">17</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-07-17T01:41:24.529Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Lixiney</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["不被坚定选择就及时放手。","所有失去的也总会在别处生根发芽。","去坚持自己热爱的东西。"])
+  } else {
+    document.getElementById("subtitle").textContent = "不被坚定选择就及时放手。"
+  }
+}
+typedJSFn.run(subtitleType)</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script src="/js/sakuraPlus.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

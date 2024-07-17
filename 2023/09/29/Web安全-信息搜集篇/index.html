@@ -1,0 +1,464 @@
+<!DOCTYPE html><html lang="ch" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Web安全-信息搜集篇 | Lixiney's Blog</title><meta name="author" content="Lixiney"><meta name="copyright" content="Lixiney"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="三、信息收集知己知彼，百战不殆 3.1 whois信息 得到注册人的信息 ​	邮箱 ​	电话号码 ​	姓名   有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破    whois网站 whois.com    站长之家 http:&#x2F;&#x2F;whois.chinaz.com&#x2F;   3.2 子域名 谷歌语法  site: 指定域名   在线平台  ip反">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web安全-信息搜集篇">
+<meta property="og:url" content="https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:description" content="三、信息收集知己知彼，百战不殆 3.1 whois信息 得到注册人的信息 ​	邮箱 ​	电话号码 ​	姓名   有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破    whois网站 whois.com    站长之家 http:&#x2F;&#x2F;whois.chinaz.com&#x2F;   3.2 子域名 谷歌语法  site: 指定域名   在线平台  ip反">
+<meta property="og:locale">
+<meta property="og:image" content="https://lixey.top/img/avator.jpg">
+<meta property="article:published_time" content="2023-09-29T14:54:54.000Z">
+<meta property="article:modified_time" content="2023-09-29T15:06:02.000Z">
+<meta property="article:author" content="Lixiney">
+<meta property="article:tag" content="web安全">
+<meta property="article:tag" content="信息搜集">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lixey.top/img/avator.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Web安全-信息搜集篇',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-29 23:06:02'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Lixiney's Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avator.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Lixiney's Blog"><span class="site-name">Lixiney's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Web安全-信息搜集篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-09-29T14:54:54.000Z" title="Created 2023-09-29 22:54:54">2023-09-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-09-29T15:06:02.000Z" title="Updated 2023-09-29 23:06:02">2023-09-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Web安全-信息搜集篇"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="三、信息收集"><a href="#三、信息收集" class="headerlink" title="三、信息收集"></a>三、信息收集</h2><p><em>知己知彼，百战不殆</em></p>
+<h3 id="3-1-whois信息"><a href="#3-1-whois信息" class="headerlink" title="3.1 whois信息"></a>3.1 whois信息</h3><ul>
+<li><p>得到注册人的信息</p>
+<p>​	邮箱</p>
+<p>​	电话号码</p>
+<p>​	姓名</p>
+</li>
+</ul>
+<p><em>有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破</em></p>
+<table>
+<thead>
+<tr>
+<th>whois网站</th>
+<th>whois.com</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>站长之家</td>
+<td><a target="_blank" rel="noopener" href="http://whois.chinaz.com/">http://whois.chinaz.com/</a></td>
+</tr>
+</tbody></table>
+<h3 id="3-2-子域名"><a href="#3-2-子域名" class="headerlink" title="3.2 子域名"></a>3.2 子域名</h3><ul>
+<li><p>谷歌语法</p>
+<ul>
+<li>site: 指定域名</li>
+</ul>
+</li>
+<li><p>在线平台</p>
+<ul>
+<li><p>ip反查域名</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://dns.aizhan.com/">https://dns.aizhan.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://reverseip.domaintools.com/">https://reverseip.domaintools.com/</a></li>
+</ul>
+</li>
+<li><p>微步社区</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
+</ul>
+</li>
+<li><p>站长工具</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://tool.chinaz.com/subdomain/">http://tool.chinaz.com/subdomain/</a></li>
+</ul>
+</li>
+<li><p>潮汐指纹</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://finger.tidesec.com/">http://finger.tidesec.com/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用工具爆破DNS服务器</p>
+<ul>
+<li><p>PYthon</p>
+<ul>
+<li><p>subDomainsBrute</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/lijiejie/subDomainsBrute">https://github.com/lijiejie/subDomainsBrute</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>exe工具</p>
+<ul>
+<li>Layer.exe</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>网页内蜘蛛爬虫</p>
+<ul>
+<li>等待后续…..</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-1-google-hacking"><a href="#3-2-1-google-hacking" class="headerlink" title="3.2.1 google hacking"></a>3.2.1 google hacking</h4><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>site:</td>
+<td>指定站点，查找子域名</td>
+</tr>
+<tr>
+<td>filetype：</td>
+<td>指定文件的格式</td>
+</tr>
+<tr>
+<td>inurl:</td>
+<td>指定存在于url链接里面的字符串</td>
+</tr>
+<tr>
+<td>intext:</td>
+<td>指定存在于网页之中的内容</td>
+</tr>
+<tr>
+<td>intitle:</td>
+<td>指定存在于网页&lt;title&gt;&lt;&#x2F;title&gt;标签之中的内容</td>
+</tr>
+<tr>
+<td>allintitle:</td>
+<td>用法和intitle相似可以指定多个词</td>
+</tr>
+<tr>
+<td>allinurl:</td>
+<td>和inurl相似 可以指定多个词</td>
+</tr>
+<tr>
+<td>link:</td>
+<td>将返回所有包含指向 指定链接 的网页</td>
+</tr>
+<tr>
+<td>related:</td>
+<td>返回和指定网页布局相似的网页</td>
+</tr>
+<tr>
+<td>cache:</td>
+<td>网页快照</td>
+</tr>
+<tr>
+<td>info:</td>
+<td>返回站点的指定信息</td>
+</tr>
+<tr>
+<td>define:</td>
+<td>返回某个词语的定义</td>
+</tr>
+</tbody></table>
+<p>举个栗子</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230912100346.png"></p>
+<h3 id="3-3-端口探测"><a href="#3-3-端口探测" class="headerlink" title="3.3 端口探测"></a>3.3 端口探测</h3><p><em>危险端口可以直接爆破入侵，一个ip可能搭建了多个网站，分布在不同的端口</em></p>
+<p>常用的端口探测方法:</p>
+<ul>
+<li>nmap工具				<a target="_blank" rel="noopener" href="https://nmap.org/">https://nmap.org/</a>   &#x2F;&#x2F;自己去下</li>
+<li>在线工具        	       <a target="_blank" rel="noopener" href="https://tool.chinaz.com/port/">https://tool.chinaz.com/port/</a>   &#x2F;&#x2F;站长之家</li>
+</ul>
+<h4 id="3-3-1-Nmap使用方法"><a href="#3-3-1-Nmap使用方法" class="headerlink" title="3.3.1 Nmap使用方法"></a>3.3.1 Nmap使用方法</h4><table>
+<thead>
+<tr>
+<th align="left">基础命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-p</td>
+<td>指定端口扫描</td>
+</tr>
+<tr>
+<td align="left">-v</td>
+<td>显示扫描过程</td>
+</tr>
+<tr>
+<td align="left">-Pn</td>
+<td>跳过主机发现过程直接端口扫描 [目标禁Ping时]</td>
+</tr>
+<tr>
+<td align="left">-O</td>
+<td>探测主机操作系统</td>
+</tr>
+<tr>
+<td align="left">-A</td>
+<td>全面扫描包括一切探测</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>端口扫描状态</p>
+<ul>
+<li>Opend	端口开放</li>
+<li>Closed    端口关闭</li>
+<li>Filtered   端口被过滤</li>
+</ul>
+</li>
+<li><p>利用永恒之蓝直接拿下服务器</p>
+<ul>
+<li>链接： <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1m5F-7vLC3lpVYOcNcIpLwA">https://pan.baidu.com/s/1m5F-7vLC3lpVYOcNcIpLwA</a> </li>
+<li>提取码：zkaq</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-旁站"><a href="#3-4-旁站" class="headerlink" title="3.4 旁站"></a>3.4 旁站</h3><p>旁站指的是同一台服务器上还有其他网站，很多时候，有些网站可能不是那么容易入侵。那么，可以查看该网站所在服务器上是否还有其他网站。如果有其他网站，可以先拿下其他网站的webshell，然后再提权拿到服务器的权限，最后自然就可以拿下网站了</p>
+<ul>
+<li>在线工具<ul>
+<li><a target="_blank" rel="noopener" href="http://stool.chinaz.com/same">http://stool.chinaz.com/same</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.webscan.cc/">https://www.webscan.cc/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-C段"><a href="#3-5-C段" class="headerlink" title="3.5 C段"></a>3.5 C段</h3><p>C段指的是同一内网段内的其他服务器，每个IP有ABCD四个段，举个例子，192.168.0.1，A段就是192，B段是168，C段是0，D段是1，而C段嗅探的意思就是拿下它同一C段中的其中一台服务器，也就是说是D段1-255中的一台服务器，然后利用工具嗅探拿下该服务器</p>
+<ul>
+<li>可以使用在线工具，如fofa<ul>
+<li><a target="_blank" rel="noopener" href="https://fofa.info/">https://fofa.info</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="3-5-1-FoFa使用查C段"><a href="#3-5-1-FoFa使用查C段" class="headerlink" title="3.5.1 FoFa使用查C段"></a>3.5.1 FoFa使用查C段</h4><ul>
+<li><p>进入fofa</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201555.png"></p>
+<p>ip&#x3D;”[IP地址]&#x2F;24”</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201640.png"></p>
+</li>
+<li><p>回车，然后页面里面的就是我们想要的</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813201712.png"></p>
+</li>
+</ul>
+<p>注：如果单纯的输入 ip&#x3D;”[ip地址]”  则会搜索该ip开放的端口</p>
+<h3 id="3-6-目录扫描"><a href="#3-6-目录扫描" class="headerlink" title="3.6 目录扫描"></a>3.6 目录扫描</h3><ul>
+<li><p>御剑扫描</p>
+<ul>
+<li>小技巧： 看看君子协议robots.txt</li>
+</ul>
+<p>eg： <a target="_blank" rel="noopener" href="https://www.baodu.com/robots.txt">https://www.baodu.com/robots.txt</a></p>
+<p><em>大部分网站都会有，防止网络爬虫乱爬用的</em></p>
+</li>
+</ul>
+<h3 id="3-7-指纹识别"><a href="#3-7-指纹识别" class="headerlink" title="3.7 指纹识别"></a>3.7 指纹识别</h3><p><em>再此引入一种概念，有些网站为了节省开发的时间，他们会套用一种模板（CMS），将安装程序放到服务器上直接运行，安装程序会自动将网站搭建好，但是CMS并非绝对安全，相反，一旦模板爆出漏洞，那么使用这种模板搭建的网站都会存在这种漏洞，即所谓的 ”通杀漏洞“</em></p>
+<p>CMS的种类数不胜数，所以指纹识别可以快速分析出该网站是那种CMS</p>
+<ul>
+<li><p>网站源码</p>
+<ul>
+<li><em>有些CMS会写在源码里面或者可以从一些标志中判断</em></li>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203535.png"></li>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203705.png"></li>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203713.png"></li>
+</ul>
+</li>
+<li><p>在线工具</p>
+<ul>
+<li><p>在线指纹识别</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://whatweb.bugscaner.com/">http://whatweb.bugscaner.com/</a></li>
+</ul>
+</li>
+<li><p>微步社区</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
+</ul>
+</li>
+<li><p>潮汐指纹</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://finger.tidesec.com/">http://finger.tidesec.com/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>浏览器插件</p>
+<ul>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813203914.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-8-伪静态"><a href="#3-8-伪静态" class="headerlink" title="3.8 伪静态"></a>3.8 伪静态</h3><p>伪静态是相对真实静态来讲的，真实静态会生成一个html或htm后缀的文件，访客能够访问到真实存在的静态页面，而伪静态则没有生成实体静态页面文件，而仅仅是以.html一类的静态页面形式，但其实是用PHP程序动态脚本来处理的，这就是伪静态。</p>
+<p>控制台输入 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">javascript</span>:<span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">lastModified</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果网站是个html,但是显示的却是现在的时间，就是伪静态页面</p>
+<ul>
+<li>在网页中按f12</li>
+<li><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813205533.png"></li>
+</ul>
+<h3 id="3-9-CDN"><a href="#3-9-CDN" class="headerlink" title="3.9 CDN"></a>3.9 CDN</h3><p>内容分发网络（CDN）是指一组分布在不同地理位置的服务器，协同工作以提供互联网内容的快速交付。</p>
+<p>也就是说 CDN 不负责承载任何内容</p>
+<p>举一个很简单的例子，我们访问百度，他的主站虽然只有一个，但是如果我们从全国不同的地点去ping baidu.com   我们返回的ip是不一样的</p>
+<p>就比如下面这个，我用多地ping 之后</p>
+<p><img src="https://lixiney.github.io/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230813210242.png"></p>
+<h4 id="3-9-1-CDN绕过"><a href="#3-9-1-CDN绕过" class="headerlink" title="3.9.1 CDN绕过"></a>3.9.1 CDN绕过</h4><p>懒得打字，在此附上一篇文章</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/0x7e/p/13710650.html">绕过CDN查找真实IP的方法 - 0X7e - 博客园 (cnblogs.com)</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://lixey.top">Lixiney</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/">https://lixey.top/2023/09/29/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86%E7%AF%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/web%E5%AE%89%E5%85%A8/">web安全</a><a class="post-meta__tags" href="/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/">信息搜集</a></div><div class="post_share"><div class="social-share" data-image="/img/avator.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/29/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%BF%AB%E9%80%9F%E8%87%AA%E5%BB%BAweb%E7%8E%AF%E5%A2%83/" title="虚拟机快速自建web环境"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">虚拟机快速自建web环境</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/29/Web%E5%AE%89%E5%85%A8-PHP%E5%9F%BA%E7%A1%80/" title="Web安全-PHP基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Web安全-PHP基础</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avator.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lixiney</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">三、信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-whois%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">3.1 whois信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%AD%90%E5%9F%9F%E5%90%8D"><span class="toc-number">1.2.</span> <span class="toc-text">3.2 子域名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-google-hacking"><span class="toc-number">1.2.1.</span> <span class="toc-text">3.2.1 google hacking</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%AB%AF%E5%8F%A3%E6%8E%A2%E6%B5%8B"><span class="toc-number">1.3.</span> <span class="toc-text">3.3 端口探测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-Nmap%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.3.1 Nmap使用方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E6%97%81%E7%AB%99"><span class="toc-number">1.4.</span> <span class="toc-text">3.4 旁站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-C%E6%AE%B5"><span class="toc-number">1.5.</span> <span class="toc-text">3.5 C段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-1-FoFa%E4%BD%BF%E7%94%A8%E6%9F%A5C%E6%AE%B5"><span class="toc-number">1.5.1.</span> <span class="toc-text">3.5.1 FoFa使用查C段</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E7%9B%AE%E5%BD%95%E6%89%AB%E6%8F%8F"><span class="toc-number">1.6.</span> <span class="toc-text">3.6 目录扫描</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB"><span class="toc-number">1.7.</span> <span class="toc-text">3.7 指纹识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-%E4%BC%AA%E9%9D%99%E6%80%81"><span class="toc-number">1.8.</span> <span class="toc-text">3.8 伪静态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-CDN"><span class="toc-number">1.9.</span> <span class="toc-text">3.9 CDN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-9-1-CDN%E7%BB%95%E8%BF%87"><span class="toc-number">1.9.1.</span> <span class="toc-text">3.9.1 CDN绕过</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/15/Web%E5%AE%89%E5%85%A8-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%95%E8%BF%87/" title="Web安全-文件上传绕过">Web安全-文件上传绕过</a><time datetime="2024-06-15T03:34:54.000Z" title="Created 2024-06-15 11:34:54">2024-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/14/CTF-MISC-%E6%9D%82%E9%A1%B9/" title="CTF-MISC 杂项">CTF-MISC 杂项</a><time datetime="2024-06-14T11:14:40.000Z" title="Created 2024-06-14 19:14:40">2024-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/12/Python-Flask%E6%A8%A1%E6%9D%BF/" title="Python-Flask模板">Python-Flask模板</a><time datetime="2024-06-12T11:49:38.000Z" title="Created 2024-06-12 19:49:38">2024-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/12/PHP-MySQL-%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" title="PHP&amp;MySQL-登录功能实现">PHP&amp;MySQL-登录功能实现</a><time datetime="2024-06-12T10:59:08.000Z" title="Created 2024-06-12 18:59:08">2024-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/08/hexo-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/" title="hexo 使用相对路径引入图片">hexo 使用相对路径引入图片</a><time datetime="2024-06-08T14:59:17.000Z" title="Created 2024-06-08 22:59:17">2024-06-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Lixiney</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script src="/js/sakuraPlus.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
