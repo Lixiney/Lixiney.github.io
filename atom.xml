@@ -6,7 +6,7 @@
   <link href="https://lixey.top/atom.xml" rel="self"/>
   
   <link href="https://lixey.top/"/>
-  <updated>2024-06-15T04:59:08.000Z</updated>
+  <updated>2024-08-01T07:21:30.168Z</updated>
   <id>https://lixey.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP使用预处理方法防止SQL注入</title>
+    <link href="https://lixey.top/2024/08/01/PHP%E4%BD%BF%E7%94%A8%E9%A2%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/"/>
+    <id>https://lixey.top/2024/08/01/PHP%E4%BD%BF%E7%94%A8%E9%A2%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</id>
+    <published>2024-08-01T07:05:48.000Z</published>
+    <updated>2024-08-01T07:21:30.168Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$hostname</span> = <span class="string">&quot;localhost&quot;</span>;  <span class="comment">//数据库地址</span></span><br><span class="line"><span class="variable">$dbuser</span> = <span class="string">&quot;root&quot;</span>   <span class="comment">//数据库 用户名</span></span><br><span class="line"><span class="variable">$dbpass</span> = <span class="string">&quot;toor&quot;</span>; <span class="comment">//数据库密码</span></span><br><span class="line"><span class="variable">$dbname</span> = <span class="string">&quot;tgfs&quot;</span>;<span class="comment">//数据库名</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建连接</span></span><br><span class="line"><span class="variable">$conn</span> = <span class="keyword">new</span> <span class="title function_ invoke__">mysqli</span>(<span class="variable">$hostname</span>,<span class="variable">$dbuser</span>,<span class="variable">$dbpass</span>,<span class="variable">$dbname</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$conn</span> -&gt; connect_error)&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;连接失败&quot;</span>.<span class="variable">$conn</span>-&gt;connect_error);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;select * from user&quot;</span>;</span><br><span class="line"><span class="variable">$result</span> = <span class="variable">$conn</span> -&gt; <span class="title function_ invoke__">query</span>(<span class="variable">$sql</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$result</span>-&gt;num_rows&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="variable">$row</span>=<span class="variable">$result</span>-&gt;<span class="title function_ invoke__">fetch_assoc</span>())&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$row</span>[<span class="number">0</span>].<span class="variable">$row</span>[<span class="number">1</span>].<span class="string">&quot;&lt;br /&gt;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h2 id="预处理以及绑定变量"><a href="#预处理以及绑定变量" class="headerlink" title="预处理以及绑定变量"></a>预处理以及绑定变量</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$result</span> = <span class="variable">$conn</span> -&gt; <span class="title function_ invoke__">prepare</span>(<span class="string">&quot;select * from user where username = ? and password = ?&quot;</span>)</span><br></pre></td></tr></table></figure><p><code>这里的 ？ 是占位符</code></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$result</span> -&gt; <span class="title function_ invoke__">bind_param</span>(<span class="string">&quot;ss&quot;</span>,<span class="variable">$username</span>，<span class="variable">$password</span>);</span><br></pre></td></tr></table></figure><p>第一个参数表示参数的类型</p><ul><li>i 表示 整形</li><li>s 表示 字符串</li><li>d 表示 双精度浮点型</li><li>b 表示 二进制大对象</li></ul><p>绑定输出结果的变量</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$result</span>-&gt;<span class="title function_ invoke__">bind_result</span>(<span class="variable">$name</span>,<span class="variable">$pwd</span>);</span><br></pre></td></tr></table></figure><h2 id="执行查询"><a href="#执行查询" class="headerlink" title="执行查询"></a>执行查询</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$result</span> -&gt; <span class="title function_ invoke__">excute</span>();</span><br></pre></td></tr></table></figure><h2 id="关闭连接"><a href="#关闭连接" class="headerlink" title="关闭连接"></a>关闭连接</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$result</span> -&gt; <span class="title function_ invoke__">close</span>();</span><br><span class="line"><span class="variable">$conn</span> -&gt; <span class="title function_ invoke__">close</span>();</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一个简单的例子&quot;&gt;&lt;a href=&quot;#一个简单的例子&quot; class=&quot;headerlink&quot; title=&quot;一个简单的例子&quot;&gt;&lt;/a&gt;一个简单的例子&lt;/h2&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;g</summary>
+      
+    
+    
+    
+    
+    <category term="PHP" scheme="https://lixey.top/tags/PHP/"/>
+    
+    <category term="代码审计" scheme="https://lixey.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>Web安全-文件上传绕过</title>
