@@ -4,11 +4,63 @@
   
   
   <entry>
+    <title>Python-Django开发</title>
+    <link href="/posts/2bf21027.html"/>
+    <url>/posts/2bf21027.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h1><ul><li>创建 env 环境</li></ul><div class="code-wrapper"><pre><code class="hljs bash">python -m venv <span class="hljs-built_in">env</span></code></pre></div><ul><li>启动虚拟环境</li></ul><div class="code-wrapper"><pre><code class="hljs bash">./env/Scripts/activate</code></pre></div><h1 id="运行第一个-Django-程序"><a href="#运行第一个-Django-程序" class="headerlink" title="运行第一个 Django 程序"></a>运行第一个 Django 程序</h1><ul><li>安装 django 库</li></ul><div class="code-wrapper"><pre><code class="hljs bash">pip install django</code></pre></div><ul><li>初始化 django 项目</li></ul><div class="code-wrapper"><pre><code class="hljs bash">django-admin startproject website</code></pre></div><ul><li>启动 django 项目</li></ul><div class="code-wrapper"><pre><code class="hljs bash">python ./website/manage.py runserver</code></pre></div><ul><li>切换端口号</li></ul><div class="code-wrapper"><pre><code class="hljs bash">python manage.py runserver 8888</code></pre></div><h2 id="修改首页并输出-Hello-world"><a href="#修改首页并输出-Hello-world" class="headerlink" title="修改首页并输出 Hello world"></a>修改首页并输出 Hello world</h2><ul><li>在根目录下新建 views.py</li></ul><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># views.py</span><span class="hljs-keyword">from</span> django.http <span class="hljs-keyword">import</span> HttpResponse<span class="hljs-keyword">def</span> <span class="hljs-title function_">index</span>(<span class="hljs-params">request</span>):  <span class="hljs-keyword">return</span> HttpResponse(<span class="hljs-string">&quot;Hello world&quot;</span>)</code></pre></div><ul><li>修改 urls.py 文件</li></ul><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#urls.py</span><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views   <span class="hljs-comment">#导入 views.py </span>urlpatterns = [    path(<span class="hljs-string">&#x27;admin/&#x27;</span>, admin.site.urls),    path(<span class="hljs-string">&#x27;&#x27;</span>,views.index,name=<span class="hljs-string">&quot;asd&quot;</span>), ]</code></pre></div><h1 id="django-admin-命令详解"><a href="#django-admin-命令详解" class="headerlink" title="django-admin 命令详解"></a>django-admin 命令详解</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>Django</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Python创建env虚拟环境</title>
+    <link href="/posts/3b86160f.html"/>
+    <url>/posts/3b86160f.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h1><div class="code-wrapper"><pre><code class="hljs bash">python -m venv <span class="hljs-built_in">env</span></code></pre></div><h1 id="启动虚拟环境"><a href="#启动虚拟环境" class="headerlink" title="启动虚拟环境"></a>启动虚拟环境</h1><div class="code-wrapper"><pre><code class="hljs python">./env/scripts/activate</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python-PyMySQL</title>
     <link href="/posts/db284c9b.html"/>
     <url>/posts/db284c9b.html</url>
     
-    <content type="html"><![CDATA[<h1 id="安装-PyMySQL"><a href="#安装-PyMySQL" class="headerlink" title="安装 PyMySQL"></a>安装 PyMySQL</h1><div class="code-wrapper"><pre><code class="hljs bash">pip install PyMySQL</code></pre></div><h1 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h1><blockquote><p>开启 mysql 地址为 localhost:3306 用户名为 root 密码为 root</p></blockquote><ul><li>创建数据库连接</li></ul><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pymysqldbconn = pymysql.connect(  host=<span class="hljs-string">&#x27;localhost&#x27;</span>,  user=<span class="hljs-string">&#x27;root&#x27;</span>,  password=<span class="hljs-string">&#x27;root&#x27;</span>,  database=<span class="hljs-string">&#x27;test&#x27;</span>)</code></pre></div><ul><li>使用 cursor() 方法创建一个游标对象 cursor</li></ul><div class="code-wrapper"><pre><code class="hljs python">cursor = dbconn.cursor()</code></pre></div><ul><li>使用 excute() 方法执行sql查询</li></ul><div class="code-wrapper"><pre><code class="hljs python">cursor.excute(<span class="hljs-string">&quot;select user()&quot;</span>)</code></pre></div><ul><li>使用 fetchone() 方法获取一条数据</li></ul><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">str</span> = cursor.fetchone()</code></pre></div><ul><li>关闭数据库连接</li></ul><div class="code-wrapper"><pre><code class="hljs python">dbconn.close()</code></pre></div><ul><li>创建数据表</li></ul><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3</span> <span class="hljs-keyword">import</span> pymysql <span class="hljs-comment"># 打开数据库连接</span>db = pymysql.connect(host=<span class="hljs-string">&#x27;localhost&#x27;</span>,                     user=<span class="hljs-string">&#x27;testuser&#x27;</span>,                     password=<span class="hljs-string">&#x27;test123&#x27;</span>,                     database=<span class="hljs-string">&#x27;TESTDB&#x27;</span>) <span class="hljs-comment"># 使用 cursor() 方法创建一个游标对象 cursor</span>cursor = db.cursor() <span class="hljs-comment"># 使用 execute() 方法执行 SQL，如果表存在则删除</span>cursor.execute(<span class="hljs-string">&quot;DROP TABLE IF EXISTS EMPLOYEE&quot;</span>) <span class="hljs-comment"># 使用预处理语句创建表</span>sql = <span class="hljs-string">&quot;&quot;&quot;CREATE TABLE EMPLOYEE (</span><span class="hljs-string">         FIRST_NAME  CHAR(20) NOT NULL,</span><span class="hljs-string">         LAST_NAME  CHAR(20),</span><span class="hljs-string">         AGE INT,  </span><span class="hljs-string">         SEX CHAR(1),</span><span class="hljs-string">         INCOME FLOAT )&quot;&quot;&quot;</span> cursor.execute(sql) <span class="hljs-comment"># 关闭数据库连接</span>db.close()</code></pre></div>]]></content>
+    <content type="html"><![CDATA[<h1 id="安装-PyMySQL"><a href="#安装-PyMySQL" class="headerlink" title="安装 PyMySQL"></a>安装 PyMySQL</h1><div class="code-wrapper"><pre><code class="hljs bash">pip install PyMySQL</code></pre></div><h1 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h1><blockquote><p>开启 mysql 地址为 localhost:3306 用户名为 root 密码为 root</p></blockquote><ul><li>创建数据库连接</li></ul><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pymysqldbconn = pymysql.connect(  host=<span class="hljs-string">&#x27;localhost&#x27;</span>,  user=<span class="hljs-string">&#x27;root&#x27;</span>,  password=<span class="hljs-string">&#x27;root&#x27;</span>,  database=<span class="hljs-string">&#x27;test&#x27;</span>)</code></pre></div><ul><li>使用 cursor() 方法创建一个游标对象 cursor</li></ul><div class="code-wrapper"><pre><code class="hljs python">cursor = dbconn.cursor()</code></pre></div><ul><li>使用 excute() 方法执行sql查询</li></ul><div class="code-wrapper"><pre><code class="hljs python">cursor.excute(<span class="hljs-string">&quot;select user()&quot;</span>)</code></pre></div><ul><li>使用 fetchone() 方法获取一条数据</li></ul><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">str</span> = cursor.fetchone()</code></pre></div><ul><li>关闭数据库连接</li></ul><div class="code-wrapper"><pre><code class="hljs python">dbconn.close()</code></pre></div><ul><li>创建数据表</li></ul><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3</span> <span class="hljs-keyword">import</span> pymysql <span class="hljs-comment"># 打开数据库连接</span>db = pymysql.connect(host=<span class="hljs-string">&#x27;localhost&#x27;</span>,                     user=<span class="hljs-string">&#x27;testuser&#x27;</span>,                     password=<span class="hljs-string">&#x27;test123&#x27;</span>,                     database=<span class="hljs-string">&#x27;TESTDB&#x27;</span>) <span class="hljs-comment"># 使用 cursor() 方法创建一个游标对象 cursor</span>cursor = db.cursor() <span class="hljs-comment"># 使用 execute() 方法执行 SQL，如果表存在则删除</span>cursor.execute(<span class="hljs-string">&quot;DROP TABLE IF EXISTS EMPLOYEE&quot;</span>) <span class="hljs-comment"># 使用预处理语句创建表</span>sql = <span class="hljs-string">&quot;&quot;&quot;CREATE TABLE EMPLOYEE (</span><span class="hljs-string">         FIRST_NAME  CHAR(20) NOT NULL,</span><span class="hljs-string">         LAST_NAME  CHAR(20),</span><span class="hljs-string">         AGE INT,  </span><span class="hljs-string">         SEX CHAR(1),</span><span class="hljs-string">         INCOME FLOAT )&quot;&quot;&quot;</span> cursor.execute(sql) <span class="hljs-comment"># 关闭数据库连接</span>db.close()</code></pre></div><h1 id="使用预处理方法防止SQL注入"><a href="#使用预处理方法防止SQL注入" class="headerlink" title="使用预处理方法防止SQL注入"></a>使用预处理方法防止SQL注入</h1><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3</span> <span class="hljs-keyword">import</span> pymysql <span class="hljs-comment"># 打开数据库连接</span>db = pymysql.connect(host=<span class="hljs-string">&#x27;localhost&#x27;</span>,                     user=<span class="hljs-string">&#x27;testuser&#x27;</span>,                     password=<span class="hljs-string">&#x27;test123&#x27;</span>,                     database=<span class="hljs-string">&#x27;TESTDB&#x27;</span>) <span class="hljs-comment"># 使用 cursor() 方法创建一个游标对象 cursor</span>cursor = db.cursor() sql = <span class="hljs-string">&#x27;SELECT * FROM user where username = %s&#x27;</span> cursor.execute(sql,(username,))<span class="hljs-comment"># 关闭数据库连接</span>db.close()</code></pre></div>]]></content>
     
     
     <categories>
