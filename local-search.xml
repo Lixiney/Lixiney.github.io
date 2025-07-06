@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>vulfocus|命令执行漏洞WP</title>
+    <link href="/posts/83c1bda7.html"/>
+    <url>/posts/83c1bda7.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-运行环境"><a href="#1-运行环境" class="headerlink" title="1.运行环境"></a>1.运行环境</h1><p>进入首页 返回 index.php?cmd&#x3D;ls &#x2F;tmp</p><h1 id="2-将其拼接到浏览器-url-栏后面"><a href="#2-将其拼接到浏览器-url-栏后面" class="headerlink" title="2.将其拼接到浏览器 url 栏后面"></a>2.将其拼接到浏览器 url 栏后面</h1><p>发现输出了一段文字，但是看的不是很明显，CTRL+U 查看页面源代码</p><p>发现有两行东西，这就说明这个目录下面就一个index.php 文件</p><p>推测执行了 ls 系统命令</p><h1 id="3-替换其他指令查找-flag"><a href="#3-替换其他指令查找-flag" class="headerlink" title="3.替换其他指令查找 flag"></a>3.替换其他指令查找 flag</h1><p>执行下列命令</p><div class="code-wrapper"><pre><code class="hljs bash">find / -name <span class="hljs-string">&#x27;*flag*&#x27;</span></code></pre></div><p>获得flag</p><p>flag-{bmh8bd27630-a4fd-4bfa-a7c8-61af1a1f0f0b}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>网络安全</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>命令执行</tag>
+      
+      <tag>WriteUp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python-Django开发</title>
     <link href="/posts/2bf21027.html"/>
     <url>/posts/2bf21027.html</url>
