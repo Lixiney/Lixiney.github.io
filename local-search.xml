@@ -4,6 +4,71 @@
   
   
   <entry>
+    <title>test测试</title>
+    <link href="/posts/1c4de300/"/>
+    <url>/posts/1c4de300/</url>
+    
+    <content type="html"><![CDATA[<p>123</p><p>测试</p><p>你好</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ajax技术-前后端交互</title>
+    <link href="/posts/98d7f58f/"/>
+    <url>/posts/98d7f58f/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>Ajax 并不是一门编程语言，而是一种前后端交互的技术</p></blockquote><h1 id="什么是-Ajax"><a href="#什么是-Ajax" class="headerlink" title="什么是 Ajax"></a>什么是 Ajax</h1><p>通过在后台与服务器进行少量数据交换，Ajax 可以使用网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p><h1 id="Ajax-实例"><a href="#Ajax-实例" class="headerlink" title="Ajax 实例"></a>Ajax 实例</h1><div class="code-wrapper"><pre><code class="hljs php">&lt;script&gt;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadXMlDoc</span>(<span class="hljs-params"></span>)</span>&#123;<span class="hljs-comment">// Ajax 脚本执行</span>&#125;&lt;/script&gt;</code></pre></div><h2 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h2><p>所有现代浏览器均支持 XMLHttpRequest 对象</p><p>XMLHttpRequest 用于在后台与服务器进行数据交换</p><h2 id="创建-XMLHttpRequest-对象"><a href="#创建-XMLHttpRequest-对象" class="headerlink" title="创建 XMLHttpRequest 对象"></a>创建 XMLHttpRequest 对象</h2><div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> xmlhttp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();</code></pre></div><h2 id="Ajax-向服务器发出请求"><a href="#Ajax-向服务器发出请求" class="headerlink" title="Ajax 向服务器发出请求"></a>Ajax 向服务器发出请求</h2><div class="code-wrapper"><pre><code class="hljs javascript">xmlhttp.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;test.php&#x27;</span>,<span class="hljs-literal">true</span>);xmlhttp.<span class="hljs-title function_">send</span>();</code></pre></div><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul><li>open(method,url,async)<ul><li>method：请求的类型 GET 或 POST</li><li>url ： 文件在服务器上的位置</li><li>async：true（异步）或 false （同步）</li></ul></li><li>send(string)<ul><li>string 仅用于 POST 请求</li></ul></li></ul><h3 id="GET-请求"><a href="#GET-请求" class="headerlink" title="GET 请求"></a>GET 请求</h3><div class="code-wrapper"><pre><code class="hljs javascript">xmlhttp.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>,<span class="hljs-string">&quot;test.php?id=1&quot;</span>,<span class="hljs-literal">true</span>);xmlhttp.<span class="hljs-title function_">send</span>();</code></pre></div><h3 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST <strong>请求</strong></h3><div class="code-wrapper"><pre><code class="hljs javascript">xmlhttp.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;POST&quot;</span>,<span class="hljs-string">&quot;test.php&quot;</span>,<span class="hljs-literal">true</span>);xmlhttp.<span class="hljs-title function_">setRequestHeader</span>(<span class="hljs-string">&quot;Content-type&quot;</span>,<span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>);xmlhttp.<span class="hljs-title function_">send</span>(<span class="hljs-string">&quot;name=lixiney&amp;password=hello&quot;</span>);</code></pre></div><ul><li>setRequestHeader(header,value)<ul><li>header 请求头</li><li>请求头的值</li></ul></li></ul><h3 id="Async-true"><a href="#Async-true" class="headerlink" title="Async&#x3D;true"></a>Async&#x3D;true</h3><p>当 async &#x3D; true 时</p><div class="code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">loadXMLDoc</span>(<span class="hljs-params"></span>)&#123;</span><span class="language-javascript">        <span class="hljs-keyword">var</span> xmlhttp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();</span><span class="language-javascript">        xmlhttp.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;</span><span class="language-javascript">            <span class="hljs-keyword">if</span>(xmlhttp.<span class="hljs-property">readyState</span> == <span class="hljs-number">4</span> &amp;&amp; xmlhttp.<span class="hljs-property">status</span> == <span class="hljs-number">200</span>)&#123;</span><span class="language-javascript">                <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;myDiv&quot;</span>).<span class="hljs-property">innerHTML</span>=xmlhttp.<span class="hljs-property">responseText</span>;</span><span class="language-javascript">            &#125;</span><span class="language-javascript">        &#125;</span><span class="language-javascript">        xmlhttp.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>,<span class="hljs-string">&quot;test.php&quot;</span>,<span class="hljs-literal">true</span>);</span><span class="language-javascript">        xmlhttp.<span class="hljs-title function_">send</span>();</span><span class="language-javascript">    &#125;</span><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div><h2 id="Ajax-服务器的响应"><a href="#Ajax-服务器的响应" class="headerlink" title="Ajax 服务器的响应"></a>Ajax 服务器的响应</h2><h3 id="服务器响应"><a href="#服务器响应" class="headerlink" title="服务器响应"></a>服务器响应</h3><ul><li>responseText<ul><li>获得字符串形式的响应数据</li></ul></li><li>responseXML<ul><li>获得XML形式的响应数据</li></ul></li></ul><h2 id="Ajax-onreadystatechange-事件"><a href="#Ajax-onreadystatechange-事件" class="headerlink" title="Ajax - onreadystatechange 事件"></a>Ajax - onreadystatechange 事件</h2><p>当请求被发送到服务器时，我们需要执行基于响应的任务。</p><p>每当 readyState 改变时，就会出发 onreadystatechange 事件。</p><ul><li>readyState 属性存有 XMLHttpRequest 的状态信息<ul><li>0 :  请求未初始化</li><li>1：服务器连接已建立</li><li>2：请求已接收</li><li>3：请求处理中</li><li>4：请求已完成，且响应就绪</li></ul></li><li>status <ul><li>200 : OK</li><li>404：未找到页面</li><li>其他状态码： <a href="https://www.runoob.com/http/http-status-codes.html">https://www.runoob.com/http/http-status-codes.html</a></li></ul></li></ul><h2 id="Ajax-Json"><a href="#Ajax-Json" class="headerlink" title="Ajax - Json"></a>Ajax - Json</h2><div class="code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><span class="language-javascript">    <span class="hljs-keyword">function</span> <span class="hljs-title function_">putJson</span>(<span class="hljs-params"></span>)&#123;</span><span class="language-javascript">        <span class="hljs-keyword">var</span> xmlhttp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();</span><span class="language-javascript">        xmlhttp.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;</span><span class="language-javascript">        <span class="hljs-keyword">if</span>(xmlhttp.<span class="hljs-property">status</span> == <span class="hljs-number">200</span> &amp;&amp; xmlhttp.<span class="hljs-property">readyState</span> ==<span class="hljs-number">4</span>)&#123;</span><span class="language-javascript">            <span class="hljs-keyword">var</span> myArr = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">responseText</span>);</span><span class="language-javascript">                <span class="hljs-title function_">myFunc</span>(myArr);</span><span class="language-javascript">           &#125;</span><span class="language-javascript">        &#125;</span><span class="language-javascript">        xmlhttp.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>,<span class="hljs-string">&quot;test.json&quot;</span>,<span class="hljs-literal">true</span>);</span><span class="language-javascript">        xmlhttp.<span class="hljs-title function_">setRequestHeader</span>(<span class="hljs-string">&quot;Content-type&quot;</span>,<span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);</span><span class="language-javascript">        xmlhttp.<span class="hljs-title function_">send</span>();</span><span class="language-javascript">    &#125;</span><span class="language-javascript">    <span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunc</span>(<span class="hljs-params">arr</span>)&#123;</span><span class="language-javascript"><span class="hljs-keyword">var</span> out = <span class="hljs-string">&quot;&quot;</span>;</span><span class="language-javascript">        <span class="hljs-keyword">var</span> i;</span><span class="language-javascript">        <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;arr.<span class="hljs-property">length</span>;i++)&#123;</span><span class="language-javascript">out += <span class="hljs-string">&#x27;a&lt; href=&quot;&#x27;</span>+arr[i].<span class="hljs-property">url</span>+<span class="hljs-string">&#x27;&quot;&gt;&#x27;</span>+arr[i].<span class="hljs-property">title</span>+<span class="hljs-string">&#x27;&lt;/a&gt;&lt;br&gt;&#x27;</span>;</span><span class="language-javascript">        &#125;</span><span class="language-javascript">        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;myDiv&#x27;</span>).<span class="hljs-property">innerHTML</span>=out;</span><span class="language-javascript">    &#125;</span><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div><p>test.json</p><div class="code-wrapper"><pre><code class="hljs json"><span class="hljs-punctuation">[</span>  <span class="hljs-punctuation">&#123;</span>    <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;JavaScript 教程&quot;</span><span class="hljs-punctuation">,</span>    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.runoob.com/js/&quot;</span>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>  <span class="hljs-punctuation">&#123;</span>    <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;HTML 教程&quot;</span><span class="hljs-punctuation">,</span>    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.runoob.com/html/&quot;</span>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>  <span class="hljs-punctuation">&#123;</span>    <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CSS 教程&quot;</span><span class="hljs-punctuation">,</span>    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.runoob.com/css/&quot;</span>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SSTI模板注入漏洞</title>
+    <link href="/posts/2dff4083/"/>
+    <url>/posts/2dff4083/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ssti漏洞的成因与危害"><a href="#ssti漏洞的成因与危害" class="headerlink" title="ssti漏洞的成因与危害"></a>ssti漏洞的成因与危害</h1><blockquote><p>当服务端接受了用户的恶意代码，未经任何处理就将其应用在web应用模板的部分上，服务端在渲染这些模板时，执行了这些恶意代码，可能导致getshell 代码执行 敏感信息泄露等安全问题</p></blockquote><p>一个简单的漏洞代码实例</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>网络安全</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ssti</tag>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>PHP代码审计-反序列化漏洞</title>
     <link href="/posts/bcdf8f30/"/>
     <url>/posts/bcdf8f30/</url>
