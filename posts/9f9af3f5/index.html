@@ -19,12 +19,12 @@
   <meta name="author" content="Lixiney">
   <meta name="keywords" content="网络安全,前端开发,后端开发,全栈开发">
   
-    <meta name="description" content="Pair[x,y]可以理解为（x,y）数学中的坐标表示 小技巧：使用typedef定义 typedef pair&lt;int,int&gt; PII  头文件#include&lt;utility&gt;	  初始化&#x2F;&#x2F; 两种方法初始化 pair&lt;string,int&gt; p(&quot;hello&quot;,1); p &#x3D; make_pair(&quot;hello&quot;,1">
+    <meta name="description" content="Pair[x,y]12可以理解为（x,y）数学中的坐标表示小技巧：使用typedef定义 typedef pair&lt;int,int&gt; PII  头文件1#include&lt;utility&gt;	  初始化123&#x2F;&#x2F; 两种方法初始化pair&lt;string,int&gt; p(&quot;hello&quot;,1);p &#x3D; make_pair(&quot;hello&amp;quot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL库（二）--Pair[x,y]">
 <meta property="og:url" content="https://blog.lixey.top/posts/9f9af3f5/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="Pair[x,y]可以理解为（x,y）数学中的坐标表示 小技巧：使用typedef定义 typedef pair&lt;int,int&gt; PII  头文件#include&lt;utility&gt;	  初始化&#x2F;&#x2F; 两种方法初始化 pair&lt;string,int&gt; p(&quot;hello&quot;,1); p &#x3D; make_pair(&quot;hello&quot;,1">
+<meta property="og:description" content="Pair[x,y]12可以理解为（x,y）数学中的坐标表示小技巧：使用typedef定义 typedef pair&lt;int,int&gt; PII  头文件1#include&lt;utility&gt;	  初始化123&#x2F;&#x2F; 两种方法初始化pair&lt;string,int&gt; p(&quot;hello&quot;,1);p &#x3D; make_pair(&quot;hello&amp;quot">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-02T13:24:19.000Z">
 <meta property="article:modified_time" content="2025-07-08T13:23:22.401Z">
@@ -76,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.lixey.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.lixey.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -86,6 +86,17 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
   
@@ -184,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          139 words
+          141 words
         
       </span>
     
@@ -254,23 +265,17 @@
             
               <div class="markdown-body">
                 
-                <h2 id="Pair-x-y"><a href="#Pair-x-y" class="headerlink" title="Pair[x,y]"></a>Pair[x,y]</h2><div class="code-wrapper"><pre><code class="hljs cpp">可以理解为（x,y）数学中的坐标表示
-小技巧：使用<span class="hljs-keyword">typedef</span>定义 <span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; PII</code></pre></div>
+                <h2 id="Pair-x-y"><a href="#Pair-x-y" class="headerlink" title="Pair[x,y]"></a>Pair[x,y]</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">可以理解为（x,y）数学中的坐标表示<br>小技巧：使用<span class="hljs-keyword">typedef</span>定义 <span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; PII<br></code></pre></td></tr></table></figure>
 
-<h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;utility&gt;</span>	</span></code></pre></div>
+<h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;utility&gt;</span>	</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">// 两种方法初始化</span>
-<span class="hljs-function">pair&lt;string,<span class="hljs-type">int</span>&gt; <span class="hljs-title">p</span><span class="hljs-params">(<span class="hljs-string">&quot;hello&quot;</span>,<span class="hljs-number">1</span>)</span></span>;
-p = <span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;hello&quot;</span>,<span class="hljs-number">1</span>);</code></pre></div>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 两种方法初始化</span><br><span class="hljs-function">pair&lt;string,<span class="hljs-type">int</span>&gt; <span class="hljs-title">p</span><span class="hljs-params">(<span class="hljs-string">&quot;hello&quot;</span>,<span class="hljs-number">1</span>)</span></span>;<br>p = <span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;hello&quot;</span>,<span class="hljs-number">1</span>);<br></code></pre></td></tr></table></figure>
 
-<h3 id="first-和-second"><a href="#first-和-second" class="headerlink" title="first() 和 second()"></a>first() 和 second()</h3><div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-built_in">p</span>(<span class="hljs-string">&quot;hello&quot;</span>,<span class="hljs-number">1</span>);
-p.first; <span class="hljs-comment">//第一个元素 = hello;</span>
-p.second; <span class="hljs-comment">// 第二个元素 = 1;</span></code></pre></div>
+<h3 id="first-和-second"><a href="#first-和-second" class="headerlink" title="first() 和 second()"></a>first() 和 second()</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-built_in">p</span>(<span class="hljs-string">&quot;hello&quot;</span>,<span class="hljs-number">1</span>);<br>p.first; <span class="hljs-comment">//第一个元素 = hello;</span><br>p.second; <span class="hljs-comment">// 第二个元素 = 1;</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="嵌套（套娃）"><a href="#嵌套（套娃）" class="headerlink" title="嵌套（套娃）"></a>嵌套（套娃）</h3><div class="code-wrapper"><pre><code class="hljs c++">vector&lt;vector&lt;pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;&gt;&gt;  <span class="hljs-comment">//与vector结合再写个vector结合即可</span></code></pre></div>
+<h3 id="嵌套（套娃）"><a href="#嵌套（套娃）" class="headerlink" title="嵌套（套娃）"></a>嵌套（套娃）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">vector&lt;vector&lt;pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;&gt;&gt;  <span class="hljs-comment">//与vector结合再写个vector结合即可</span><br></code></pre></td></tr></table></figure>
 
-<div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">//套娃操作 用pair 存储3个数据</span>
-pair&lt;<span class="hljs-type">int</span>,pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">p</span>(<span class="hljs-number">1</span>,&#123;<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;);</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//套娃操作 用pair 存储3个数据</span><br>pair&lt;<span class="hljs-type">int</span>,pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">p</span>(<span class="hljs-number">1</span>,&#123;<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;);<br></code></pre></td></tr></table></figure>
 
                 
               </div>

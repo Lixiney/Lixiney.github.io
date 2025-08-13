@@ -19,12 +19,12 @@
   <meta name="author" content="Lixiney">
   <meta name="keywords" content="网络安全,前端开发,后端开发,全栈开发">
   
-    <meta name="description" content="数据结构 序列类型：列表、元组、字符串 映射类型：字典 集合类型：集合、冻结集合  列表 (List) 列表是Python中最灵活的有序的集合类型  列表的基本特性 有序的集合，元素按照插入的顺序排列 可变，可以修改内容 可以包含任意类型的对象 , 可以嵌套使用 使用方括号[]，元素之间用逗号分隔  eg : list &#x3D; [123,&#x27;test&#x27;,1.2,1e10,[1,2,3">
+    <meta name="description" content="数据结构 序列类型：列表、元组、字符串 映射类型：字典 集合类型：集合、冻结集合  列表 (List) 列表是Python中最灵活的有序的集合类型  列表的基本特性 有序的集合，元素按照插入的顺序排列 可变，可以修改内容 可以包含任意类型的对象 , 可以嵌套使用 使用方括号[]，元素之间用逗号分隔  eg : 1list &#x3D; [123,&#x27;test&#x27;,1.2,1e10,[1,2,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python-列表、元组、字典、集合">
 <meta property="og:url" content="https://blog.lixey.top/posts/df8caf15/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="数据结构 序列类型：列表、元组、字符串 映射类型：字典 集合类型：集合、冻结集合  列表 (List) 列表是Python中最灵活的有序的集合类型  列表的基本特性 有序的集合，元素按照插入的顺序排列 可变，可以修改内容 可以包含任意类型的对象 , 可以嵌套使用 使用方括号[]，元素之间用逗号分隔  eg : list &#x3D; [123,&#x27;test&#x27;,1.2,1e10,[1,2,3">
+<meta property="og:description" content="数据结构 序列类型：列表、元组、字符串 映射类型：字典 集合类型：集合、冻结集合  列表 (List) 列表是Python中最灵活的有序的集合类型  列表的基本特性 有序的集合，元素按照插入的顺序排列 可变，可以修改内容 可以包含任意类型的对象 , 可以嵌套使用 使用方括号[]，元素之间用逗号分隔  eg : 1list &#x3D; [123,&#x27;test&#x27;,1.2,1e10,[1,2,">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-06-29T04:38:57.000Z">
 <meta property="article:modified_time" content="2025-06-29T06:09:29.963Z">
@@ -76,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.lixey.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.lixey.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -86,6 +86,17 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
   
@@ -269,7 +280,7 @@
 <li>使用方括号[]，元素之间用逗号分隔</li>
 </ul>
 <p>eg :</p>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">123</span>,<span class="hljs-string">&#x27;test&#x27;</span>,<span class="hljs-number">1.2</span>,<span class="hljs-number">1e10</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]]</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">123</span>,<span class="hljs-string">&#x27;test&#x27;</span>,<span class="hljs-number">1.2</span>,<span class="hljs-number">1e10</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]]<br></code></pre></td></tr></table></figure>
 
 
 
@@ -282,16 +293,12 @@
 <h2 id="创建列表"><a href="#创建列表" class="headerlink" title="创建列表"></a>创建列表</h2><ul>
 <li>普通方式</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = []
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
-	<span class="hljs-built_in">list</span>.append(i)</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = []<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br>	<span class="hljs-built_in">list</span>.append(i)<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>推导式</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]
-<span class="hljs-comment">##带有条件的情况</span>
-<span class="hljs-built_in">list</span> = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]<br><span class="hljs-comment">##带有条件的情况</span><br><span class="hljs-built_in">list</span> = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]<br></code></pre></td></tr></table></figure>
 
 
 
@@ -301,20 +308,17 @@
 <ul>
 <li>直接输出</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>访问列表中的值</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>])</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>])<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>截取字符串</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>])</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>])<br></code></pre></td></tr></table></figure>
 
 
 
@@ -322,9 +326,7 @@
 <p>使用 append() 方法</p>
 </blockquote>
 <p>eg：</p>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
-<span class="hljs-built_in">list</span>.append(<span class="hljs-number">7</span>)
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-built_in">list</span>.append(<span class="hljs-number">7</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)<br></code></pre></td></tr></table></figure>
 
 
 
@@ -335,11 +337,7 @@
 <li>使用 pop() 方法</li>
 </ol>
 </blockquote>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
-<span class="hljs-built_in">list</span>.pop(<span class="hljs-number">1</span>)
-<span class="hljs-keyword">del</span> <span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>]
-<span class="hljs-built_in">list</span>.remove(<span class="hljs-number">1</span>)
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-built_in">list</span>.pop(<span class="hljs-number">1</span>)<br><span class="hljs-keyword">del</span> <span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>]<br><span class="hljs-built_in">list</span>.remove(<span class="hljs-number">1</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)<br></code></pre></td></tr></table></figure>
 
 
 
@@ -459,18 +457,17 @@
 <p>元组创建很简单，只需要在括号中添加元素，并使用逗号隔开</p>
 </blockquote>
 <p>eg：</p>
-<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)<br></code></pre></td></tr></table></figure>
 
 <p>创建空元组</p>
-<div class="code-wrapper"><pre><code class="hljs python">tup1 = ()</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">tup1 = ()<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意：当元组中只包含一个元素时，需要在元素后面加逗号. 否则括号会被当做运算符使用</p>
 </blockquote>
 <h2 id="访问元组"><a href="#访问元组" class="headerlink" title="访问元组"></a>访问元组</h2><p>和列表一样，元组可以使用下标索引来访问元组中的值</p>
 <p>eg：</p>
-<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)
-<span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tup1[0]: &quot;</span>, tup1[<span class="hljs-number">0</span>])</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)<br><span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tup1[0]: &quot;</span>, tup1[<span class="hljs-number">0</span>])<br></code></pre></td></tr></table></figure>
 
 
 
@@ -478,12 +475,7 @@
 <p>元组中的元素是不允许被修改的，但是可以对元组进行连接组合</p>
 </blockquote>
 <p>eg：</p>
-<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
-tup2 = (<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)
-
-<span class="hljs-comment">#tup1[0]=0  这种操作是非法的</span>
-
-tup3 = tup1 + tup2</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">tup1 = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br>tup2 = (<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)<br><br><span class="hljs-comment">#tup1[0]=0  这种操作是非法的</span><br><br>tup3 = tup1 + tup2<br></code></pre></td></tr></table></figure>
 
 
 
@@ -491,8 +483,7 @@ tup3 = tup1 + tup2</code></pre></div>
 <p>元组中的元素值不允许被删除，但是可以使用del 语句来删除整个元组</p>
 </blockquote>
 <p>eg：</p>
-<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)
-<span class="hljs-keyword">del</span> tup1</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)<br><span class="hljs-keyword">del</span> tup1<br></code></pre></td></tr></table></figure>
 
 
 
@@ -500,7 +491,7 @@ tup3 = tup1 + tup2</code></pre></div>
 <p>与字符串一样，元组之间可以使用 +、+&#x3D;、*号进行运算</p>
 </blockquote>
 <p>eg： 复制</p>
-<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;asd&quot;</span>,)*<span class="hljs-number">4</span></code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;asd&quot;</span>,)*<span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -524,49 +515,39 @@ tup3 = tup1 + tup2</code></pre></div>
 <p>字典是另一种可变容器模型，且可存储任意类型对象</p>
 <p>字典的每个键值 key&#x3D;&gt;value 用冒号:分割，每个对之间用逗号分隔，整个字典包括在花括号中</p>
 </blockquote>
-<div class="code-wrapper"><pre><code class="hljs python">d = &#123;key1 : value1, key2 : value2, key3 : value3 &#125;</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">d = &#123;key1 : value1, key2 : value2, key3 : value3 &#125;<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意：dict作为python的关键字和内置函数，变量名不建议命名为dict</p>
 </blockquote>
 <p>键 必须是唯一的，但值不必</p>
 <p>值可以取任何数据类型，但键必须是不可变的，如字符串，数字</p>
-<div class="code-wrapper"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;runoob&#x27;</span>, <span class="hljs-string">&#x27;likes&#x27;</span>: <span class="hljs-number">123</span>, <span class="hljs-string">&#x27;url&#x27;</span>: <span class="hljs-string">&#x27;www.runoob.com&#x27;</span>&#125;
-</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;runoob&#x27;</span>, <span class="hljs-string">&#x27;likes&#x27;</span>: <span class="hljs-number">123</span>, <span class="hljs-string">&#x27;url&#x27;</span>: <span class="hljs-string">&#x27;www.runoob.com&#x27;</span>&#125;<br><br></code></pre></td></tr></table></figure>
 
 <h2 id="创建空字典"><a href="#创建空字典" class="headerlink" title="创建空字典"></a>创建空字典</h2><ul>
 <li>使用花括号 {} 创建空字典</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python">emptyDict = &#123;&#125;</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">emptyDict = &#123;&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>使用内置函数 dict() 创建空字典</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python">emptyDict = <span class="hljs-built_in">dict</span>()</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">emptyDict = <span class="hljs-built_in">dict</span>()<br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="访问字典中的值"><a href="#访问字典中的值" class="headerlink" title="访问字典中的值"></a>访问字典中的值</h2><div class="code-wrapper"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;Name&#x27;</span>: <span class="hljs-string">&#x27;Runoob&#x27;</span>, <span class="hljs-string">&#x27;Age&#x27;</span>: <span class="hljs-number">7</span>, <span class="hljs-string">&#x27;Class&#x27;</span>: <span class="hljs-string">&#x27;First&#x27;</span>&#125;
- 
-<span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tinydict[&#x27;Name&#x27;]: &quot;</span>, tinydict[<span class="hljs-string">&#x27;Name&#x27;</span>])
-<span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tinydict[&#x27;Age&#x27;]: &quot;</span>, tinydict[<span class="hljs-string">&#x27;Age&#x27;</span>])</code></pre></div>
+<h2 id="访问字典中的值"><a href="#访问字典中的值" class="headerlink" title="访问字典中的值"></a>访问字典中的值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;Name&#x27;</span>: <span class="hljs-string">&#x27;Runoob&#x27;</span>, <span class="hljs-string">&#x27;Age&#x27;</span>: <span class="hljs-number">7</span>, <span class="hljs-string">&#x27;Class&#x27;</span>: <span class="hljs-string">&#x27;First&#x27;</span>&#125;<br> <br><span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tinydict[&#x27;Name&#x27;]: &quot;</span>, tinydict[<span class="hljs-string">&#x27;Name&#x27;</span>])<br><span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tinydict[&#x27;Age&#x27;]: &quot;</span>, tinydict[<span class="hljs-string">&#x27;Age&#x27;</span>])<br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="修改字典"><a href="#修改字典" class="headerlink" title="修改字典"></a>修改字典</h2><div class="code-wrapper"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;Name&#x27;</span>: <span class="hljs-string">&#x27;Runoob&#x27;</span>, <span class="hljs-string">&#x27;Age&#x27;</span>: <span class="hljs-number">7</span>, <span class="hljs-string">&#x27;Class&#x27;</span>: <span class="hljs-string">&#x27;First&#x27;</span>&#125;
- 
-tinydict[<span class="hljs-string">&#x27;Age&#x27;</span>] = <span class="hljs-number">8</span>               <span class="hljs-comment"># 更新 Age</span>
-tinydict[<span class="hljs-string">&#x27;School&#x27;</span>] = <span class="hljs-string">&quot;菜鸟教程&quot;</span>  <span class="hljs-comment"># 添加信息</span></code></pre></div>
+<h2 id="修改字典"><a href="#修改字典" class="headerlink" title="修改字典"></a>修改字典</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;Name&#x27;</span>: <span class="hljs-string">&#x27;Runoob&#x27;</span>, <span class="hljs-string">&#x27;Age&#x27;</span>: <span class="hljs-number">7</span>, <span class="hljs-string">&#x27;Class&#x27;</span>: <span class="hljs-string">&#x27;First&#x27;</span>&#125;<br> <br>tinydict[<span class="hljs-string">&#x27;Age&#x27;</span>] = <span class="hljs-number">8</span>               <span class="hljs-comment"># 更新 Age</span><br>tinydict[<span class="hljs-string">&#x27;School&#x27;</span>] = <span class="hljs-string">&quot;菜鸟教程&quot;</span>  <span class="hljs-comment"># 添加信息</span><br></code></pre></td></tr></table></figure>
 
 
 
 <h2 id="删除字典中的元素"><a href="#删除字典中的元素" class="headerlink" title="删除字典中的元素"></a>删除字典中的元素</h2><ul>
 <li>使用del 语句删除字典</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 删除键‘Name’</span>
-<span class="hljs-keyword">del</span> qweDict[<span class="hljs-string">&#x27;Name&#x27;</span>]
-<span class="hljs-comment"># 删除整个字典</span>
-<span class="hljs-keyword">del</span> qweDict</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 删除键‘Name’</span><br><span class="hljs-keyword">del</span> qweDict[<span class="hljs-string">&#x27;Name&#x27;</span>]<br><span class="hljs-comment"># 删除整个字典</span><br><span class="hljs-keyword">del</span> qweDict<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>del 删除后整个字典不再存在</p>
@@ -574,7 +555,7 @@ tinydict[<span class="hljs-string">&#x27;School&#x27;</span>] = <span class="hlj
 <ul>
 <li>清空字典</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs python">qweDict.clear()</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">qweDict.clear()<br></code></pre></td></tr></table></figure>
 
 
 
@@ -670,8 +651,7 @@ tinydict[<span class="hljs-string">&#x27;School&#x27;</span>] = <span class="hlj
 <p>可以使用花括号{}创建集合，元素之间用逗号，分隔，或者也可以使用set()函数创建</p>
 </blockquote>
 <p>eg：</p>
-<div class="code-wrapper"><pre><code class="hljs python">set1 = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;
-set2 = <span class="hljs-built_in">set</span>([<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>])</code></pre></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">set1 = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;<br>set2 = <span class="hljs-built_in">set</span>([<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>])<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意：创建空集合时必须用set()函数，因为 {} 用来创建一个空字典</p>
