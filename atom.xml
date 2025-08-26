@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Lixiney&#39;s Blog</title>
+  <icon>https://blog.lixey.top/icon.png</icon>
+  <subtitle>知者不言，言者不知</subtitle>
+  <link href="https://blog.lixey.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.lixey.top/"/>
+  <updated>2025-08-24T13:54:43.860Z</updated>
+  <id>https://blog.lixey.top/</id>
+  
+  <author>
+    <name>Lixiney</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨站请求伪造--CSRF</title>
+    <link href="https://blog.lixey.top/posts/9f0e9b52/"/>
+    <id>https://blog.lixey.top/posts/9f0e9b52/</id>
+    <published>2025-08-24T13:17:02.000Z</published>
+    <updated>2025-08-24T13:54:43.860Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;攻击者通过某些技术手段欺骗用户的浏览器访问曾经认证过的网站并执行一些操作，挟持用户在当前已经登录的web应用程序上执行非本意的操作&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;攻击流程&quot;&gt;&lt;a href=&quot;#攻击流程&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络安全" scheme="https://blog.lixey.top/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="web" scheme="https://blog.lixey.top/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP常用一句话木马整理</title>
+    <link href="https://blog.lixey.top/posts/90b3b820/"/>
+    <id>https://blog.lixey.top/posts/90b3b820/</id>
+    <published>2025-08-18T15:03:14.000Z</published>
+    <updated>2025-08-18T15:21:26.333Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;eval函数&quot;&gt;&lt;a href=&quot;#eval函数&quot; class=&quot;headerlink&quot; title=&quot;eval函数&quot;&gt;&lt;/a&gt;eval函数&lt;/h1&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+    <category term="webshell" scheme="https://blog.lixey.top/tags/webshell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令执行WAF绕过</title>
+    <link href="https://blog.lixey.top/posts/6a2b5ddf/"/>
+    <id>https://blog.lixey.top/posts/6a2b5ddf/</id>
+    <published>2025-08-18T13:44:19.000Z</published>
+    <updated>2025-08-18T14:58:01.566Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;命令执行漏洞是指服务器没有对执行的命令进行过滤，用户可以随意执行系统命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;漏洞原理&quot;&gt;&lt;a href=&quot;#漏洞原理&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="web安全" scheme="https://blog.lixey.top/categories/web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="命令执行" scheme="https://blog.lixey.top/tags/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web安全-信息收集</title>
+    <link href="https://blog.lixey.top/posts/faa6e9cf/"/>
+    <id>https://blog.lixey.top/posts/faa6e9cf/</id>
+    <published>2025-08-17T13:25:28.000Z</published>
+    <updated>2025-08-17T04:06:39.488Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;em&gt;知己知彼，百战不殆&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;whois信息&quot;&gt;&lt;a href=&quot;#whois信息&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://blog.lixey.top/tags/Web%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XSS-labs通关文档</title>
+    <link href="https://blog.lixey.top/posts/4278955b/"/>
+    <id>https://blog.lixey.top/posts/4278955b/</id>
+    <published>2025-08-14T02:46:29.000Z</published>
+    <updated>2025-08-14T07:57:20.336Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文档仅用于信息防御技术研究探讨，请勿用于其他用如图，渗透测试务必在已授权的情况下进行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="WriteUp" scheme="https://blog.lixey.top/categories/WriteUp/"/>
+    
+    
+    <category term="web安全" scheme="https://blog.lixey.top/tags/web%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="xss" scheme="https://blog.lixey.top/tags/xss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax技术-前后端交互</title>
+    <link href="https://blog.lixey.top/posts/98d7f58f/"/>
+    <id>https://blog.lixey.top/posts/98d7f58f/</id>
+    <published>2025-07-31T09:01:43.000Z</published>
+    <updated>2025-08-03T09:02:18.746Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Ajax 并不是一门编程语言，而是一种前后端交互的技术&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;什么是-Ajax&quot;&gt;&lt;a href=&quot;#什么是-Ajax&quot; class=&quot;headerlink&quot; title=&quot;什么是</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://blog.lixey.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="前端" scheme="https://blog.lixey.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSTI模板注入漏洞</title>
+    <link href="https://blog.lixey.top/posts/2dff4083/"/>
+    <id>https://blog.lixey.top/posts/2dff4083/</id>
+    <published>2025-07-08T14:15:11.000Z</published>
+    <updated>2025-08-14T02:45:32.458Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ssti漏洞的成因与危害&quot;&gt;&lt;a href=&quot;#ssti漏洞的成因与危害&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络安全" scheme="https://blog.lixey.top/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="ssti" scheme="https://blog.lixey.top/tags/ssti/"/>
+    
+    <category term="python" scheme="https://blog.lixey.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP代码审计-反序列化漏洞</title>
+    <link href="https://blog.lixey.top/posts/bcdf8f30/"/>
+    <id>https://blog.lixey.top/posts/bcdf8f30/</id>
+    <published>2025-07-08T13:38:45.000Z</published>
+    <updated>2025-07-08T14:05:37.859Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;所有的 flag 均在 flag.php 的 $flag 变量中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;level-1&quot;&gt;&lt;a href=&quot;#level-1&quot; class=&quot;headerlink&quot; title=&quot;level</summary>
+        
+      
+    
+    
+    
+    <category term="网络安全" scheme="https://blog.lixey.top/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="代码审计" scheme="https://blog.lixey.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+    <category term="php" scheme="https://blog.lixey.top/tags/php/"/>
+    
+    <category term="反序列化" scheme="https://blog.lixey.top/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vulfocus|命令执行漏洞WP</title>
+    <link href="https://blog.lixey.top/posts/83c1bda7/"/>
+    <id>https://blog.lixey.top/posts/83c1bda7/</id>
+    <published>2025-07-06T05:10:16.000Z</published>
+    <updated>2025-07-06T05:20:38.933Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-运行环境&quot;&gt;&lt;a href=&quot;#1-运行环境&quot; class=&quot;headerlink&quot; title=&quot;1.运行环境&quot;&gt;&lt;/a&gt;1.运行环境&lt;/h1&gt;&lt;p&gt;进入首页 返回 index.php?cmd&amp;#x3D;ls &amp;#x2F;tmp&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="网络安全" scheme="https://blog.lixey.top/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="命令执行" scheme="https://blog.lixey.top/tags/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    <category term="WriteUp" scheme="https://blog.lixey.top/tags/WriteUp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python-Django开发</title>
+    <link href="https://blog.lixey.top/posts/2bf21027/"/>
+    <id>https://blog.lixey.top/posts/2bf21027/</id>
+    <published>2025-07-01T03:52:06.000Z</published>
+    <updated>2025-07-01T15:25:19.579Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;创建虚拟环境&quot;&gt;&lt;a href=&quot;#创建虚拟环境&quot; class=&quot;headerlink&quot; title=&quot;创建虚拟环境&quot;&gt;&lt;/a&gt;创建虚拟环境&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;创建 env 环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://blog.lixey.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Python" scheme="https://blog.lixey.top/tags/Python/"/>
+    
+    <category term="Django" scheme="https://blog.lixey.top/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python创建env虚拟环境</title>
+    <link href="https://blog.lixey.top/posts/3b86160f/"/>
+    <id>https://blog.lixey.top/posts/3b86160f/</id>
+    <published>2025-07-01T03:40:47.000Z</published>
+    <updated>2025-07-01T03:52:42.522Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;创建虚拟环境&quot;&gt;&lt;a href=&quot;#创建虚拟环境&quot; class=&quot;headerlink&quot; title=&quot;创建虚拟环境&quot;&gt;&lt;/a&gt;创建虚拟环境&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://blog.lixey.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Python" scheme="https://blog.lixey.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python-PyMySQL</title>
+    <link href="https://blog.lixey.top/posts/db284c9b/"/>
+    <id>https://blog.lixey.top/posts/db284c9b/</id>
+    <published>2025-06-29T07:06:34.000Z</published>
+    <updated>2025-07-01T03:55:52.139Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;安装-PyMySQL&quot;&gt;&lt;a href=&quot;#安装-PyMySQL&quot; class=&quot;headerlink&quot; title=&quot;安装 PyMySQL&quot;&gt;&lt;/a&gt;安装 PyMySQL&lt;/h1&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://blog.lixey.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Mysql" scheme="https://blog.lixey.top/tags/Mysql/"/>
+    
+    <category term="Python" scheme="https://blog.lixey.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python-列表、元组、字典、集合</title>
+    <link href="https://blog.lixey.top/posts/df8caf15/"/>
+    <id>https://blog.lixey.top/posts/df8caf15/</id>
+    <published>2025-06-29T04:38:57.000Z</published>
+    <updated>2025-06-29T06:09:29.963Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据结构&quot;&gt;&lt;a href=&quot;#数据结构&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://blog.lixey.top/tags/Python/"/>
+    
+    <category term="开发" scheme="https://blog.lixey.top/tags/%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="数据结构" scheme="https://blog.lixey.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python开发-Flask框架</title>
+    <link href="https://blog.lixey.top/posts/483d9cef/"/>
+    <id>https://blog.lixey.top/posts/483d9cef/</id>
+    <published>2025-06-28T14:58:36.000Z</published>
+    <updated>2025-07-06T12:31:59.218Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;pip install flask&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;基础入门&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://blog.lixey.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Python" scheme="https://blog.lixey.top/tags/Python/"/>
+    
+    <category term="Flask" scheme="https://blog.lixey.top/tags/Flask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sqli-Labs 通关文档</title>
+    <link href="https://blog.lixey.top/posts/879a70bf/"/>
+    <id>https://blog.lixey.top/posts/879a70bf/</id>
+    <published>2025-06-28T14:11:56.000Z</published>
+    <updated>2025-07-08T13:37:13.524Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Less-01&quot;&gt;&lt;a href=&quot;#Less-01&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="WriteUp" scheme="https://blog.lixey.top/categories/WriteUp/"/>
+    
+    
+    <category term="网络安全" scheme="https://blog.lixey.top/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="SQL注入" scheme="https://blog.lixey.top/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql增删改查基础</title>
+    <link href="https://blog.lixey.top/posts/b710732f/"/>
+    <id>https://blog.lixey.top/posts/b710732f/</id>
+    <published>2025-06-28T14:07:01.000Z</published>
+    <updated>2025-06-28T14:10:39.824Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;首先启动数据库&quot;&gt;&lt;a href=&quot;#首先启动数据库&quot; class=&quot;headerlink&quot; title=&quot;首先启动数据库&quot;&gt;&lt;/a&gt;首先启动数据库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Linux :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Mysql" scheme="https://blog.lixey.top/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CTF-PHP代码审计</title>
+    <link href="https://blog.lixey.top/posts/5fe44501/"/>
+    <id>https://blog.lixey.top/posts/5fe44501/</id>
+    <published>2025-06-28T14:03:17.000Z</published>
+    <updated>2025-06-28T14:04:48.631Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;is-numeric-函数&quot;&gt;&lt;a href=&quot;#is-numeric-函数&quot; class=&quot;headerlink&quot; title=&quot;is_numeric 函数&quot;&gt;&lt;/a&gt;is_numeric 函数&lt;/h1&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+    <category term="CTF" scheme="https://blog.lixey.top/tags/CTF/"/>
+    
+    <category term="PHP" scheme="https://blog.lixey.top/tags/PHP/"/>
+    
+    <category term="代码审计" scheme="https://blog.lixey.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STL库（一）--Vector</title>
+    <link href="https://blog.lixey.top/posts/afe38b32/"/>
+    <id>https://blog.lixey.top/posts/afe38b32/</id>
+    <published>2024-09-02T13:24:41.000Z</published>
+    <updated>2025-07-08T13:23:22.395Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Vector（动态数组）&quot;&gt;&lt;a href=&quot;#Vector（动态数组）&quot; class=&quot;headerlink&quot; title=&quot;Vector（动态数组）&quot;&gt;&lt;/a&gt;Vector（动态数组）&lt;/h2&gt;&lt;h4 id=&quot;头文件&quot;&gt;&lt;a href=&quot;#头文件&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C++" scheme="https://blog.lixey.top/tags/C/"/>
+    
+    <category term="STL" scheme="https://blog.lixey.top/tags/STL/"/>
+    
+    <category term="算法" scheme="https://blog.lixey.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STL库（二）--Pair[x,y]</title>
+    <link href="https://blog.lixey.top/posts/9f9af3f5/"/>
+    <id>https://blog.lixey.top/posts/9f9af3f5/</id>
+    <published>2024-09-02T13:24:19.000Z</published>
+    <updated>2025-07-08T13:23:22.401Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Pair-x-y&quot;&gt;&lt;a href=&quot;#Pair-x-y&quot; class=&quot;headerlink&quot; title=&quot;Pair[x,y]&quot;&gt;&lt;/a&gt;Pair[x,y]&lt;/h2&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C++" scheme="https://blog.lixey.top/tags/C/"/>
+    
+    <category term="STL" scheme="https://blog.lixey.top/tags/STL/"/>
+    
+    <category term="算法" scheme="https://blog.lixey.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CTF-MISC杂项</title>
+    <link href="https://blog.lixey.top/posts/d708c66/"/>
+    <id>https://blog.lixey.top/posts/d708c66/</id>
+    <published>2024-09-02T13:20:14.000Z</published>
+    <updated>2025-07-08T13:21:00.156Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;MISC-杂项&quot;&gt;&lt;a href=&quot;#MISC-杂项&quot; class=&quot;headerlink&quot; title=&quot;MISC 杂项&quot;&gt;&lt;/a&gt;MISC 杂项&lt;/h1&gt;&lt;h2 id=&quot;文件的操作&quot;&gt;&lt;a href=&quot;#文件的操作&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="MISC" scheme="https://blog.lixey.top/tags/MISC/"/>
+    
+    <category term="CTF" scheme="https://blog.lixey.top/tags/CTF/"/>
+    
+  </entry>
+  
+</feed>
