@@ -6,7 +6,7 @@
   <link href="https://blog.lixey.top/atom.xml" rel="self"/>
   
   <link href="https://blog.lixey.top/"/>
-  <updated>2025-08-24T13:54:43.860Z</updated>
+  <updated>2025-08-27T12:28:31.515Z</updated>
   <id>https://blog.lixey.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>杂记</title>
+    <link href="https://blog.lixey.top/posts/430d67de/"/>
+    <id>https://blog.lixey.top/posts/430d67de/</id>
+    <published>2025-08-27T11:09:45.000Z</published>
+    <updated>2025-08-27T12:28:31.515Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本篇文章留待有缘人看到。。。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;今天不记录有关技术问题的文章，简单的写一些本人对于生活对于现实，以及一些对于修行上的感悟。&lt;/p&gt;
+&lt;p&gt;其实我个人不喜欢自己写东西，因为我明白，只要你写出来，就会有人看，就会</summary>
+        
+      
+    
+    
+    
+    
+    <category term="杂记" scheme="https://blog.lixey.top/tags/%E6%9D%82%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>跨站请求伪造--CSRF</title>
@@ -534,31 +561,6 @@
     <category term="STL" scheme="https://blog.lixey.top/tags/STL/"/>
     
     <category term="算法" scheme="https://blog.lixey.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CTF-MISC杂项</title>
-    <link href="https://blog.lixey.top/posts/d708c66/"/>
-    <id>https://blog.lixey.top/posts/d708c66/</id>
-    <published>2024-09-02T13:20:14.000Z</published>
-    <updated>2025-07-08T13:21:00.156Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;MISC-杂项&quot;&gt;&lt;a href=&quot;#MISC-杂项&quot; class=&quot;headerlink&quot; title=&quot;MISC 杂项&quot;&gt;&lt;/a&gt;MISC 杂项&lt;/h1&gt;&lt;h2 id=&quot;文件的操作&quot;&gt;&lt;a href=&quot;#文件的操作&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="MISC" scheme="https://blog.lixey.top/tags/MISC/"/>
-    
-    <category term="CTF" scheme="https://blog.lixey.top/tags/CTF/"/>
     
   </entry>
   
