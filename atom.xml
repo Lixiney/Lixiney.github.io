@@ -6,7 +6,7 @@
   <link href="https://blog.lixey.top/atom.xml" rel="self"/>
   
   <link href="https://blog.lixey.top/"/>
-  <updated>2025-08-27T13:46:42.672Z</updated>
+  <updated>2025-09-01T14:07:34.073Z</updated>
   <id>https://blog.lixey.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jsonp前传--同源策略</title>
+    <link href="https://blog.lixey.top/posts/f6aaed80/"/>
+    <id>https://blog.lixey.top/posts/f6aaed80/</id>
+    <published>2025-09-01T13:46:08.000Z</published>
+    <updated>2025-09-01T14:07:34.073Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;欠了好久的文章（之前一直想着要好好学安全的，但是玩起来就忘我了&amp;#x3D;_&amp;#x3D;），今天终于有时间能写写了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;什么是同源策略&quot;&gt;&lt;a href=&quot;#什么是同源策略&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="https://blog.lixey.top/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="同源策略" scheme="https://blog.lixey.top/tags/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>杂记</title>
@@ -523,33 +551,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;Vector（动态数组）&quot;&gt;&lt;a href=&quot;#Vector（动态数组）&quot; class=&quot;headerlink&quot; title=&quot;Vector（动态数组）&quot;&gt;&lt;/a&gt;Vector（动态数组）&lt;/h2&gt;&lt;h4 id=&quot;头文件&quot;&gt;&lt;a href=&quot;#头文件&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="C++" scheme="https://blog.lixey.top/tags/C/"/>
-    
-    <category term="STL" scheme="https://blog.lixey.top/tags/STL/"/>
-    
-    <category term="算法" scheme="https://blog.lixey.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STL库（二）--Pair[x,y]</title>
-    <link href="https://blog.lixey.top/posts/9f9af3f5/"/>
-    <id>https://blog.lixey.top/posts/9f9af3f5/</id>
-    <published>2024-09-02T13:24:19.000Z</published>
-    <updated>2025-07-08T13:23:22.401Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Pair-x-y&quot;&gt;&lt;a href=&quot;#Pair-x-y&quot; class=&quot;headerlink&quot; title=&quot;Pair[x,y]&quot;&gt;&lt;/a&gt;Pair[x,y]&lt;/h2&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
         
       
     

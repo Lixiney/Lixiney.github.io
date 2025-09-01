@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>jsonp前传--同源策略</title>
+      <link href="/posts/f6aaed80/"/>
+      <url>/posts/f6aaed80/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>欠了好久的文章（之前一直想着要好好学安全的，但是玩起来就忘我了&#x3D;_&#x3D;），今天终于有时间能写写了。</p></blockquote><h1 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h1><p>之前刚刚学习的时候，那是做一个前后端分离的项目，有一串json数据要从后端提取，前端用的语言是 vue，使用了8080端口，后端为php语言，80端口。后来发现这个数据愣是找不到，一番检查之下，发现是同源策略的问题。</p><p>那么问题来了，为什么会有同源策略呢？其实简单的思考一下就能想到，同一个后端接口，我能访问到，别人也能访问到，这就构成了一个很严重的数据安全问题。</p><p>浏览器的同源策略规定，不同域的客户端脚本在没有明确授权的情况下，不能读写对方的资源</p><p>那么概念理解完了，所谓的“同源”是什么意思呢？</p><ul><li>相同协议</li><li>相同域名</li><li>相同端口号</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 同源策略 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>杂记</title>
       <link href="/posts/430d67de/"/>
       <url>/posts/430d67de/</url>

@@ -19,24 +19,24 @@
   <meta name="author" content="Lixiney">
   <meta name="keywords" content="网络安全,前端开发,后端开发,全栈开发">
   
-    <meta name="description" content="本篇文章留待有缘人看到。。。  今天不记录有关技术问题的文章，简单的写一些本人对于生活对于现实，以及一些对于修行上的感悟。 其实我个人不喜欢自己写东西，因为我明白，只要你写出来，就会有人看，就会有人信，又不可能人人都是圣人，难免会有些错误的观念，让他人学去岂不是误人子弟？当然现在有很大一部分人很“蒙”，认为记在脑子里就是会了，但是懂不懂呢？不知道，他们不去求证，知行不合一，当然这也是现在教育行业">
+    <meta name="description" content="欠了好久的文章（之前一直想着要好好学安全的，但是玩起来就忘我了&#x3D;_&#x3D;），今天终于有时间能写写了。  什么是同源策略之前刚刚学习的时候，那是做一个前后端分离的项目，有一串json数据要从后端提取，前端用的语言是 vue，使用了8080端口，后端为php语言，80端口。后来发现这个数据愣是找不到，一番检查之下，发现是同源策略的问题。 那么问题来了，为什么会有同源策略呢？其实简单的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="杂记">
-<meta property="og:url" content="https://blog.lixey.top/posts/430d67de/index.html">
+<meta property="og:title" content="jsonp前传--同源策略">
+<meta property="og:url" content="https://blog.lixey.top/posts/f6aaed80/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="本篇文章留待有缘人看到。。。  今天不记录有关技术问题的文章，简单的写一些本人对于生活对于现实，以及一些对于修行上的感悟。 其实我个人不喜欢自己写东西，因为我明白，只要你写出来，就会有人看，就会有人信，又不可能人人都是圣人，难免会有些错误的观念，让他人学去岂不是误人子弟？当然现在有很大一部分人很“蒙”，认为记在脑子里就是会了，但是懂不懂呢？不知道，他们不去求证，知行不合一，当然这也是现在教育行业">
+<meta property="og:description" content="欠了好久的文章（之前一直想着要好好学安全的，但是玩起来就忘我了&#x3D;_&#x3D;），今天终于有时间能写写了。  什么是同源策略之前刚刚学习的时候，那是做一个前后端分离的项目，有一串json数据要从后端提取，前端用的语言是 vue，使用了8080端口，后端为php语言，80端口。后来发现这个数据愣是找不到，一番检查之下，发现是同源策略的问题。 那么问题来了，为什么会有同源策略呢？其实简单的">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-08-27T11:09:45.000Z">
-<meta property="article:modified_time" content="2025-08-27T13:46:42.672Z">
+<meta property="article:published_time" content="2025-09-01T13:46:08.000Z">
+<meta property="article:modified_time" content="2025-09-01T14:07:34.073Z">
 <meta property="article:author" content="Lixiney">
-<meta property="article:tag" content="杂记">
+<meta property="article:tag" content="同源策略">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>杂记 - Lixiney&#39;s Blog</title>
+  <title>jsonp前传--同源策略 - Lixiney&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -166,7 +166,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="杂记"></span>
+            <span id="subtitle" data-typed-text="jsonp前传--同源策略"></span>
           
         </div>
 
@@ -182,8 +182,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-27 19:09" pubdate>
-          August 27, 2025 pm
+        <time datetime="2025-09-01 21:46" pubdate>
+          September 1, 2025 pm
         </time>
       </span>
     
@@ -194,7 +194,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          272 words
         
       </span>
     
@@ -205,7 +205,7 @@
         
         
         
-          12 mins
+          3 mins
         
       </span>
     
@@ -251,12 +251,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">杂记</h1>
+            <h1 id="seo-header">jsonp前传--同源策略</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    Last updated on August 27, 2025 pm
+                    Last updated on September 1, 2025 pm
                   
                 
               </p>
@@ -265,36 +265,17 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>本篇文章留待有缘人看到。。。</p>
+<p>欠了好久的文章（之前一直想着要好好学安全的，但是玩起来就忘我了&#x3D;_&#x3D;），今天终于有时间能写写了。</p>
 </blockquote>
-<p>今天不记录有关技术问题的文章，简单的写一些本人对于生活对于现实，以及一些对于修行上的感悟。</p>
-<p>其实我个人不喜欢自己写东西，因为我明白，只要你写出来，就会有人看，就会有人信，又不可能人人都是圣人，难免会有些错误的观念，让他人学去岂不是误人子弟？当然现在有很大一部分人很“蒙”，认为记在脑子里就是会了，但是懂不懂呢？不知道，他们不去求证，知行不合一，当然这也是现在教育行业很大的一个不合理的地方。</p>
-<p>当然，聊到教育问题，这就不得不提一嘴国内那些个专家教授的了，说实话截止到目前，我是一名本科生，我仍然不知道 “专家” 这是一个什么职位，就好比我前文中所写，你作为一名教师，那就老实本分教授课本中的知识就可以了，而不是整天在网上散布一些你认为对的观念，当然，有人信那叫误人子弟，让人当成笑柄的那叫傻逼。</p>
-<p>以上我说的是谁，我也不便指名道姓，自行搜索 “农名才是世界上最懒得人” 即可。</p>
-<p>当然，以上为本人观点，切勿盲目迷信。</p>
-<p>本人不是佛门弟子，乱世之中有幸得遇恩师，闻太一道法，得 “太乙救苦天尊”以及太一祖师护佑，拜为道教太一派弟子，关于这些我并不想多说什么，因为我也只是一名普通的修道者，算是一名小学生，才疏学浅，说多了免得给师父，给师门，给祖师抹黑。</p>
-<p>关于“末法时代”一事，我认为所言非虚，这个时代是一个妖魔鬼怪横行的时代，读者可以自行上网浏览，根据本篇文章的上传日期，搜索近期国内外发生的各种事迹，在此不一一列举。</p>
-<p>首先我要讲一下末法时代是什么，在《佛说法灭尽经》 中：</p>
-<blockquote>
-<p>佛告阿难：“我涅槃后，佛法将要灭去时，在这五浊世中，魔道兴盛。魔鬼成为沙门，来破坏扰乱我的道法。魔沙门不但会穿世间人衣裳，还乐于好看的五色袈裟。魔沙门饮酒、吃肉、杀生，贪恋美味，没有慈心，又互相憎恨嫉妒。</p>
-</blockquote>
-<p>如今短视频网站上宗教乱象频出，着实该好好反思。</p>
-<p>不知道各位有没有刷到过这样一句话。</p>
-<blockquote>
-<p>你知道为什么我信道不信佛吗 信佛的每天早上起来说的是阿弥陀佛 佛祖保佑我 那你知道我每天早上起来说的是什么吗 气我者自断财路 害我者百病缠身算计我者 替我吞苦 欺我者替我扛病 苍天有眼加倍偿还</p>
-</blockquote>
-<p>千篇一律的文案，诸位可以去某音上搜，有一堆，外行人看起来确实有点像是那么回事，实则不然</p>
-<p>这是典型的外门邪说，能说出来这种话的，不是外行人，也是一名纯种的道青，要么就是邪道。</p>
-<p>道教重在修心养性，而非恶意诅咒，至于我上一段为什么这么说，这里我引用一下我入门读的第一本经书《太上老君说常清静经》吧。</p>
-<blockquote>
-<p>老君曰：上士无争，下士好争；上德不德，下德执德；执著之者，不名道德。众生所以不得真道者，为有妄心；既有妄心，即惊其神；既惊其神，即著万物；既著万物，即生贪求；既生贪求，即是烦恼；烦恼妄想，忧苦身心；便遭浊辱，流浪生死；常沉苦海，永失真道。真常之道，悟者自得；得悟道者，常清静矣！</p>
-</blockquote>
-<p>这里我发表一些个人拙见：</p>
-<p>我们道家讲究修行，修行修的是什么呢？修心，修我们的元神。有个词语叫做“心猿意马”，心和意，这两个是最为活泼好动的东西，要让这两个东西静下来，才算是修有所成，为什么这么说呢？</p>
-<p>道教有“元神”和“识神”的说法，具体可以看看《太乙金华宗旨》</p>
-<p>简单来说，元神随着胎儿一起来到世间，封闭在身体内，不能直接接触事物，需要通过各种方式在大脑内存储各种信息，元神才能对这种信息做出判断，同时，随着知识越积越多，就会产生“识神”，也就是自我意识，因此，在识神没有形成以前，是元神在控制大脑，表现为行为幼稚，到了后来识神形成以后，阻碍了元神与大脑的沟通，虽然行为能力加强了，但是灵性却减弱甚至于消失。</p>
-<p>道教认为，在进入“无极”的状态之后，人处于恬淡虚无的境界，呼吸绵绵，若有若无，没有任何思虑，目不视耳不闻，在这一个状态下，识神停止活动，元神才得以显现。</p>
-<p>这一个过程《太乙金华宗旨》中有详细记载，不过没有人指导不建议自己摸索着练习。</p>
+<h1 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h1><p>之前刚刚学习的时候，那是做一个前后端分离的项目，有一串json数据要从后端提取，前端用的语言是 vue，使用了8080端口，后端为php语言，80端口。后来发现这个数据愣是找不到，一番检查之下，发现是同源策略的问题。</p>
+<p>那么问题来了，为什么会有同源策略呢？其实简单的思考一下就能想到，同一个后端接口，我能访问到，别人也能访问到，这就构成了一个很严重的数据安全问题。</p>
+<p>浏览器的同源策略规定，不同域的客户端脚本在没有明确授权的情况下，不能读写对方的资源</p>
+<p>那么概念理解完了，所谓的“同源”是什么意思呢？</p>
+<ul>
+<li>相同协议</li>
+<li>相同域名</li>
+<li>相同端口号</li>
+</ul>
 
                 
               </div>
@@ -303,11 +284,32 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%BC%80%E5%8F%91/" class="category-chain-item">开发</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%9D%82%E8%AE%B0/" class="print-no-link">#杂记</a>
+        <a href="/tags/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/" class="print-no-link">#同源策略</a>
       
     </div>
   
@@ -319,8 +321,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>杂记</div>
-      <div>https://blog.lixey.top/posts/430d67de/</div>
+      <div>jsonp前传--同源策略</div>
+      <div>https://blog.lixey.top/posts/f6aaed80/</div>
     </div>
     <div class="license-meta">
       
@@ -332,7 +334,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 27, 2025</div>
+          <div>September 1, 2025</div>
         </div>
       
       
@@ -364,18 +366,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/f6aaed80/" title="jsonp前传--同源策略">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">jsonp前传--同源策略</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/9f0e9b52/" title="跨站请求伪造--CSRF">
-                        <span class="hidden-mobile">跨站请求伪造--CSRF</span>
+                      <a href="/posts/430d67de/" title="杂记">
+                        <span class="hidden-mobile">杂记</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
