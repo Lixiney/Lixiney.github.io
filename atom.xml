@@ -6,7 +6,7 @@
   <link href="https://blog.lixey.top/atom.xml" rel="self"/>
   
   <link href="https://blog.lixey.top/"/>
-  <updated>2025-09-01T14:07:34.073Z</updated>
+  <updated>2025-09-02T13:09:54.144Z</updated>
   <id>https://blog.lixey.top/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JSONP 漏洞</title>
+    <link href="https://blog.lixey.top/posts/39c6ae33/"/>
+    <id>https://blog.lixey.top/posts/39c6ae33/</id>
+    <published>2025-09-02T13:04:38.000Z</published>
+    <updated>2025-09-02T13:09:54.144Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Jsonp-原理&quot;&gt;&lt;a href=&quot;#Jsonp-原理&quot; class=&quot;headerlink&quot; title=&quot;Jsonp 原理&quot;&gt;&lt;/a&gt;Jsonp 原理&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;jsonp</summary>
+        
+      
+    
+    
+    
+    <category term="网络安全" scheme="https://blog.lixey.top/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="jsonp" scheme="https://blog.lixey.top/tags/jsonp/"/>
+    
+  </entry>
+  
+  <entry>
     <title>jsonp前传--同源策略</title>
     <link href="https://blog.lixey.top/posts/f6aaed80/"/>
     <id>https://blog.lixey.top/posts/f6aaed80/</id>
     <published>2025-09-01T13:46:08.000Z</published>
-    <updated>2025-09-01T14:07:34.073Z</updated>
+    <updated>2025-09-02T13:49:54.858Z</updated>
     
     
       
@@ -535,33 +561,6 @@
     <category term="PHP" scheme="https://blog.lixey.top/tags/PHP/"/>
     
     <category term="代码审计" scheme="https://blog.lixey.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STL库（一）--Vector</title>
-    <link href="https://blog.lixey.top/posts/afe38b32/"/>
-    <id>https://blog.lixey.top/posts/afe38b32/</id>
-    <published>2024-09-02T13:24:41.000Z</published>
-    <updated>2025-07-08T13:23:22.395Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Vector（动态数组）&quot;&gt;&lt;a href=&quot;#Vector（动态数组）&quot; class=&quot;headerlink&quot; title=&quot;Vector（动态数组）&quot;&gt;&lt;/a&gt;Vector（动态数组）&lt;/h2&gt;&lt;h4 id=&quot;头文件&quot;&gt;&lt;a href=&quot;#头文件&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="C++" scheme="https://blog.lixey.top/tags/C/"/>
-    
-    <category term="STL" scheme="https://blog.lixey.top/tags/STL/"/>
-    
-    <category term="算法" scheme="https://blog.lixey.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
