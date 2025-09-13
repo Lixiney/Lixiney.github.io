@@ -6,7 +6,7 @@
   <link href="https://blog.lixey.top/atom.xml" rel="self"/>
   
   <link href="https://blog.lixey.top/"/>
-  <updated>2025-09-02T13:50:29.528Z</updated>
+  <updated>2025-09-13T15:07:07.843Z</updated>
   <id>https://blog.lixey.top/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>PHP反序列化-WriteUp</title>
+    <link href="https://blog.lixey.top/posts/3e0906bb/"/>
+    <id>https://blog.lixey.top/posts/3e0906bb/</id>
+    <published>2025-09-13T14:12:37.000Z</published>
+    <updated>2025-09-13T15:07:07.843Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;注意事项：阅读之前先要学会 php 的基础语法，面向对象的一些基础知识&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;什么是序列化和反序列化&quot;&gt;&lt;a href=&quot;#什么是序列化和反序列化&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="反序列化" scheme="https://blog.lixey.top/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JSONP 漏洞</title>
     <link href="https://blog.lixey.top/posts/39c6ae33/"/>
     <id>https://blog.lixey.top/posts/39c6ae33/</id>
     <published>2025-09-02T13:04:38.000Z</published>
-    <updated>2025-09-02T13:50:29.528Z</updated>
+    <updated>2025-09-02T14:31:14.097Z</updated>
     
     
       
@@ -311,9 +337,9 @@
     
     <category term="代码审计" scheme="https://blog.lixey.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
     
-    <category term="php" scheme="https://blog.lixey.top/tags/php/"/>
-    
     <category term="反序列化" scheme="https://blog.lixey.top/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+    <category term="php" scheme="https://blog.lixey.top/tags/php/"/>
     
   </entry>
   
@@ -534,33 +560,6 @@
     
     
     <category term="Mysql" scheme="https://blog.lixey.top/tags/Mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CTF-PHP代码审计</title>
-    <link href="https://blog.lixey.top/posts/5fe44501/"/>
-    <id>https://blog.lixey.top/posts/5fe44501/</id>
-    <published>2025-06-28T14:03:17.000Z</published>
-    <updated>2025-06-28T14:04:48.631Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;is-numeric-函数&quot;&gt;&lt;a href=&quot;#is-numeric-函数&quot; class=&quot;headerlink&quot; title=&quot;is_numeric 函数&quot;&gt;&lt;/a&gt;is_numeric 函数&lt;/h1&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    
-    <category term="CTF" scheme="https://blog.lixey.top/tags/CTF/"/>
-    
-    <category term="PHP" scheme="https://blog.lixey.top/tags/PHP/"/>
-    
-    <category term="代码审计" scheme="https://blog.lixey.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
     
   </entry>
   
