@@ -6,7 +6,7 @@
   <link href="https://blog.lixey.top/atom.xml" rel="self"/>
   
   <link href="https://blog.lixey.top/"/>
-  <updated>2025-09-13T15:20:03.842Z</updated>
+  <updated>2025-10-23T15:00:52.817Z</updated>
   <id>https://blog.lixey.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PWN 入门基础笔记</title>
+    <link href="https://blog.lixey.top/posts/15cede88/"/>
+    <id>https://blog.lixey.top/posts/15cede88/</id>
+    <published>2025-10-05T08:22:17.000Z</published>
+    <updated>2025-10-23T15:00:52.817Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Python3&lt;/li&gt;
+&lt;li&gt;pip&lt;/li&gt;
+&lt;li&gt;gdb-pwndbg</summary>
+        
+      
+    
+    
+    
+    
+    <category term="PWN" scheme="https://blog.lixey.top/tags/PWN/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP反序列化-WriteUp</title>
@@ -156,7 +182,7 @@
     <link href="https://blog.lixey.top/posts/90b3b820/"/>
     <id>https://blog.lixey.top/posts/90b3b820/</id>
     <published>2025-08-18T15:03:14.000Z</published>
-    <updated>2025-08-18T15:21:26.333Z</updated>
+    <updated>2025-10-10T14:53:56.544Z</updated>
     
     
       
@@ -534,32 +560,6 @@
     <category term="网络安全" scheme="https://blog.lixey.top/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
     
     <category term="SQL注入" scheme="https://blog.lixey.top/tags/SQL%E6%B3%A8%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql增删改查基础</title>
-    <link href="https://blog.lixey.top/posts/b710732f/"/>
-    <id>https://blog.lixey.top/posts/b710732f/</id>
-    <published>2025-06-28T14:07:01.000Z</published>
-    <updated>2025-06-28T14:10:39.824Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;首先启动数据库&quot;&gt;&lt;a href=&quot;#首先启动数据库&quot; class=&quot;headerlink&quot; title=&quot;首先启动数据库&quot;&gt;&lt;/a&gt;首先启动数据库&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Linux :&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Mysql" scheme="https://blog.lixey.top/tags/Mysql/"/>
     
   </entry>
   
