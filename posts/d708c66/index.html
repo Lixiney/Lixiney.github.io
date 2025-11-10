@@ -37,6 +37,7 @@
 <meta property="og:image" content="https://blog.lixey.top/posts/d708c66/18.png">
 <meta property="og:image" content="https://blog.lixey.top/posts/d708c66/17.png">
 <meta property="og:image" content="https://blog.lixey.top/posts/d708c66/19.png">
+<meta property="og:image" content="https://blog.lixey.top/posts/d708c66/image-20251024234718310.png">
 <meta property="og:image" content="https://blog.lixey.top/posts/d708c66/20.png">
 <meta property="og:image" content="https://blog.lixey.top/posts/d708c66/25.png">
 <meta property="og:image" content="https://blog.lixey.top/posts/d708c66/22.png">
@@ -49,7 +50,7 @@
 <meta property="og:image" content="https://blog.lixey.top/posts/d708c66/4.png">
 <meta property="og:image" content="https://blog.lixey.top/posts/d708c66/Mouse_Key2.png">
 <meta property="article:published_time" content="2024-09-02T13:20:14.000Z">
-<meta property="article:modified_time" content="2025-10-24T14:52:35.133Z">
+<meta property="article:modified_time" content="2025-10-24T15:55:12.267Z">
 <meta property="article:author" content="Lixiney">
 <meta property="article:tag" content="MISC">
 <meta property="article:tag" content="CTF">
@@ -218,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k words
+          2k words
         
       </span>
     
@@ -229,7 +230,7 @@
         
         
         
-          16 mins
+          17 mins
         
       </span>
     
@@ -486,15 +487,44 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">stegdetect -s 敏感度 文件名<br></code></pre></td></tr></table></figure>
 
 <h3 id="outguess-工具"><a href="#outguess-工具" class="headerlink" title="outguess 工具"></a>outguess 工具</h3><p>当 stegdetect 提示 outguess 加密时 </p>
+<p>安装：（Kali Linux）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install outguess<br></code></pre></td></tr></table></figure>
+
 <p><img src="/posts/d708c66/17.png" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">outguess 要解密的文件名 输出结果文件名<br></code></pre></td></tr></table></figure>
 
 <h3 id="JPhs-工具"><a href="#JPhs-工具" class="headerlink" title="JPhs 工具"></a>JPhs 工具</h3><p><img src="/posts/d708c66/19.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="F5"><a href="#F5" class="headerlink" title="F5"></a>F5</h3><p>使用场景，当 stegdetect 识别出来是F5 加密的图片</p>
+<h3 id="F5-工具"><a href="#F5-工具" class="headerlink" title="F5 工具"></a>F5 工具</h3><p>使用场景，当 stegdetect 识别出来是F5 加密的图片</p>
 <p>使用方法 ： 进入F5 -steganography_F5 目录 ,将 图片 拷贝 到给目录下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">java extact 要解密的文件名 -p 密码<br></code></pre></td></tr></table></figure>
 
+
+
+<h3 id="Steghide-工具"><a href="#Steghide-工具" class="headerlink" title="Steghide 工具"></a>Steghide 工具</h3><p>安装 （Kali Linux）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install steghide<br></code></pre></td></tr></table></figure>
+
+<p><img src="/posts/d708c66/image-20251024234718310.png" srcset="/img/loading.gif" lazyload alt="image-20251024234718310"></p>
+<p>使用：</p>
+<ul>
+<li>将信息从隐藏的载体中分离出来</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">steghide extract -sf 文件名 -p 密码[可以为空]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>将信息隐藏到载体中</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">steghide embed -cf test.jpg -ef secret.txt -p 123456<br></code></pre></td></tr></table></figure>
+
+
+
 <h3 id="CQR-二维码处理"><a href="#CQR-二维码处理" class="headerlink" title="CQR 二维码处理"></a>CQR 二维码处理</h3><p><img src="/posts/d708c66/20.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>二进制转二维码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br>MAX = <span class="hljs-number">25</span><br>pic = Image.new(<span class="hljs-string">&quot;RGB&quot;</span>,(MAX, MAX))<br><span class="hljs-built_in">str</span> = <span class="hljs-string">&quot;得到的二进制数字&quot;</span><br>i=<span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span> (<span class="hljs-number">0</span>,MAX):<br>    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span> (<span class="hljs-number">0</span>,MAX):<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">str</span>[i] == <span class="hljs-string">&#x27;1&#x27;</span>):<br>            pic.putpixel([x,y],(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>))<br>        <span class="hljs-keyword">else</span>:<br>            pic.putpixel([x,y],(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>))<br>        i = i+<span class="hljs-number">1</span><br>pic.show()<br>pic.save(<span class="hljs-string">&quot;flag.png&quot;</span>)``<br><br></code></pre></td></tr></table></figure>
+
+
+
 <h2 id="压缩文件处理"><a href="#压缩文件处理" class="headerlink" title="压缩文件处理"></a>压缩文件处理</h2><h3 id="伪加密"><a href="#伪加密" class="headerlink" title="伪加密"></a>伪加密</h3><p>如果压缩文件是加密的，或者文件头正常但是压缩错误，首先尝试问就按是否是伪加密。zip文件是否是加密，是通过标识符来显示的，在每个文件的文件目录字段有一位专门标识了文件是否加密，将其实设置为00表示该文件未加密，如果成功解压则文件为伪加密，如果解压出错说明文件为真加密，这时候就需要根据线索，或者使用工具来破解密码.</p>
 <p><strong>如果是真加密也不用担心，密码一般都不会太复杂，而且一般都会给出密码位数（在爆破工具中要选择位数），它主要考察有没有暴力破解的工具和技术</strong></p>
 <h4 id="zip-伪加密"><a href="#zip-伪加密" class="headerlink" title="zip 伪加密"></a>zip 伪加密</h4><p><img src="/posts/d708c66/25.png" srcset="/img/loading.gif" lazyload></p>
