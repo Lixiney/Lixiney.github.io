@@ -19,28 +19,24 @@
   <meta name="author" content="Lixiney">
   <meta name="keywords" content="网络安全,前端开发,后端开发,全栈开发">
   
-    <meta name="description" content="伪协议 含义    file:&#x2F;&#x2F; 访问本地文件系统   php:&#x2F;&#x2F; 访问各个输入&#x2F;输出流（I&#x2F;O streams）   zlib:&#x2F;&#x2F; 压缩流   data:&#x2F;&#x2F; 数据流   glob:&#x2F;&#x2F; 查找匹配的文件路径模式   phar:&#x2F;&#x2F; php 归档">
+    <meta name="description" content="1. 背景与必要性随着数字化建设加速推进，云网已成为承载核心业务、数据交换和服务的关键基础设施。其网络边界作为抵御外部威胁的第一道防线，面临日益复杂的攻击面： l 攻击者利用边界策略疏漏实施初始入侵（如暴露的管理接口、未修复的Web漏洞）； l 高级持续性威胁（APT）通过供应链、钓鱼邮件等绕过传统边界防护； l 云环境动态性导致安全策略滞后或配置漂移。 传统的“合规检查+年度渗透测试”模式难以应">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP文件包含-伪协议">
-<meta property="og:url" content="https://blog.lixey.top/posts/213f8363/index.html">
+<meta property="og:title" content="企业进行有效性（BAS）的一般方法">
+<meta property="og:url" content="https://blog.lixey.top/posts/27c2e9d1/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="伪协议 含义    file:&#x2F;&#x2F; 访问本地文件系统   php:&#x2F;&#x2F; 访问各个输入&#x2F;输出流（I&#x2F;O streams）   zlib:&#x2F;&#x2F; 压缩流   data:&#x2F;&#x2F; 数据流   glob:&#x2F;&#x2F; 查找匹配的文件路径模式   phar:&#x2F;&#x2F; php 归档">
+<meta property="og:description" content="1. 背景与必要性随着数字化建设加速推进，云网已成为承载核心业务、数据交换和服务的关键基础设施。其网络边界作为抵御外部威胁的第一道防线，面临日益复杂的攻击面： l 攻击者利用边界策略疏漏实施初始入侵（如暴露的管理接口、未修复的Web漏洞）； l 高级持续性威胁（APT）通过供应链、钓鱼邮件等绕过传统边界防护； l 云环境动态性导致安全策略滞后或配置漂移。 传统的“合规检查+年度渗透测试”模式难以应">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://blog.lixey.top/posts/213f8363/image-20251113224557980.png">
-<meta property="og:image" content="https://blog.lixey.top/posts/213f8363/image-20251113225021349.png">
-<meta property="og:image" content="https://blog.lixey.top/posts/213f8363/image-20251113225132654.png">
-<meta property="article:published_time" content="2025-11-13T14:36:28.000Z">
-<meta property="article:modified_time" content="2025-11-13T15:17:50.252Z">
+<meta property="article:published_time" content="2024-11-16T04:25:38.000Z">
+<meta property="article:modified_time" content="2025-11-20T05:41:22.655Z">
 <meta property="article:author" content="Lixiney">
-<meta property="article:tag" content="web安全">
+<meta property="article:tag" content="网络安全,前端开发,后端开发,全栈开发">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://blog.lixey.top/posts/213f8363/image-20251113224557980.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>PHP文件包含-伪协议 - Lixiney&#39;s Blog</title>
+  <title>企业进行有效性（BAS）的一般方法 - Lixiney&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -170,7 +166,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PHP文件包含-伪协议"></span>
+            <span id="subtitle" data-typed-text="企业进行有效性（BAS）的一般方法"></span>
           
         </div>
 
@@ -186,8 +182,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-11-13 22:36" pubdate>
-          November 13, 2025 pm
+        <time datetime="2024-11-16 12:25" pubdate>
+          November 16, 2024 pm
         </time>
       </span>
     
@@ -198,7 +194,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          224 words
+          2.5k words
         
       </span>
     
@@ -209,7 +205,7 @@
         
         
         
-          2 mins
+          21 mins
         
       </span>
     
@@ -255,12 +251,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">PHP文件包含-伪协议</h1>
+            <h1 id="seo-header">企业进行有效性（BAS）的一般方法</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    Last updated on November 13, 2025 pm
+                    Last updated on November 20, 2025 pm
                   
                 
               </p>
@@ -268,112 +264,143 @@
             
               <div class="markdown-body">
                 
-                <table>
+                <h1 id="1-背景与必要性"><a href="#1-背景与必要性" class="headerlink" title="1. 背景与必要性"></a>1. <strong>背景与必要性</strong></h1><p>随着数字化建设加速推进，云网已成为承载核心业务、数据交换和服务的关键基础设施。其网络边界作为抵御外部威胁的第一道防线，面临日益复杂的攻击面：</p>
+<p>l 攻击者利用边界策略疏漏实施初始入侵（如暴露的管理接口、未修复的Web漏洞）；</p>
+<p>l 高级持续性威胁（APT）通过供应链、钓鱼邮件等绕过传统边界防护；</p>
+<p>l 云环境动态性导致安全策略滞后或配置漂移。</p>
+<p>传统的“合规检查+年度渗透测试”模式难以应对快速演化的威胁。亟需建立常态化、自动化、闭环化的边界安全有效性验证机制，以真实攻击视角检验纵深防御体系的实际效能。</p>
+<h1 id="2-服务目标"><a href="#2-服务目标" class="headerlink" title="2. 服务目标"></a>2. <strong>服务目标</strong></h1><p>本服务旨在通过模拟真实攻击手法，从纵深防御（Defense-in-Depth）架构出发，对云网的网络边界防护能力进行持续、量化、可追溯的验证，实现：</p>
+<ol>
+<li>验证边界策略有效性：确认防火墙、WAF、IPS、云安全组等是否按预期阻断&#x2F;检测攻击；</li>
+<li>暴露防御盲区：识别策略冲突、默认放行、日志缺失、响应延迟等隐性风险；</li>
+<li>驱动安全运营优化：为SOC告警调优、策略收紧、应急响应流程提供实战依据；</li>
+<li>支撑合规与审计：满足《网络安全法》《关键信息基础设施安全保护条例》《云安全管理指南》等要求。</li>
+</ol>
+<h1 id="3-验证范围"><a href="#3-验证范围" class="headerlink" title="3. 验证范围"></a>3. <strong>验证范围</strong></h1><table>
 <thead>
 <tr>
-<th>伪协议</th>
-<th>含义</th>
+<th><strong>边界类型</strong></th>
+<th><strong>具体对象</strong></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>file:&#x2F;&#x2F;</td>
-<td>访问本地文件系统</td>
+<td>外网边界</td>
+<td>互联网出口防火墙、与其他专网互联边界、DMZ区域、统一接入平台、API网关</td>
 </tr>
 <tr>
-<td>php:&#x2F;&#x2F;</td>
-<td>访问各个输入&#x2F;输出流（I&#x2F;O streams）</td>
+<td>云边界</td>
+<td>VPC南北向边界（NAT网关、公网IP）、安全组策略、云防火墙（CloudFirewall）、WAF、DDoS防护、零信任访问代理（ZTNA）</td>
 </tr>
 <tr>
-<td>zlib:&#x2F;&#x2F;</td>
-<td>压缩流</td>
-</tr>
-<tr>
-<td>data:&#x2F;&#x2F;</td>
-<td>数据流</td>
-</tr>
-<tr>
-<td>glob:&#x2F;&#x2F;</td>
-<td>查找匹配的文件路径模式</td>
-</tr>
-<tr>
-<td>phar:&#x2F;&#x2F;</td>
-<td>php 归档</td>
-</tr>
-<tr>
-<td>ssh2:&#x2F;&#x2F;</td>
-<td>Secure Shell 2</td>
-</tr>
-<tr>
-<td>rar:&#x2F;&#x2F;</td>
-<td>RAR</td>
-</tr>
-<tr>
-<td>ogg:&#x2F;&#x2F;</td>
-<td>音频流</td>
+<td>共性组件</td>
+<td>堡垒机、跳板机、运维审计系统、网络准入控制（NAC）、DNS解析服务</td>
 </tr>
 </tbody></table>
-<h1 id="php-ini-参数"><a href="#php-ini-参数" class="headerlink" title="php.ini 参数"></a>php.ini 参数</h1><ul>
-<li>allow_url_fopen    默认为 On 允许url里封装协议访问文件</li>
-<li>allow_url_include    默认为 Off   不允许包含url 里的封装协议包含文件</li>
-</ul>
-<h1 id="各种伪协议的利用方法"><a href="#各种伪协议的利用方法" class="headerlink" title="各种伪协议的利用方法"></a>各种伪协议的利用方法</h1><ul>
-<li>file:&#x2F;&#x2F; 协议</li>
-</ul>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">file:<span class="hljs-regexp">//</span><span class="hljs-regexp">/etc/</span>passwd<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>php:&#x2F;&#x2F;filter</li>
-</ul>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">php://<span class="hljs-built_in">filter</span>/<span class="hljs-built_in">read</span>=<span class="hljs-built_in">convert</span>.base64-encode/resource=index.php<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>php:&#x2F;&#x2F;data   【allow_url_include 设置为 On】</li>
-</ul>
-<p><img src="/posts/213f8363/image-20251113224557980.png" srcset="/img/loading.gif" lazyload alt="image-20251113224557980"></p>
-<ul>
-<li>zip:&#x2F;&#x2F; 协议</li>
-</ul>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">zip:</span><span class="hljs-comment">//test.zip%23phpinfo.txt</span><br></code></pre></td></tr></table></figure>
-
-<p><img src="/posts/213f8363/image-20251113225021349.png" srcset="/img/loading.gif" lazyload alt="image-20251113225021349"></p>
-<p><img src="/posts/213f8363/image-20251113225132654.png" srcset="/img/loading.gif" lazyload alt="image-20251113225132654"></p>
-<ul>
-<li>data:&#x2F;&#x2F;   【allow_url_iclude 设置为 On】</li>
-</ul>
-<figure class="highlight php-template"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php-template"><span class="language-xml">data://text/plain,</span><span class="language-php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">phpinfo</span>();<span class="hljs-meta">?&gt;</span></span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">data:text/plain,<span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">phpinfo</span>();<span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">data:<span class="hljs-regexp">//</span>text<span class="hljs-regexp">/plain;base64,PD9waHAgc3lzdGVtKCd3aG9hbWknKTs/</span>Pg==<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="php-filter-其他过滤器"><a href="#php-filter-其他过滤器" class="headerlink" title="php:&#x2F;&#x2F;filter  其他过滤器"></a>php:&#x2F;&#x2F;filter  其他过滤器</h2><table>
+<p>注：测试前由甲方提供最新资产清单、IP段、域名、业务系统分类及豁免清单，并签署《授权测试协议》。</p>
+<h1 id="4-纵深防御视角下的验证维度"><a href="#4-纵深防御视角下的验证维度" class="headerlink" title="4. 纵深防御视角下的验证维度"></a>4. <strong>纵深防御视角下的验证维度</strong></h1><p>本服务将边界防护能力拆解为纵深防御的四个关键层，每层设置对应验证用例：</p>
+<table>
 <thead>
 <tr>
-<th>过滤器</th>
-<th>作用</th>
+<th><strong>防御层级</strong></th>
+<th><strong>验证重点</strong></th>
+<th><strong>示例攻击用例</strong></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>string.rot13</td>
-<td>rot13编码</td>
+<td>1.外围屏障层</td>
+<td>是否有效过滤恶意流量</td>
+<td>模拟DDoS攻击、端口扫描、协议异常探测</td>
 </tr>
 <tr>
-<td>string.toupper</td>
-<td>转大写字母</td>
+<td>2.访问控制层</td>
+<td>策略是否最小权限、无冗余开放</td>
+<td>利用非业务端口尝试连接、越权访问API接口</td>
 </tr>
 <tr>
-<td>string.tolower</td>
-<td>转小写字母</td>
+<td>3.威胁检测层</td>
+<td>是否能识别并告警已知&#x2F;未知攻击</td>
+<td>SQL注入变形绕过WAF、C2通信模拟（DNS隧道、HTTPS伪装）</td>
 </tr>
 <tr>
-<td>string.strip_tags</td>
-<td>去除html标签</td>
+<td>4.响应与取证层</td>
+<td>是否联动阻断、留存完整日志</td>
+<td>触发攻击后验证SOC告警时效性、日志完整性、自动封禁能力</td>
 </tr>
 </tbody></table>
-<p>例子 ： </p>
-<p><code>php://filter/read=string.rot13/resource=index.php</code></p>
+<h1 id="5-周期性验证机制"><a href="#5-周期性验证机制" class="headerlink" title="5. 周期性验证机制"></a>5. <strong>周期性验证机制</strong></h1><p>为实现“持续验证、动态优化”，建立如下三级验证节奏：</p>
+<h2 id="5-1-季度全量攻击测试"><a href="#5-1-季度全量攻击测试" class="headerlink" title="5.1. 季度全量攻击测试"></a>5.1. <strong>季度全量攻击测试</strong></h2><p>l 频率：每季度1次（建议在重大活动前、年度攻防演练前执行）</p>
+<p>l 内容：执行全量攻击测试用例库（≥200项），覆盖所有边界场景</p>
+<p>l 输出：全面评估边界防护基线能力，生成能力成熟度评分</p>
+<h2 id="5-2-周度增量攻击测试"><a href="#5-2-周度增量攻击测试" class="headerlink" title="5.2. 周度增量攻击测试"></a>5.2. <strong>周度增量攻击测试</strong></h2><p>l 频率：每周1次（避开业务高峰时段）</p>
+<p>l 内容：</p>
+<p>o 新增威胁情报映射用例（如近期CVE利用）</p>
+<p>o 新上线系统&#x2F;接口的边界策略验证</p>
+<p>输出：快速反馈新风险，支持敏捷安全响应。</p>
+<h2 id="5-3-月度回归验证"><a href="#5-3-月度回归验证" class="headerlink" title="5.3. 月度回归验证"></a>5.3. <strong>月度回归验证</strong></h2><p>l 频率：每月1次</p>
+<p>l 内容：对上月报告中“已整改”项对应的测试用例重新执行</p>
+<p>l 目标：确保修复措施真实有效，防止策略回滚或配置漂移</p>
+<p>攻击用例库管理：采用动态更新机制，结合MITREATT&amp;CK框架、CNVD&#x2F;CNNVD漏洞库、内部红队经验持续扩充。</p>
+<h1 id="6-技术实现方式"><a href="#6-技术实现方式" class="headerlink" title="6. 技术实现方式"></a>6. <strong>技术实现方式</strong></h1><h2 id="6-1-工具与平台"><a href="#6-1-工具与平台" class="headerlink" title="6.1. 工具与平台"></a>6.1. <strong>工具与平台</strong></h2><p>自动化BAS平台：部署轻量级探针，支持7×24小时无人值守测试（如自研平台或集成SafeBreach、Cymulate等）</p>
+<p>人工渗透辅助：针对高价值目标或复杂逻辑漏洞，由持证专家（CISP-PTE&#x2F;OSCP）进行深度验证</p>
+<p>流量仿真引擎：模拟真实用户行为与攻击流量混合，避免被简单规则识别为“测试”</p>
+<h2 id="6-2-攻击类型覆盖"><a href="#6-2-攻击类型覆盖" class="headerlink" title="6.2. 攻击类型覆盖"></a>6.2. <strong>攻击类型覆盖</strong></h2><p>边界绕过类：IP欺骗、协议隧道（ICMP&#x2F;DNS&#x2F;HTTP）、SSL&#x2F;TLS加密绕过</p>
+<p>策略滥用类：利用宽松ACL、默认允许策略、云安全组误配</p>
+<p>应用层攻击：OWASPTop10漏洞利用、API参数篡改、JWT令牌伪造</p>
+<p>横向试探：从DMZ服务器尝试访问内网管理网段（验证微隔离有效性）</p>
+<h2 id="6-3-搭建有效性验证攻击机和靶机"><a href="#6-3-搭建有效性验证攻击机和靶机" class="headerlink" title="6.3. 搭建有效性验证攻击机和靶机"></a>6.3. <strong>搭建有效性验证攻击机和靶机</strong></h2><p>为了有效验证安全策略和控制措施的实际效果，搭建攻击机和靶机是至关重要的。攻击机指模拟攻击的工具和平台，而靶机则是被攻击的目标系统。下面是搭建有效性验证攻击机和靶机的关键步骤和考虑因素：</p>
+<p>1.攻击机搭建</p>
+<p>攻击机的搭建通常包括以下几个主要步骤：</p>
+<p>选择攻击工具：根据评估目标和安全控制的类别，选择合适的攻击工具，如Metasploit、Nmap、BurpSuite等。</p>
+<p>配置攻击平台：配置虚拟机或物理机作为攻击平台，确保其具备足够的计算能力和资源以执行模拟攻击。</p>
+<p>设置攻击环境：建立一个安全的攻击环境，确保攻击不会对生产系统和网络造成影响。可以使用隔离网络或虚拟化技术。</p>
+<p>攻击脚本和模块：根据评估矩阵中的安全控制和评估标准，开发或配置适当的攻击脚本和模块，用于执行各种类型的攻击。</p>
+<p>2、靶机搭建</p>
+<p>靶机的搭建涉及以意事项：</p>
+<p>选择靶机平台：确定需要评估的目标系统类型，如操作系统、数据库、应用程序等，并选择相应的靶机平台。</p>
+<p>配置漏洞和弱点：在靶机上设置漏洞和弱点，以模拟真实环境中可能存在的安全风险和漏洞。</p>
+<p>实施安全控制：确保靶机上已实施所需的安全控制措施，例如防火墙、入侵检测系统（IDS）、访问控制等，以模拟真实环境中的安全防护措施。</p>
+<p>监控和记录：设置监控机制和日志记录，以便捕获攻击和评估过程中的所有活动和事件，用于后续分析和报告。</p>
+<h2 id="6-4-开展安全策略有效性验证"><a href="#6-4-开展安全策略有效性验证" class="headerlink" title="6.4. 开展安全策略有效性验证"></a>6.4. <strong>开展安全策略有效性验证</strong></h2><p>开展安全策略有效性验证是通过模拟攻击和实际测试，评估安全控制和措施是否能够有效防御和应对现实世界中的威胁和攻击。以下是有效性验证的关键步骤和实施方法：</p>
+<p>1.规划和准备</p>
+<p>明确评估目标：根据制定的评估矩阵和安全控制清单，确定评估的具体目标和范围。</p>
+<p>制定评估计划：制定详细的评估计划，包括评估的时间表、参与人员、使用的工具和技术等。</p>
+<p>准备攻击和靶机：搭建攻击机和靶机环境，确保其安全、稳定和符合评估需求。</p>
+<p>2.执行模拟攻击</p>
+<p>执行攻击：根据选择的攻击工具和技术，执行模拟攻击，尝试穿透靶机的防御措施，检验其强度和反应能力。</p>
+<p>记录攻击过程：详细记录攻击的方法、过程和结果，包括成功和失败的尝试，以及发现的漏洞和弱点。</p>
+<p>3.分析和评估</p>
+<p>分析攻击效果：分析模拟攻击的效果，评估靶机上已实施的安全控制和措施的实际防御能力。</p>
+<p>与评估矩阵对比：将攻击结果与事先制定的评估矩阵和安全控制标准进行对比，确定是否符合预期的安全水平。</p>
+<p>4.编制报告和建议</p>
+<p>撰写评估报告：撰写详细的评估报告，包括评估的方法、发现的问题、推荐的改进措施和建议的下一步行动计划。</p>
+<p>与利益相关者分享：向管理层和安全团队分享评估结果，讨论发现的问题和建议的改进措施，以促进安全策略的持续改进和优化。</p>
+<h1 id="7-组织协同与流程保障"><a href="#7-组织协同与流程保障" class="headerlink" title="7. 组织协同与流程保障"></a>7. <strong>组织协同与流程保障</strong></h1><table>
+<thead>
+<tr>
+<th><strong>角色</strong></th>
+<th><strong>职责</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>甲方（信息中心）</td>
+<td>提供资产清单、审批测试窗口、协调SOC&#x2F;SIEM对接、推动整改</td>
+</tr>
+<tr>
+<td>乙方（安全服务商）</td>
+<td>设计用例、执行测试分析结果、输出报告、提供修复建议</td>
+</tr>
+<tr>
+<td>第三方（监管&#x2F;审计单位）</td>
+<td>可选参与结果评审，用于合规检查</td>
+</tr>
+</tbody></table>
+<p>应急机制：</p>
+<p>测试期间设立7×24小时应急联络人</p>
+<p>一旦触发真实业务中断或误报，立即暂停测试并启动复盘。</p>
+<h1 id="8-风险控制措施"><a href="#8-风险控制措施" class="headerlink" title="8. 风险控制措施"></a>8. <strong>风险控制措施</strong></h1><p>所有测试均为非破坏性（No-Destructive），禁止删除、篡改、加密数据；</p>
+<p>攻击强度可控，避免引发性能瓶颈；</p>
+<p>测试行为全程留痕，日志同步至甲方SIEM系统；</p>
+<p>签订保密协议（NDA），人员通过政审背景调查。</p>
 
                 
               </div>
@@ -383,13 +410,6 @@
               <div class="post-metas my-3">
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/web%E5%AE%89%E5%85%A8/" class="print-no-link">#web安全</a>
-      
-    </div>
-  
 </div>
 
 
@@ -398,8 +418,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PHP文件包含-伪协议</div>
-      <div>https://blog.lixey.top/posts/213f8363/</div>
+      <div>企业进行有效性（BAS）的一般方法</div>
+      <div>https://blog.lixey.top/posts/27c2e9d1/</div>
     </div>
     <div class="license-meta">
       
@@ -411,7 +431,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>November 13, 2025</div>
+          <div>November 16, 2024</div>
         </div>
       
       
@@ -443,9 +463,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/80937084/" title="XXE-外部实体注入">
+                      <a href="/posts/5fe44501/" title="CTF-PHP代码审计">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">XXE-外部实体注入</span>
+                        <span class="hidden-mobile">CTF-PHP代码审计</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -453,8 +473,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/15cede88/" title="PWN 入门基础笔记">
-                        <span class="hidden-mobile">PWN 入门基础笔记</span>
+                      <a href="/posts/afe38b32/" title="STL库（一）--Vector">
+                        <span class="hidden-mobile">STL库（一）--Vector</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

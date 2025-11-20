@@ -6,7 +6,7 @@
   <link href="https://blog.lixey.top/atom.xml" rel="self"/>
   
   <link href="https://blog.lixey.top/"/>
-  <updated>2025-11-13T15:17:50.252Z</updated>
+  <updated>2025-11-17T13:05:40.313Z</updated>
   <id>https://blog.lixey.top/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>XXE-外部实体注入</title>
+    <link href="https://blog.lixey.top/posts/80937084/"/>
+    <id>https://blog.lixey.top/posts/80937084/</id>
+    <published>2025-11-17T13:05:40.000Z</published>
+    <updated>2025-11-17T13:05:40.313Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>PHP文件包含-伪协议</title>
@@ -398,9 +411,9 @@
     
     <category term="代码审计" scheme="https://blog.lixey.top/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
     
-    <category term="反序列化" scheme="https://blog.lixey.top/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    
     <category term="php" scheme="https://blog.lixey.top/tags/php/"/>
+    
+    <category term="反序列化" scheme="https://blog.lixey.top/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
     
   </entry>
   
@@ -538,36 +551,6 @@
     <category term="开发" scheme="https://blog.lixey.top/tags/%E5%BC%80%E5%8F%91/"/>
     
     <category term="数据结构" scheme="https://blog.lixey.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python开发-Flask框架</title>
-    <link href="https://blog.lixey.top/posts/483d9cef/"/>
-    <id>https://blog.lixey.top/posts/483d9cef/</id>
-    <published>2025-06-28T14:58:36.000Z</published>
-    <updated>2025-07-06T12:31:59.218Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;pip install flask&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;基础入门&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="开发" scheme="https://blog.lixey.top/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="Python" scheme="https://blog.lixey.top/tags/Python/"/>
-    
-    <category term="Flask" scheme="https://blog.lixey.top/tags/Flask/"/>
     
   </entry>
   
