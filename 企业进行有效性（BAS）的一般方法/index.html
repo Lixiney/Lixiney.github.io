@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Lixiney">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. 背景与必要性随着数字化建设加速推进，云网已成为承载核心业务、数据交换和服务的关键基础设施。其网络边界作为抵御外部威胁的第一道防线，面临日益复杂的攻击面： l 攻击者利用边界策略疏漏实施初始入侵（如暴露的管理接口、未修复的Web漏洞）； l 高级持续性威胁（APT）通过供应链、钓鱼邮件等绕过传统边界防护； l 云环境动态性导致安全策略滞后或配置漂移。 传统的“合规检查+年度渗透测试”模式难以应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="企业进行有效性（BAS）的一般方法">
+<meta property="og:url" content="https://blog.lixey.top/%E4%BC%81%E4%B8%9A%E8%BF%9B%E8%A1%8C%E6%9C%89%E6%95%88%E6%80%A7%EF%BC%88BAS%EF%BC%89%E7%9A%84%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:description" content="1. 背景与必要性随着数字化建设加速推进，云网已成为承载核心业务、数据交换和服务的关键基础设施。其网络边界作为抵御外部威胁的第一道防线，面临日益复杂的攻击面： l 攻击者利用边界策略疏漏实施初始入侵（如暴露的管理接口、未修复的Web漏洞）； l 高级持续性威胁（APT）通过供应链、钓鱼邮件等绕过传统边界防护； l 云环境动态性导致安全策略滞后或配置漂移。 传统的“合规检查+年度渗透测试”模式难以应">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-11-16T04:25:38.000Z">
+<meta property="article:modified_time" content="2025-11-28T09:30:56.000Z">
+<meta property="article:author" content="Lixiney">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>企业进行有效性（BAS）的一般方法 - Lixiney&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.lixey.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Lixiney&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="企业进行有效性（BAS）的一般方法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-16 12:25" pubdate>
+          November 16, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          22 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">企业进行有效性（BAS）的一般方法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="1-背景与必要性"><a href="#1-背景与必要性" class="headerlink" title="1. 背景与必要性"></a>1. <strong>背景与必要性</strong></h1><p>随着数字化建设加速推进，云网已成为承载核心业务、数据交换和服务的关键基础设施。其网络边界作为抵御外部威胁的第一道防线，面临日益复杂的攻击面：</p>
+<p>l 攻击者利用边界策略疏漏实施初始入侵（如暴露的管理接口、未修复的Web漏洞）；</p>
+<p>l 高级持续性威胁（APT）通过供应链、钓鱼邮件等绕过传统边界防护；</p>
+<p>l 云环境动态性导致安全策略滞后或配置漂移。</p>
+<p>传统的“合规检查+年度渗透测试”模式难以应对快速演化的威胁。亟需建立常态化、自动化、闭环化的边界安全有效性验证机制，以真实攻击视角检验纵深防御体系的实际效能。</p>
+<h1 id="2-服务目标"><a href="#2-服务目标" class="headerlink" title="2. 服务目标"></a>2. <strong>服务目标</strong></h1><p>本服务旨在通过模拟真实攻击手法，从纵深防御（Defense-in-Depth）架构出发，对云网的网络边界防护能力进行持续、量化、可追溯的验证，实现：</p>
+<ol>
+<li>验证边界策略有效性：确认防火墙、WAF、IPS、云安全组等是否按预期阻断&#x2F;检测攻击；</li>
+<li>暴露防御盲区：识别策略冲突、默认放行、日志缺失、响应延迟等隐性风险；</li>
+<li>驱动安全运营优化：为SOC告警调优、策略收紧、应急响应流程提供实战依据；</li>
+<li>支撑合规与审计：满足《网络安全法》《关键信息基础设施安全保护条例》《云安全管理指南》等要求。</li>
+</ol>
+<h1 id="3-验证范围"><a href="#3-验证范围" class="headerlink" title="3. 验证范围"></a>3. <strong>验证范围</strong></h1><table>
+<thead>
+<tr>
+<th><strong>边界类型</strong></th>
+<th><strong>具体对象</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>外网边界</td>
+<td>互联网出口防火墙、与其他专网互联边界、DMZ区域、统一接入平台、API网关</td>
+</tr>
+<tr>
+<td>云边界</td>
+<td>VPC南北向边界（NAT网关、公网IP）、安全组策略、云防火墙（CloudFirewall）、WAF、DDoS防护、零信任访问代理（ZTNA）</td>
+</tr>
+<tr>
+<td>共性组件</td>
+<td>堡垒机、跳板机、运维审计系统、网络准入控制（NAC）、DNS解析服务</td>
+</tr>
+</tbody></table>
+<p>注：测试前由甲方提供最新资产清单、IP段、域名、业务系统分类及豁免清单，并签署《授权测试协议》。</p>
+<h1 id="4-纵深防御视角下的验证维度"><a href="#4-纵深防御视角下的验证维度" class="headerlink" title="4. 纵深防御视角下的验证维度"></a>4. <strong>纵深防御视角下的验证维度</strong></h1><p>本服务将边界防护能力拆解为纵深防御的四个关键层，每层设置对应验证用例：</p>
+<table>
+<thead>
+<tr>
+<th><strong>防御层级</strong></th>
+<th><strong>验证重点</strong></th>
+<th><strong>示例攻击用例</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.外围屏障层</td>
+<td>是否有效过滤恶意流量</td>
+<td>模拟DDoS攻击、端口扫描、协议异常探测</td>
+</tr>
+<tr>
+<td>2.访问控制层</td>
+<td>策略是否最小权限、无冗余开放</td>
+<td>利用非业务端口尝试连接、越权访问API接口</td>
+</tr>
+<tr>
+<td>3.威胁检测层</td>
+<td>是否能识别并告警已知&#x2F;未知攻击</td>
+<td>SQL注入变形绕过WAF、C2通信模拟（DNS隧道、HTTPS伪装）</td>
+</tr>
+<tr>
+<td>4.响应与取证层</td>
+<td>是否联动阻断、留存完整日志</td>
+<td>触发攻击后验证SOC告警时效性、日志完整性、自动封禁能力</td>
+</tr>
+</tbody></table>
+<h1 id="5-周期性验证机制"><a href="#5-周期性验证机制" class="headerlink" title="5. 周期性验证机制"></a>5. <strong>周期性验证机制</strong></h1><p>为实现“持续验证、动态优化”，建立如下三级验证节奏：</p>
+<h2 id="5-1-季度全量攻击测试"><a href="#5-1-季度全量攻击测试" class="headerlink" title="5.1. 季度全量攻击测试"></a>5.1. <strong>季度全量攻击测试</strong></h2><p>l 频率：每季度1次（建议在重大活动前、年度攻防演练前执行）</p>
+<p>l 内容：执行全量攻击测试用例库（≥200项），覆盖所有边界场景</p>
+<p>l 输出：全面评估边界防护基线能力，生成能力成熟度评分</p>
+<h2 id="5-2-周度增量攻击测试"><a href="#5-2-周度增量攻击测试" class="headerlink" title="5.2. 周度增量攻击测试"></a>5.2. <strong>周度增量攻击测试</strong></h2><p>l 频率：每周1次（避开业务高峰时段）</p>
+<p>l 内容：</p>
+<p>o 新增威胁情报映射用例（如近期CVE利用）</p>
+<p>o 新上线系统&#x2F;接口的边界策略验证</p>
+<p>输出：快速反馈新风险，支持敏捷安全响应。</p>
+<h2 id="5-3-月度回归验证"><a href="#5-3-月度回归验证" class="headerlink" title="5.3. 月度回归验证"></a>5.3. <strong>月度回归验证</strong></h2><p>l 频率：每月1次</p>
+<p>l 内容：对上月报告中“已整改”项对应的测试用例重新执行</p>
+<p>l 目标：确保修复措施真实有效，防止策略回滚或配置漂移</p>
+<p>攻击用例库管理：采用动态更新机制，结合MITREATT&amp;CK框架、CNVD&#x2F;CNNVD漏洞库、内部红队经验持续扩充。</p>
+<h1 id="6-技术实现方式"><a href="#6-技术实现方式" class="headerlink" title="6. 技术实现方式"></a>6. <strong>技术实现方式</strong></h1><h2 id="6-1-工具与平台"><a href="#6-1-工具与平台" class="headerlink" title="6.1. 工具与平台"></a>6.1. <strong>工具与平台</strong></h2><p>自动化BAS平台：部署轻量级探针，支持7×24小时无人值守测试（如自研平台或集成SafeBreach、Cymulate等）</p>
+<p>人工渗透辅助：针对高价值目标或复杂逻辑漏洞，由持证专家（CISP-PTE&#x2F;OSCP）进行深度验证</p>
+<p>流量仿真引擎：模拟真实用户行为与攻击流量混合，避免被简单规则识别为“测试”</p>
+<h2 id="6-2-攻击类型覆盖"><a href="#6-2-攻击类型覆盖" class="headerlink" title="6.2. 攻击类型覆盖"></a>6.2. <strong>攻击类型覆盖</strong></h2><p>边界绕过类：IP欺骗、协议隧道（ICMP&#x2F;DNS&#x2F;HTTP）、SSL&#x2F;TLS加密绕过</p>
+<p>策略滥用类：利用宽松ACL、默认允许策略、云安全组误配</p>
+<p>应用层攻击：OWASPTop10漏洞利用、API参数篡改、JWT令牌伪造</p>
+<p>横向试探：从DMZ服务器尝试访问内网管理网段（验证微隔离有效性）</p>
+<h2 id="6-3-搭建有效性验证攻击机和靶机"><a href="#6-3-搭建有效性验证攻击机和靶机" class="headerlink" title="6.3. 搭建有效性验证攻击机和靶机"></a>6.3. <strong>搭建有效性验证攻击机和靶机</strong></h2><p>为了有效验证安全策略和控制措施的实际效果，搭建攻击机和靶机是至关重要的。攻击机指模拟攻击的工具和平台，而靶机则是被攻击的目标系统。下面是搭建有效性验证攻击机和靶机的关键步骤和考虑因素：</p>
+<p>1.攻击机搭建</p>
+<p>攻击机的搭建通常包括以下几个主要步骤：</p>
+<p>选择攻击工具：根据评估目标和安全控制的类别，选择合适的攻击工具，如Metasploit、Nmap、BurpSuite等。</p>
+<p>配置攻击平台：配置虚拟机或物理机作为攻击平台，确保其具备足够的计算能力和资源以执行模拟攻击。</p>
+<p>设置攻击环境：建立一个安全的攻击环境，确保攻击不会对生产系统和网络造成影响。可以使用隔离网络或虚拟化技术。</p>
+<p>攻击脚本和模块：根据评估矩阵中的安全控制和评估标准，开发或配置适当的攻击脚本和模块，用于执行各种类型的攻击。</p>
+<p>2、靶机搭建</p>
+<p>靶机的搭建涉及以意事项：</p>
+<p>选择靶机平台：确定需要评估的目标系统类型，如操作系统、数据库、应用程序等，并选择相应的靶机平台。</p>
+<p>配置漏洞和弱点：在靶机上设置漏洞和弱点，以模拟真实环境中可能存在的安全风险和漏洞。</p>
+<p>实施安全控制：确保靶机上已实施所需的安全控制措施，例如防火墙、入侵检测系统（IDS）、访问控制等，以模拟真实环境中的安全防护措施。</p>
+<p>监控和记录：设置监控机制和日志记录，以便捕获攻击和评估过程中的所有活动和事件，用于后续分析和报告。</p>
+<h2 id="6-4-开展安全策略有效性验证"><a href="#6-4-开展安全策略有效性验证" class="headerlink" title="6.4. 开展安全策略有效性验证"></a>6.4. <strong>开展安全策略有效性验证</strong></h2><p>开展安全策略有效性验证是通过模拟攻击和实际测试，评估安全控制和措施是否能够有效防御和应对现实世界中的威胁和攻击。以下是有效性验证的关键步骤和实施方法：</p>
+<p>1.规划和准备</p>
+<p>明确评估目标：根据制定的评估矩阵和安全控制清单，确定评估的具体目标和范围。</p>
+<p>制定评估计划：制定详细的评估计划，包括评估的时间表、参与人员、使用的工具和技术等。</p>
+<p>准备攻击和靶机：搭建攻击机和靶机环境，确保其安全、稳定和符合评估需求。</p>
+<p>2.执行模拟攻击</p>
+<p>执行攻击：根据选择的攻击工具和技术，执行模拟攻击，尝试穿透靶机的防御措施，检验其强度和反应能力。</p>
+<p>记录攻击过程：详细记录攻击的方法、过程和结果，包括成功和失败的尝试，以及发现的漏洞和弱点。</p>
+<p>3.分析和评估</p>
+<p>分析攻击效果：分析模拟攻击的效果，评估靶机上已实施的安全控制和措施的实际防御能力。</p>
+<p>与评估矩阵对比：将攻击结果与事先制定的评估矩阵和安全控制标准进行对比，确定是否符合预期的安全水平。</p>
+<p>4.编制报告和建议</p>
+<p>撰写评估报告：撰写详细的评估报告，包括评估的方法、发现的问题、推荐的改进措施和建议的下一步行动计划。</p>
+<p>与利益相关者分享：向管理层和安全团队分享评估结果，讨论发现的问题和建议的改进措施，以促进安全策略的持续改进和优化。</p>
+<h1 id="7-组织协同与流程保障"><a href="#7-组织协同与流程保障" class="headerlink" title="7. 组织协同与流程保障"></a>7. <strong>组织协同与流程保障</strong></h1><table>
+<thead>
+<tr>
+<th><strong>角色</strong></th>
+<th><strong>职责</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>甲方（信息中心）</td>
+<td>提供资产清单、审批测试窗口、协调SOC&#x2F;SIEM对接、推动整改</td>
+</tr>
+<tr>
+<td>乙方（安全服务商）</td>
+<td>设计用例、执行测试分析结果、输出报告、提供修复建议</td>
+</tr>
+<tr>
+<td>第三方（监管&#x2F;审计单位）</td>
+<td>可选参与结果评审，用于合规检查</td>
+</tr>
+</tbody></table>
+<p>应急机制：</p>
+<p>测试期间设立7×24小时应急联络人</p>
+<p>一旦触发真实业务中断或误报，立即暂停测试并启动复盘。</p>
+<h1 id="8-风险控制措施"><a href="#8-风险控制措施" class="headerlink" title="8. 风险控制措施"></a>8. <strong>风险控制措施</strong></h1><p>所有测试均为非破坏性（No-Destructive），禁止删除、篡改、加密数据；</p>
+<p>攻击强度可控，避免引发性能瓶颈；</p>
+<p>测试行为全程留痕，日志同步至甲方SIEM系统；</p>
+<p>签订保密协议（NDA），人员通过政审背景调查。</p>
+<p> 通过以上步骤，组织可以有效地进行安全策略有效性验证，评估其安全控制和措施是否能够抵御现实世界中的威胁和攻击。这种实施验证的方法不仅有助于发现和解决潜在的安全风险和漏洞,还能够提升安全团队的响应能力和整体安全水平。在进行有效性验证时，确保遵循规划和执行的详细步骤，并根据发现的问题制定相应的改进计划，以持续优化安全控制和策略的实施效果。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>企业进行有效性（BAS）的一般方法</div>
+      <div>https://blog.lixey.top/企业进行有效性（BAS）的一般方法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Lixiney</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>November 16, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/CTF-PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" title="CTF-PHP代码审计">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CTF-PHP代码审计</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/STL%E5%BA%93%EF%BC%88%E4%B8%80%EF%BC%89-Vector/" title="STL库（一）--Vector">
+                        <span class="hidden-mobile">STL库（一）--Vector</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
