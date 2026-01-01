@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>XXE-外部实体注入</title>
-    <link href="/XXE-%E5%A4%96%E9%83%A8%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5/"/>
-    <url>/XXE-%E5%A4%96%E9%83%A8%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>PHP文件包含-伪协议</title>
     <link href="/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB-%E4%BC%AA%E5%8D%8F%E8%AE%AE/"/>
     <url>/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB-%E4%BC%AA%E5%8D%8F%E8%AE%AE/</url>
@@ -326,9 +313,9 @@
     
     <tags>
       
-      <tag>代码审计</tag>
-      
       <tag>php</tag>
+      
+      <tag>代码审计</tag>
       
       <tag>反序列化</tag>
       
@@ -553,9 +540,9 @@
       
       <tag>CTF</tag>
       
-      <tag>PHP</tag>
-      
       <tag>代码审计</tag>
+      
+      <tag>PHP</tag>
       
     </tags>
     
