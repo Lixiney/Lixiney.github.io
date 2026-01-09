@@ -1,0 +1,833 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Lixiney">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="知己知彼，百战不殆 whois信息 得到注册人的信息 ​    邮箱 ​    电话号码 ​    姓名   有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破    whois网站 whois.com    站长之家 http:&#x2F;&#x2F;whois.chinaz.com&#x2F;   子域名 谷歌语法 site: 指定域名   在线平台 ip反查域名 htt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web安全-信息收集">
+<meta property="og:url" content="https://blog.lixey.top/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:description" content="知己知彼，百战不殆 whois信息 得到注册人的信息 ​    邮箱 ​    电话号码 ​    姓名   有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破    whois网站 whois.com    站长之家 http:&#x2F;&#x2F;whois.chinaz.com&#x2F;   子域名 谷歌语法 site: 指定域名   在线平台 ip反查域名 htt">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.lixey.top/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/image-20240903184446288.png">
+<meta property="article:published_time" content="2025-08-17T13:25:28.000Z">
+<meta property="article:modified_time" content="2025-08-17T04:06:39.488Z">
+<meta property="article:author" content="Lixiney">
+<meta property="article:tag" content="Web安全">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.lixey.top/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/image-20240903184446288.png">
+  
+  
+  
+  <title>Web安全-信息收集 - Lixiney&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.lixey.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Web安全-信息收集"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-17 21:25" pubdate>
+          August 17, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Web安全-信息收集</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><em>知己知彼，百战不殆</em></p>
+<h2 id="whois信息"><a href="#whois信息" class="headerlink" title="whois信息"></a>whois信息</h2><ul>
+<li><p>得到注册人的信息</p>
+<p>​    邮箱</p>
+<p>​    电话号码</p>
+<p>​    姓名</p>
+</li>
+</ul>
+<p><em>有的站长喜欢拿自己的姓名的拼音设置为密码，这样我们收集到信息之后可以生成一本字典，对网站的后台进行爆破</em></p>
+<table>
+<thead>
+<tr>
+<th>whois网站</th>
+<th>whois.com</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>站长之家</td>
+<td><a target="_blank" rel="noopener" href="http://whois.chinaz.com/">http://whois.chinaz.com/</a></td>
+</tr>
+</tbody></table>
+<h3 id="子域名"><a href="#子域名" class="headerlink" title="子域名"></a>子域名</h3><ul>
+<li>谷歌语法<ul>
+<li>site: 指定域名</li>
+</ul>
+</li>
+<li>在线平台<ul>
+<li>ip反查域名<ul>
+<li><a target="_blank" rel="noopener" href="https://dns.aizhan.com/">https://dns.aizhan.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://reverseip.domaintools.com/">https://reverseip.domaintools.com/</a></li>
+</ul>
+</li>
+<li>微步社区<ul>
+<li><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
+</ul>
+</li>
+<li>站长工具<ul>
+<li><a target="_blank" rel="noopener" href="http://tool.chinaz.com/subdomain/">http://tool.chinaz.com/subdomain/</a></li>
+</ul>
+</li>
+<li>潮汐指纹<ul>
+<li><a target="_blank" rel="noopener" href="http://finger.tidesec.com/">http://finger.tidesec.com/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用工具爆破DNS服务器<ul>
+<li>Python<ul>
+<li>subDomainsBrute<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/lijiejie/subDomainsBrute">https://github.com/lijiejie/subDomainsBrute</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>exe工具<ul>
+<li>Layer.exe</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>网页内蜘蛛爬虫<ul>
+<li>等待后续…..</li>
+</ul>
+</li>
+</ul>
+<h4 id="google-hacking"><a href="#google-hacking" class="headerlink" title="google hacking"></a>google hacking</h4><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>site:</td>
+<td>指定站点，查找子域名</td>
+</tr>
+<tr>
+<td>filetype：</td>
+<td>指定文件的格式</td>
+</tr>
+<tr>
+<td>inurl:</td>
+<td>指定存在于url链接里面的字符串</td>
+</tr>
+<tr>
+<td>intext:</td>
+<td>指定存在于网页之中的内容</td>
+</tr>
+<tr>
+<td>intitle:</td>
+<td>指定存在于网页<title></title>标签之中的内容</td>
+</tr>
+<tr>
+<td>allintitle:</td>
+<td>用法和intitle相似可以指定多个词</td>
+</tr>
+<tr>
+<td>allinurl:</td>
+<td>和inurl相似 可以指定多个词</td>
+</tr>
+<tr>
+<td>link:</td>
+<td>将返回所有包含指向 指定链接 的网页</td>
+</tr>
+<tr>
+<td>related:</td>
+<td>返回和指定网页布局相似的网页</td>
+</tr>
+<tr>
+<td>cache:</td>
+<td>网页快照</td>
+</tr>
+<tr>
+<td>info:</td>
+<td>返回站点的指定信息</td>
+</tr>
+<tr>
+<td>define:</td>
+<td>返回某个词语的定义</td>
+</tr>
+</tbody></table>
+<p>举个栗子</p>
+<h3 id="端口探测"><a href="#端口探测" class="headerlink" title="端口探测"></a>端口探测</h3><p><em>危险端口可以直接爆破入侵，一个ip可能搭建了多个网站，分布在不同的端口</em></p>
+<p>常用的端口探测方法:</p>
+<ul>
+<li>nmap工具				<a target="_blank" rel="noopener" href="https://nmap.org/">https://nmap.org/</a>  </li>
+<li>在线工具        	       <a target="_blank" rel="noopener" href="https://tool.chinaz.com/port/">https://tool.chinaz.com/port/</a>   &#x2F;&#x2F;站长之家</li>
+</ul>
+<h4 id="Nmap使用方法"><a href="#Nmap使用方法" class="headerlink" title="Nmap使用方法"></a>Nmap使用方法</h4><table>
+<thead>
+<tr>
+<th>基础命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p</td>
+<td>指定端口扫描</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示扫描过程</td>
+</tr>
+<tr>
+<td>-Pn</td>
+<td>跳过主机发现过程直接端口扫描 [目标禁Ping时]</td>
+</tr>
+<tr>
+<td>-O</td>
+<td>探测主机操作系统</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>全面扫描包括一切探测</td>
+</tr>
+</tbody></table>
+<ul>
+<li>端口扫描状态<ul>
+<li>Opend    端口开放</li>
+<li>Closed    端口关闭</li>
+<li>Filtered   端口被过滤</li>
+</ul>
+</li>
+<li>利用永恒之蓝直接拿下服务器<ul>
+<li>链接： <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1m5F-7vLC3lpVYOcNcIpLwA">https://pan.baidu.com/s/1m5F-7vLC3lpVYOcNcIpLwA</a> </li>
+<li>提取码：zkaq</li>
+</ul>
+</li>
+</ul>
+<h3 id="旁站"><a href="#旁站" class="headerlink" title="旁站"></a>旁站</h3><p>旁站指的是同一台服务器上还有其他网站，很多时候，有些网站可能不是那么容易入侵。那么，可以查看该网站所在服务器上是否还有其他网站。如果有其他网站，可以先拿下其他网站的webshell，然后再提权拿到服务器的权限，最后自然就可以拿下网站了</p>
+<ul>
+<li>在线工具<ul>
+<li><a target="_blank" rel="noopener" href="http://stool.chinaz.com/same">http://stool.chinaz.com/same</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.webscan.cc/">https://www.webscan.cc/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="C段"><a href="#C段" class="headerlink" title="C段"></a>C段</h3><p>C段指的是同一内网段内的其他服务器，每个IP有ABCD四个段，举个例子，192.168.0.1，A段就是192，B段是168，C段是0，D段是1，而C段嗅探的意思就是拿下它同一C段中的其中一台服务器，也就是说是D段1-255中的一台服务器，然后利用工具嗅探拿下该服务器</p>
+<ul>
+<li>可以使用在线工具，如fofa<ul>
+<li><a target="_blank" rel="noopener" href="https://fofa.info/">https://fofa.info</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="FoFa使用查C段"><a href="#FoFa使用查C段" class="headerlink" title="FoFa使用查C段"></a>FoFa使用查C段</h4><div class="code-wrapper"><pre><code class="hljs abnf"><span class="hljs-attribute">ip</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;[ip地址]/24&quot;</span></code></pre></div>
+
+<p>注：如果单纯的输入 ip&#x3D;”[ip地址]”  则会搜索该ip开放的端口</p>
+<h3 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h3><ul>
+<li>御剑扫描</li>
+<li>君子协议robots.txt  </li>
+<li>大部分网站都会有，防止网络爬虫乱爬用的 *</li>
+</ul>
+<h3 id="指纹识别"><a href="#指纹识别" class="headerlink" title="指纹识别"></a>指纹识别</h3><p><em>再此引入一种概念，有些网站为了节省开发的时间，他们会套用一种模板（CMS），将安装程序放到服务器上直接运行，安装程序会自动将网站搭建好，但是CMS并非绝对安全，相反，一旦模板爆出漏洞，那么使用这种模板搭建的网站都会存在这种漏洞，即所谓的 ”通杀漏洞“</em></p>
+<p>CMS的种类数不胜数，所以指纹识别可以快速分析出该网站是那种CMS</p>
+<ul>
+<li><p>网站源码</p>
+</li>
+<li><p>有些CMS会写在源码里面或者可以从一些标志中判断</p>
+</li>
+<li><p>在线工具</p>
+<ul>
+<li>whatweb <a target="_blank" rel="noopener" href="http://whatweb.bugscaner.com/">http://whatweb.bugscaner.com/</a></li>
+<li>微步社区 <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></li>
+<li>潮汐指纹 <a target="_blank" rel="noopener" href="http://finger.tidesec.com/">http://finger.tidesec.com/</a></li>
+</ul>
+</li>
+<li><p>浏览器插件</p>
+<ul>
+<li>wappalyzer</li>
+</ul>
+</li>
+</ul>
+<h3 id="伪静态"><a href="#伪静态" class="headerlink" title="伪静态"></a>伪静态</h3><p><code>伪静态是相对真实静态来讲的，真实静态会生成一个html或htm后缀的文件，访客能够访问到真实存在的静态页面，而伪静态则没有生成实体静态页面文件，而仅仅是以.html一类的静态页面形式，但其实是用PHP程序动态脚本来处理的，这就是伪静态。</code></p>
+<p>判断是否是伪静态：</p>
+<ul>
+<li><p>在控制台窗口中输入</p>
+<ul>
+<li><div class="code-wrapper"><pre><code class="language-javascript">javascript:alert(document.lastModified)
+</code></pre></div>
+<p>如果网站是个html,但是显示的却是现在的时间，就是伪静态页面</p>
+<p><img src="/Web%E5%AE%89%E5%85%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/image-20240903184446288.png" srcset="/img/loading.gif" lazyload alt="image-20240903184446288"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>内容分发网络（CDN）是指一组分布在不同地理位置的服务器，协同工作以提供互联网内容的快速交付。</p>
+<p>也就是说 CDN 不负责承载任何内容</p>
+<p>比如说百度，只有一个，但是从全国各地来访问，他的ip是不一样的。</p>
+<p>使用多地 ping 或者 国外 ping</p>
+<h4 id="CDN绕过"><a href="#CDN绕过" class="headerlink" title="CDN绕过"></a>CDN绕过</h4><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/0x7e/p/13710650.html">绕过CDN查找真实IP的方法 - 0X7e - 博客园 (cnblogs.com)</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Web%E5%AE%89%E5%85%A8/" class="print-no-link">#Web安全</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Web安全-信息收集</div>
+      <div>https://blog.lixey.top/Web安全-信息收集/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Lixiney</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 17, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8CWAF%E7%BB%95%E8%BF%87/" title="命令执行WAF绕过">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">命令执行WAF绕过</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/XSS-labs%E9%80%9A%E5%85%B3%E6%96%87%E6%A1%A3/" title="XSS-labs通关文档">
+                        <span class="hidden-mobile">XSS-labs通关文档</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

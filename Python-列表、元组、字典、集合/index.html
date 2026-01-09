@@ -1,0 +1,1109 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Lixiney">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="数据结构 序列类型：列表、元组、字符串 映射类型：字典 集合类型：集合、冻结集合  列表 (List) 列表是Python中最灵活的有序的集合类型  列表的基本特性 有序的集合，元素按照插入的顺序排列 可变，可以修改内容 可以包含任意类型的对象 , 可以嵌套使用 使用方括号[]，元素之间用逗号分隔  eg : list &#x3D; [123,&#x27;test&#x27;,1.2,1e10,[1,2,3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-列表、元组、字典、集合">
+<meta property="og:url" content="https://blog.lixey.top/Python-%E5%88%97%E8%A1%A8%E3%80%81%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E3%80%81%E9%9B%86%E5%90%88/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:description" content="数据结构 序列类型：列表、元组、字符串 映射类型：字典 集合类型：集合、冻结集合  列表 (List) 列表是Python中最灵活的有序的集合类型  列表的基本特性 有序的集合，元素按照插入的顺序排列 可变，可以修改内容 可以包含任意类型的对象 , 可以嵌套使用 使用方括号[]，元素之间用逗号分隔  eg : list &#x3D; [123,&#x27;test&#x27;,1.2,1e10,[1,2,3">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-29T04:38:57.000Z">
+<meta property="article:modified_time" content="2025-06-29T06:09:29.963Z">
+<meta property="article:author" content="Lixiney">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="开发">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Python-列表、元组、字典、集合 - Lixiney&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.lixey.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Python-列表、元组、字典、集合"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-29 12:38" pubdate>
+          June 29, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Python-列表、元组、字典、集合</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><ul>
+<li>序列类型：列表、元组、字符串</li>
+<li>映射类型：字典</li>
+<li>集合类型：集合、冻结集合</li>
+</ul>
+<h1 id="列表-List"><a href="#列表-List" class="headerlink" title="列表 (List)"></a>列表 (List)</h1><blockquote>
+<p>列表是Python中最灵活的有序的集合类型</p>
+</blockquote>
+<h2 id="列表的基本特性"><a href="#列表的基本特性" class="headerlink" title="列表的基本特性"></a>列表的基本特性</h2><ul>
+<li>有序的集合，元素按照插入的顺序排列</li>
+<li>可变，可以修改内容</li>
+<li>可以包含任意类型的对象 , 可以嵌套使用</li>
+<li>使用方括号[]，元素之间用逗号分隔</li>
+</ul>
+<p>eg :</p>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">123</span>,<span class="hljs-string">&#x27;test&#x27;</span>,<span class="hljs-number">1.2</span>,<span class="hljs-number">1e10</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]]</code></pre></div>
+
+
+
+<h2 id="底层实现"><a href="#底层实现" class="headerlink" title="底层实现"></a>底层实现</h2><blockquote>
+<p>列表实际上是一个动态数组，而不是链表</p>
+<p>列表在内存中分配的空间通常比实际需要的多，这是为了优化追加的操作</p>
+<p>平均世间复杂度为o(1)</p>
+<p>列表元素在内存中不连续存储，列表只存储指向各个元素的指针</p>
+</blockquote>
+<h2 id="创建列表"><a href="#创建列表" class="headerlink" title="创建列表"></a>创建列表</h2><ul>
+<li>普通方式</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = []
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+	<span class="hljs-built_in">list</span>.append(i)</code></pre></div>
+
+<ul>
+<li>推导式</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]
+<span class="hljs-comment">##带有条件的情况</span>
+<span class="hljs-built_in">list</span> = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]</code></pre></div>
+
+
+
+<h2 id="列表的输出"><a href="#列表的输出" class="headerlink" title="列表的输出"></a>列表的输出</h2><blockquote>
+<p>与字符串的索引一样，列表索引从0开始，第二个索引为1，最后一个元素的索引也可以是-1</p>
+</blockquote>
+<ul>
+<li>直接输出</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)</code></pre></div>
+
+<ul>
+<li>访问列表中的值</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>])</code></pre></div>
+
+<ul>
+<li>截取字符串</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>])</code></pre></div>
+
+
+
+<h2 id="更新列表"><a href="#更新列表" class="headerlink" title="更新列表"></a>更新列表</h2><blockquote>
+<p>使用 append() 方法</p>
+</blockquote>
+<p>eg：</p>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
+<span class="hljs-built_in">list</span>.append(<span class="hljs-number">7</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)</code></pre></div>
+
+
+
+<h2 id="删除列表元素"><a href="#删除列表元素" class="headerlink" title="删除列表元素"></a>删除列表元素</h2><blockquote>
+<ol>
+<li>使用del语句</li>
+<li>使用 remove() 方法</li>
+<li>使用 pop() 方法</li>
+</ol>
+</blockquote>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">list</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
+<span class="hljs-built_in">list</span>.pop(<span class="hljs-number">1</span>)
+<span class="hljs-keyword">del</span> <span class="hljs-built_in">list</span>[<span class="hljs-number">1</span>]
+<span class="hljs-built_in">list</span>.remove(<span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)</code></pre></div>
+
+
+
+<h2 id="列表脚本操作符"><a href="#列表脚本操作符" class="headerlink" title="列表脚本操作符"></a>列表脚本操作符</h2><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len([1,2,3])</td>
+<td>长度</td>
+</tr>
+<tr>
+<td>[1,2,3]+[4,5,6]</td>
+<td>组合</td>
+</tr>
+<tr>
+<td>[1]*4</td>
+<td>重复</td>
+</tr>
+<tr>
+<td>3 in [1,2,3]</td>
+<td>元素是否存在列表中</td>
+</tr>
+<tr>
+<td>for x in [1,2,3]:print(x,end&#x3D;” “)</td>
+<td>迭代</td>
+</tr>
+</tbody></table>
+<h2 id="列表常用函数-方法"><a href="#列表常用函数-方法" class="headerlink" title="列表常用函数&amp;方法"></a>列表常用函数&amp;方法</h2><ul>
+<li>python 包含一下函数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len()</td>
+<td>列表元素个数</td>
+</tr>
+<tr>
+<td>max()</td>
+<td>返回最大值</td>
+</tr>
+<tr>
+<td>min()</td>
+<td>返回最小值</td>
+</tr>
+<tr>
+<td>list(seq)</td>
+<td>将元组转换为列表</td>
+</tr>
+</tbody></table>
+<ul>
+<li>python 包含以下方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>list.append()</td>
+<td>在列表末尾追加新的对象</td>
+</tr>
+<tr>
+<td>list.count()</td>
+<td>统计某个元素在列表中出现的次数</td>
+</tr>
+<tr>
+<td>list.extend()</td>
+<td>在列表末尾一次性追加另一个序列中的多个值</td>
+</tr>
+<tr>
+<td>list.index()</td>
+<td>从列表中找出某个值第一个匹配项的索引位置</td>
+</tr>
+<tr>
+<td>list.insert(index, obj)</td>
+<td>将对象插入列表</td>
+</tr>
+<tr>
+<td>list.pop()</td>
+<td>移除列表中第一个元素（默认最后一个元素），并且返回该元素的值</td>
+</tr>
+<tr>
+<td>list.remove()</td>
+<td>移除列表中某个值的第一个匹配项</td>
+</tr>
+<tr>
+<td>list.reverse()</td>
+<td>反向列表中的元素</td>
+</tr>
+<tr>
+<td>list.sort(key&#x3D;None,reverse&#x3D;False)</td>
+<td>对列表进行排序</td>
+</tr>
+<tr>
+<td>list.clear()</td>
+<td>清空列表</td>
+</tr>
+<tr>
+<td>list.copy()</td>
+<td>复制</td>
+</tr>
+</tbody></table>
+<h1 id="元组（Tuple）"><a href="#元组（Tuple）" class="headerlink" title="元组（Tuple）"></a>元组（Tuple）</h1><blockquote>
+<p>元组与列表类似，不同之处在于元组的元素不能修改</p>
+<p>元组使用 () 小括号，列表使用方括号 []</p>
+<p>元组创建很简单，只需要在括号中添加元素，并使用逗号隔开</p>
+</blockquote>
+<p>eg：</p>
+<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)</code></pre></div>
+
+<p>创建空元组</p>
+<div class="code-wrapper"><pre><code class="hljs python">tup1 = ()</code></pre></div>
+
+<blockquote>
+<p>注意：当元组中只包含一个元素时，需要在元素后面加逗号. 否则括号会被当做运算符使用</p>
+</blockquote>
+<h2 id="访问元组"><a href="#访问元组" class="headerlink" title="访问元组"></a>访问元组</h2><p>和列表一样，元组可以使用下标索引来访问元组中的值</p>
+<p>eg：</p>
+<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)
+<span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tup1[0]: &quot;</span>, tup1[<span class="hljs-number">0</span>])</code></pre></div>
+
+
+
+<h2 id="修改元组"><a href="#修改元组" class="headerlink" title="修改元组"></a>修改元组</h2><blockquote>
+<p>元组中的元素是不允许被修改的，但是可以对元组进行连接组合</p>
+</blockquote>
+<p>eg：</p>
+<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
+tup2 = (<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)
+
+<span class="hljs-comment">#tup1[0]=0  这种操作是非法的</span>
+
+tup3 = tup1 + tup2</code></pre></div>
+
+
+
+<h2 id="删除元组"><a href="#删除元组" class="headerlink" title="删除元组"></a>删除元组</h2><blockquote>
+<p>元组中的元素值不允许被删除，但是可以使用del 语句来删除整个元组</p>
+</blockquote>
+<p>eg：</p>
+<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;Google&quot;</span>,<span class="hljs-string">&quot;baidu&quot;</span>,<span class="hljs-string">&quot;github&quot;</span>,<span class="hljs-string">&quot;bing&quot;</span>)
+<span class="hljs-keyword">del</span> tup1</code></pre></div>
+
+
+
+<h2 id="元组的运算"><a href="#元组的运算" class="headerlink" title="元组的运算"></a>元组的运算</h2><blockquote>
+<p>与字符串一样，元组之间可以使用 +、+&#x3D;、*号进行运算</p>
+</blockquote>
+<p>eg： 复制</p>
+<div class="code-wrapper"><pre><code class="hljs python">tup1 = (<span class="hljs-string">&quot;asd&quot;</span>,)*<span class="hljs-number">4</span></code></pre></div>
+
+
+
+<h2 id="元组的内置函数"><a href="#元组的内置函数" class="headerlink" title="元组的内置函数"></a>元组的内置函数</h2><blockquote>
+<p>基本和列表相同，不再赘述</p>
+</blockquote>
+<p>计算个数、最大值、最小值</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tuple(iterable)</td>
+<td>将可迭代系列转换为元组</td>
+</tr>
+</tbody></table>
+<h1 id="字典（Dict）"><a href="#字典（Dict）" class="headerlink" title="字典（Dict）"></a>字典（Dict）</h1><blockquote>
+<p>字典是另一种可变容器模型，且可存储任意类型对象</p>
+<p>字典的每个键值 key&#x3D;&gt;value 用冒号:分割，每个对之间用逗号分隔，整个字典包括在花括号中</p>
+</blockquote>
+<div class="code-wrapper"><pre><code class="hljs python">d = &#123;key1 : value1, key2 : value2, key3 : value3 &#125;</code></pre></div>
+
+<blockquote>
+<p>注意：dict作为python的关键字和内置函数，变量名不建议命名为dict</p>
+</blockquote>
+<p>键 必须是唯一的，但值不必</p>
+<p>值可以取任何数据类型，但键必须是不可变的，如字符串，数字</p>
+<div class="code-wrapper"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;runoob&#x27;</span>, <span class="hljs-string">&#x27;likes&#x27;</span>: <span class="hljs-number">123</span>, <span class="hljs-string">&#x27;url&#x27;</span>: <span class="hljs-string">&#x27;www.runoob.com&#x27;</span>&#125;
+</code></pre></div>
+
+<h2 id="创建空字典"><a href="#创建空字典" class="headerlink" title="创建空字典"></a>创建空字典</h2><ul>
+<li>使用花括号 {} 创建空字典</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python">emptyDict = &#123;&#125;</code></pre></div>
+
+<ul>
+<li>使用内置函数 dict() 创建空字典</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python">emptyDict = <span class="hljs-built_in">dict</span>()</code></pre></div>
+
+
+
+<h2 id="访问字典中的值"><a href="#访问字典中的值" class="headerlink" title="访问字典中的值"></a>访问字典中的值</h2><div class="code-wrapper"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;Name&#x27;</span>: <span class="hljs-string">&#x27;Runoob&#x27;</span>, <span class="hljs-string">&#x27;Age&#x27;</span>: <span class="hljs-number">7</span>, <span class="hljs-string">&#x27;Class&#x27;</span>: <span class="hljs-string">&#x27;First&#x27;</span>&#125;
+ 
+<span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tinydict[&#x27;Name&#x27;]: &quot;</span>, tinydict[<span class="hljs-string">&#x27;Name&#x27;</span>])
+<span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;tinydict[&#x27;Age&#x27;]: &quot;</span>, tinydict[<span class="hljs-string">&#x27;Age&#x27;</span>])</code></pre></div>
+
+
+
+<h2 id="修改字典"><a href="#修改字典" class="headerlink" title="修改字典"></a>修改字典</h2><div class="code-wrapper"><pre><code class="hljs python">tinydict = &#123;<span class="hljs-string">&#x27;Name&#x27;</span>: <span class="hljs-string">&#x27;Runoob&#x27;</span>, <span class="hljs-string">&#x27;Age&#x27;</span>: <span class="hljs-number">7</span>, <span class="hljs-string">&#x27;Class&#x27;</span>: <span class="hljs-string">&#x27;First&#x27;</span>&#125;
+ 
+tinydict[<span class="hljs-string">&#x27;Age&#x27;</span>] = <span class="hljs-number">8</span>               <span class="hljs-comment"># 更新 Age</span>
+tinydict[<span class="hljs-string">&#x27;School&#x27;</span>] = <span class="hljs-string">&quot;菜鸟教程&quot;</span>  <span class="hljs-comment"># 添加信息</span></code></pre></div>
+
+
+
+<h2 id="删除字典中的元素"><a href="#删除字典中的元素" class="headerlink" title="删除字典中的元素"></a>删除字典中的元素</h2><ul>
+<li>使用del 语句删除字典</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 删除键‘Name’</span>
+<span class="hljs-keyword">del</span> qweDict[<span class="hljs-string">&#x27;Name&#x27;</span>]
+<span class="hljs-comment"># 删除整个字典</span>
+<span class="hljs-keyword">del</span> qweDict</code></pre></div>
+
+<blockquote>
+<p>del 删除后整个字典不再存在</p>
+</blockquote>
+<ul>
+<li>清空字典</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python">qweDict.clear()</code></pre></div>
+
+
+
+<h2 id="字典键的特性"><a href="#字典键的特性" class="headerlink" title="字典键的特性"></a>字典键的特性</h2><ul>
+<li>不允许同一个键出现两次，创建时同一个键如果被赋值两次，后一个值会被记住</li>
+<li>键必须不可变，所以可以用数字，字符串或元组充当，而列表就不行</li>
+</ul>
+<h2 id="字典内置函数-方法"><a href="#字典内置函数-方法" class="headerlink" title="字典内置函数&amp;方法"></a>字典内置函数&amp;方法</h2><ul>
+<li>python字典包含以下内置函数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len()</td>
+<td>计算元素个数</td>
+</tr>
+<tr>
+<td>str()</td>
+<td>输出字典</td>
+</tr>
+<tr>
+<td>type()</td>
+<td>返回输入的变量类型，如果变量是字典，就返回字典类型</td>
+</tr>
+</tbody></table>
+<ul>
+<li>python字典包含以下内置方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dict.clear()</td>
+<td>删除字典内所有元素</td>
+</tr>
+<tr>
+<td>dict.copy()</td>
+<td>返回一个字典的浅复制</td>
+</tr>
+<tr>
+<td>dict.formkeys()</td>
+<td>创建一个新的字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值</td>
+</tr>
+<tr>
+<td>dict.get(key, default&#x3D;None)</td>
+<td>返回执行键的值，如果键不在字典中返回default 设置的默认值</td>
+</tr>
+<tr>
+<td>key in dict</td>
+<td>如果键在字典返回true，否返回false</td>
+</tr>
+<tr>
+<td>dict.items()</td>
+<td>以列表返回一个试图对象</td>
+</tr>
+<tr>
+<td>dict.keys()</td>
+<td>返回一个试图对象</td>
+</tr>
+<tr>
+<td>dict.setdefault(key,dafault&#x3D;None)</td>
+<td>和get()类似，但如果键不在字典中，将回添加键并将值设为default</td>
+</tr>
+<tr>
+<td>dict.update(dict2)</td>
+<td>把字典dict2的键值对更新到dict中</td>
+</tr>
+<tr>
+<td>dict.values()</td>
+<td>返回一个试图对象</td>
+</tr>
+<tr>
+<td>dict.pop(key)</td>
+<td>删除字典key所对应的值，并返回被删除的值</td>
+</tr>
+<tr>
+<td>dict.popitem()</td>
+<td>返回并删除字典中最后一对键和值</td>
+</tr>
+</tbody></table>
+<h1 id="集合（Set）"><a href="#集合（Set）" class="headerlink" title="集合（Set）"></a>集合（Set）</h1><blockquote>
+<p>集合是一个无序的不重复的元素序列</p>
+<p>集合中的元素不会重复，并且可以进行交集，并集，差集等常见的集合操作</p>
+<p>可以使用花括号{}创建集合，元素之间用逗号，分隔，或者也可以使用set()函数创建</p>
+</blockquote>
+<p>eg：</p>
+<div class="code-wrapper"><pre><code class="hljs python">set1 = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;
+set2 = <span class="hljs-built_in">set</span>([<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>])</code></pre></div>
+
+<blockquote>
+<p>注意：创建空集合时必须用set()函数，因为 {} 用来创建一个空字典</p>
+</blockquote>
+<h2 id="集合内置方法整合表"><a href="#集合内置方法整合表" class="headerlink" title="集合内置方法整合表"></a>集合内置方法整合表</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>add()</td>
+<td>为集合添加元素</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>移除集合中的所有元素</td>
+</tr>
+<tr>
+<td>copy()</td>
+<td>拷贝多个集合的差集</td>
+</tr>
+<tr>
+<td>difference()</td>
+<td>返回多个集合的差集</td>
+</tr>
+<tr>
+<td>difference_update()</td>
+<td>移除集合中的元素，该元素在指定的集合中也存在</td>
+</tr>
+<tr>
+<td>discard()</td>
+<td>删除集合中指定的元素</td>
+</tr>
+<tr>
+<td>intersection()</td>
+<td>返回集合的交集</td>
+</tr>
+<tr>
+<td>intersection_update()</td>
+<td>返回集合的交集</td>
+</tr>
+<tr>
+<td>isdisjoint()</td>
+<td>判断两个集合是否包含相同的元素，如果没有返回 True，否则返回False</td>
+</tr>
+<tr>
+<td>issubset()</td>
+<td>判断指定集合是否为该方法参数集合的子集</td>
+</tr>
+<tr>
+<td>issuperset()</td>
+<td>判断该方法的参数集合是否为指定集合的子集</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>随机移除元素</td>
+</tr>
+<tr>
+<td>remove()</td>
+<td>移除指定元素</td>
+</tr>
+<tr>
+<td>symmetric_difference()</td>
+<td>返回两个集合中不重复的元素集合</td>
+</tr>
+<tr>
+<td>sysmmetric_difference_update()</td>
+<td>移除当前集合中在另外一个指定集合中相同的元素，并将另外一个指定集合中不同的元素插入到当前集合中</td>
+</tr>
+<tr>
+<td>union()</td>
+<td>返回两个集合的并集</td>
+</tr>
+<tr>
+<td>update()</td>
+<td>给集合添加元素</td>
+</tr>
+<tr>
+<td>len()</td>
+<td>计算集合元素的个数</td>
+</tr>
+</tbody></table>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Python/" class="print-no-link">#Python</a>
+      
+        <a href="/tags/%E5%BC%80%E5%8F%91/" class="print-no-link">#开发</a>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="print-no-link">#数据结构</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Python-列表、元组、字典、集合</div>
+      <div>https://blog.lixey.top/Python-列表、元组、字典、集合/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Lixiney</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>June 29, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Python-PyMySQL/" title="Python-PyMySQL">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python-PyMySQL</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Python%E5%BC%80%E5%8F%91-Flask%E6%A1%86%E6%9E%B6/" title="Python开发-Flask框架">
+                        <span class="hidden-mobile">Python开发-Flask框架</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

