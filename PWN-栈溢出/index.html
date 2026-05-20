@@ -21,36 +21,36 @@
   
     <meta name="description" content="环境配置 Python3 pip gdb-pwndbg 插件 pwntools IDA checksec  checksec 安装以及基本环境 使用 apt 安装的最新版的用不习惯，如果安装了pwntools，里面会自带checksec工具  sudo apt install checksec  用法  Arch  程序架构信息，判断该程序是32位还是64位程序，编写exp时选择 p32() 还是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PWN 入门基础笔记">
-<meta property="og:url" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="PWN 栈溢出">
+<meta property="og:url" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/index.html">
 <meta property="og:site_name" content="Lixiney&#39;s Blog">
 <meta property="og:description" content="环境配置 Python3 pip gdb-pwndbg 插件 pwntools IDA checksec  checksec 安装以及基本环境 使用 apt 安装的最新版的用不习惯，如果安装了pwntools，里面会自带checksec工具  sudo apt install checksec  用法  Arch  程序架构信息，判断该程序是32位还是64位程序，编写exp时选择 p32() 还是">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251005163822224.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008093049662.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008100208940.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008100722937.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008101019692.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008101221201.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013182957343.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013183541427.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013194932319.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013195047001.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013195802033.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013200151394.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013200743468.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013201019052.png">
-<meta property="og:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013201509913.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251005163822224.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008093049662.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008100208940.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008100722937.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008101019692.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008101221201.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013182957343.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013183541427.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013194932319.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013195047001.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013195802033.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013200151394.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013200743468.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013201019052.png">
+<meta property="og:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013201509913.png">
 <meta property="article:published_time" content="2025-10-05T08:22:17.000Z">
-<meta property="article:modified_time" content="2025-10-24T14:56:08.029Z">
+<meta property="article:modified_time" content="2026-05-19T14:31:24.803Z">
 <meta property="article:author" content="Lixiney">
 <meta property="article:tag" content="PWN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://blog.lixey.top/PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251005163822224.png">
+<meta name="twitter:image" content="https://blog.lixey.top/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251005163822224.png">
   
   
   
-  <title>PWN 入门基础笔记 - Lixiney&#39;s Blog</title>
+  <title>PWN 栈溢出 - Lixiney&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,7 +193,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PWN 入门基础笔记"></span>
+            <span id="subtitle" data-typed-text="PWN 栈溢出"></span>
           
         </div>
 
@@ -264,7 +264,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">PWN 入门基础笔记</h1>
+            <h1 id="seo-header">PWN 栈溢出</h1>
             
             
               <div class="markdown-body">
@@ -282,7 +282,7 @@
 </blockquote>
 <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install checksec</code></pre></div>
 
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251005163822224.png" srcset="/img/loading.gif" lazyload alt="image-20251005163822224"></p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251005163822224.png" srcset="/img/loading.gif" lazyload alt="image-20251005163822224"></p>
 <ul>
 <li>Arch</li>
 </ul>
@@ -364,7 +364,7 @@ io.sendline(p64(<span class="hljs-string">&#x27;&#x27;</span>))</code></pre></di
 <h1 id="栈溢出-（Stack-Overflow）"><a href="#栈溢出-（Stack-Overflow）" class="headerlink" title="栈溢出 （Stack Overflow）"></a>栈溢出 （Stack Overflow）</h1><blockquote>
 <p>一种后进先出的数据结构</p>
 </blockquote>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008093049662.png" srcset="/img/loading.gif" lazyload alt="image-20251008093049662"></p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008093049662.png" srcset="/img/loading.gif" lazyload alt="image-20251008093049662"></p>
 <p>栈是计算机内存中的一块特殊区域，用于存储<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8&spm=1001.2101.3001.7020">函数调用</a>时的局部变量、函数参数、返回地址等信息。栈遵循后进先出（LIFO）的原则，即最后进入栈的数据最先被取出。</p>
 <p>栈是从高地址向低地址延伸的。每个函数的每次调用，都有它自己独立的一个栈帧，这个栈帧中维持着所需要的各种信息。寄存器ebp指向当前的栈帧的底部（高地址），寄存器esp指向当前的栈帧的顶部（低地址）</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>栈溢出指的是在程序向栈中写入数据时，程序没有限制输入数据的大小，写入的数据量超过了栈的剩余空间，导致数据溢出到相邻的内存区域，覆盖了原本不应被修改的数据，如函数的返回地址，所以攻击者可以构造恶意代码来 getshell</p>
@@ -375,31 +375,31 @@ io.sendline(p64(<span class="hljs-string">&#x27;&#x27;</span>))</code></pre></di
 <h3 id="信息搜集阶段"><a href="#信息搜集阶段" class="headerlink" title="信息搜集阶段"></a>信息搜集阶段</h3><ol>
 <li>拿到程序之后先检查一下程序的位数，看看用 ida64 还是 ida32</li>
 </ol>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008100208940.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008100208940.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="2">
 <li>checksec 检查一下程序的保护状态，可以看到 Stack 栈溢出保护没有开，所以有很大可能是栈溢出</li>
 </ol>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008100722937.png" srcset="/img/loading.gif" lazyload alt="image-20251008100722937"></p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008100722937.png" srcset="/img/loading.gif" lazyload alt="image-20251008100722937"></p>
 <h3 id="在-ida-中分析程序"><a href="#在-ida-中分析程序" class="headerlink" title="在 ida 中分析程序"></a>在 ida 中分析程序</h3><ol>
 <li>使用 ida64 打开程序</li>
 </ol>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008101019692.png" srcset="/img/loading.gif" lazyload alt="image-20251008101019692"></p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008101019692.png" srcset="/img/loading.gif" lazyload alt="image-20251008101019692"></p>
 <ol start="2">
 <li>在左侧的栏内找到 main 函数，双击之后按 Tab 键可以查看反编译后的伪代码</li>
 </ol>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251008101221201.png" srcset="/img/loading.gif" lazyload alt="image-20251008101221201"></p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251008101221201.png" srcset="/img/loading.gif" lazyload alt="image-20251008101221201"></p>
 <ol start="3">
 <li>可以看到有一个 gets 函数，基本上确定是栈溢出攻击了。	</li>
 <li>双击变量 s 查看栈帧，可以推断出来需要填充的垃圾数据的长度  0xF + ebp [如果是 64 位程序就是 <code>8</code>，如果是32位程序就是 <code>4</code>]</li>
 </ol>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013182957343.png" srcset="/img/loading.gif" lazyload alt="image-20251013182957343">	</p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013182957343.png" srcset="/img/loading.gif" lazyload alt="image-20251013182957343">	</p>
 <h3 id="确定垃圾字符的长度"><a href="#确定垃圾字符的长度" class="headerlink" title="确定垃圾字符的长度"></a>确定垃圾字符的长度</h3><blockquote>
 <p>在上一步操作中已经推断出来了，但是还有另外几种方法，在此记录一下，具体以 gdb 调试的结果为准</p>
 </blockquote>
 <ol>
 <li>使用 <code>堆栈指针</code> ， 在 <code>选项 - 常规 </code> 中 勾选 <code>堆栈指针</code></li>
 </ol>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013183541427.png" srcset="/img/loading.gif" lazyload alt="image-20251013183541427"></p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013183541427.png" srcset="/img/loading.gif" lazyload alt="image-20251013183541427"></p>
 <p>可以确定长度 为 <code>0x18</code></p>
 <ol start="2">
 <li><p>使用 pwngdb 调试</p>
@@ -408,8 +408,8 @@ io.sendline(p64(<span class="hljs-string">&#x27;&#x27;</span>))</code></pre></di
 <li><code>starti</code> 执行 <code> disass main</code> 查看 main 函数的反汇编代码，<code>b *[16进制地址]</code> 在输入数据的地方打断点</li>
 <li><code>run</code> 运行程序 <code>n</code> 输入输入 <code>AAAAAAA</code> ，在 0x7fffffffdd61 处输入 ，在 0x7fffffffdd78 之后跳出</li>
 </ol>
-<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013194932319.png" srcset="/img/loading.gif" lazyload alt="image-20251013194932319"></p>
-<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013195047001.png" srcset="/img/loading.gif" lazyload alt="image-20251013195047001"></p>
+<p> <img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013194932319.png" srcset="/img/loading.gif" lazyload alt="image-20251013194932319"></p>
+<p> <img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013195047001.png" srcset="/img/loading.gif" lazyload alt="image-20251013195047001"></p>
 <ol start="4">
 <li><code>p/d 地址1-地址2</code>  计算一下要填充垃圾字符的位数，得到 长度为 <code>23</code> 是个不是 8 的倍数，同时又是一个64位的程序，所以要考虑 <code>堆栈平衡</code> 的问题</li>
 </ol>
@@ -418,26 +418,26 @@ io.sendline(p64(<span class="hljs-string">&#x27;&#x27;</span>))</code></pre></di
 <ol>
 <li><code>msf-pattern_create -l 400</code> 生成一段长度为 400 的垃圾字符</li>
 </ol>
-<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013195802033.png" srcset="/img/loading.gif" lazyload alt="image-20251013195802033"></p>
+<p> <img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013195802033.png" srcset="/img/loading.gif" lazyload alt="image-20251013195802033"></p>
 <ol start="2">
 <li>依旧是进入 <code>pwngdb</code> 调试，打完断点之后在输入数据的地方将这个长度为 400 的字符串传进去，寻找 <code>RBP</code></li>
 </ol>
-<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013200151394.png" srcset="/img/loading.gif" lazyload alt="image-20251013200151394"></p>
+<p> <img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013200151394.png" srcset="/img/loading.gif" lazyload alt="image-20251013200151394"></p>
 <ol start="3">
 <li><code>RBP</code> 只能截取到 <code>a6Aa</code> 说明被撑爆了，只需要看看 <code>a6Aa</code> 这个字符串在刚刚生成的字符串的位置即可</li>
 <li><code>msf-pattern_offset -q a6Aa</code> 算出来<code>19</code> 再加上 <code>a6Aa</code> 本身的长度<code>4</code> ，就是 <code>23</code></li>
 </ol>
-<p> <img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013200743468.png" srcset="/img/loading.gif" lazyload alt="image-20251013200743468"></p>
+<p> <img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013200743468.png" srcset="/img/loading.gif" lazyload alt="image-20251013200743468"></p>
 </li>
 </ol>
 <h3 id="找到可以利用的shell函数地址"><a href="#找到可以利用的shell函数地址" class="headerlink" title="找到可以利用的shell函数地址"></a>找到可以利用的shell函数地址</h3><ol>
 <li>在 IDA 中 按 <code>SHIFT + F12</code> 可以查看可打印字符</li>
 </ol>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013201019052.png" srcset="/img/loading.gif" lazyload alt="image-20251013201019052"></p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013201019052.png" srcset="/img/loading.gif" lazyload alt="image-20251013201019052"></p>
 <ol start="2">
 <li>双击之后 按<code>CTRL + X</code> 交叉引用一下，拿到地址为<code>0x40118A</code></li>
 </ol>
-<p><img src="/./PWN-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20251013201509913.png" srcset="/img/loading.gif" lazyload alt="image-20251013201509913"></p>
+<p><img src="/./PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/image-20251013201509913.png" srcset="/img/loading.gif" lazyload alt="image-20251013201509913"></p>
 <h3 id="编写-EXP"><a href="#编写-EXP" class="headerlink" title="编写 EXP"></a>编写 EXP</h3><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *
 
 io = remote(<span class="hljs-string">&quot;node5.buuoj.cn&quot;</span>,<span class="hljs-number">29582</span>)
@@ -529,8 +529,8 @@ io.interactive()
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PWN 入门基础笔记</div>
-      <div>https://blog.lixey.top/PWN-入门基础笔记/</div>
+      <div>PWN 栈溢出</div>
+      <div>https://blog.lixey.top/PWN-栈溢出/</div>
     </div>
     <div class="license-meta">
       
