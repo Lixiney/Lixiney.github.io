@@ -214,7 +214,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/PWN-%E6%A0%88%E6%BA%A2%E5%87%BA/" target="_self">
         <div>
-          环境配置 Python3 pip gdb-pwndbg 插件 pwntools IDA checksec  checksec 安装以及基本环境 使用 apt 安装的最新版的用不习惯，如果安装了pwntools，里面会自带checksec工具  sudo apt install checksec  用法  Arch  程序架构信息，判断该程序是32位还是64位程序，编写exp时选择 p32() 还是
+          环境配置 Python3 pip gdb-pwndbg 插件 pwntools IDA checksec  checksec 安装以及基本环境 使用 apt 安装的最新版的用不习惯，如果安装了pwntools，里面会自带checksec工具  sudo apt install checksec  用法 checksec --file=[文件名]  或者 pwn checksec [文件名]
         </div>
       </a>
 
@@ -275,7 +275,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/PWN-%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6%EF%BC%89/" target="_self">
         <div>
-          使用 pwn checksec ./[文件名]   Arch程序架构信息，判断是32位还是64位程序，决定exp代码中使用 p32() 还是 p64() RELRO RELRO 是一种可选的保护机制，主要是通过限制保护全局偏移表（GOT）和过程连接表（PLT）来防止针对这些结构的攻击
+          使用 pwn checksec ./[文件名]   Arch程序架构信息，判断该程序是32位还是64位程序，编写exp时选择 p32() 还是 p64() RELRORelocation Read-Only (RELRO) 此项技术主要针对 GOT 改写的攻击方式。它分为两种，Partial RELRO 和 Full RELRO。 Stack栈溢出保护，如果看到这个选项没有开启则可以尝试栈溢出攻
         </div>
       </a>
 
