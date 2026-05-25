@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>PWN-基础（汇编基础）</title>
+    <link href="/PWN-%E5%9F%BA%E7%A1%80%EF%BC%88%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%EF%BC%89/"/>
+    <url>/PWN-%E5%9F%BA%E7%A1%80%EF%BC%88%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>以 NASM 为主 </p></blockquote><h1 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h1><table><thead><tr><th>段（section）</th><th>作用</th><th>特点</th></tr></thead><tbody><tr><td>.data</td><td>存放已初始化的全局变量和常量</td><td>编译时确定大小和内容，存入可执行文件</td></tr><tr><td>.bss</td><td>存放未初始化的全局变量</td><td>只在运行时分配空间，不占用可执行文件的大小</td></tr><tr><td>.text</td><td>存放可执行的机器指令</td><td>只读，包含程序的全部逻辑代码</td></tr></tbody></table><p><strong>注</strong> 如果没有数据，可以省略 .bss 和 .data 段</p><h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><table><thead><tr><th align="left">寄存器</th><th align="left">调用约定中的用途</th></tr></thead><tbody><tr><td align="left">EAX</td><td align="left">存放函数返回值</td></tr><tr><td align="left">ECX</td><td align="left">计数器（循环计数）</td></tr><tr><td align="left">EDX</td><td align="left">存放除法的高位结果、扩展 EAX</td></tr><tr><td align="left">EBX、ESI、EDI、EBP</td><td align="left">被调用函数必须保存和恢复（callee-saved）</td></tr><tr><td align="left">EAX、ECX、EDX</td><td align="left">调用者负责保存（caller-saved）</td></tr></tbody></table><h1 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h1><div class="code-wrapper"><pre><code class="hljs assembly">section .data    msg db &quot;Welcome_to_CTFshow_PWN&quot;, 0section .text    global _start_start:; 立即寻址方式    mov eax, 11         ; 将11赋值给eax    add eax, 114504     ; eax加上114504    sub eax, 1          ; eax减去1; 寄存器寻址方式    mov ebx, 0x36d      ; 将0x36d赋值给ebx    mov edx, ebx        ; 将ebx的值赋值给edx; 直接寻址方式    mov ecx, msg      ; 将msg的地址赋值给ecx; 寄存器间接寻址方式    mov esi, msg        ; 将msg的地址赋值给esi    mov eax, [esi]      ; 将esi所指向的地址的值赋值给eax; 寄存器相对寻址方式    mov ecx, msg        ; 将msg的地址赋值给ecx    add ecx, 4          ; 将ecx加上4    mov eax, [ecx]      ; 将ecx所指向的地址的值赋值给eax; 基址变址寻址方式    mov ecx, msg        ; 将msg的地址赋值给ecx    mov edx, 2          ; 将2赋值给edx    mov eax, [ecx + edx*2]  ; 将ecx+edx*2所指向的地址的值赋值给eax; 相对基址变址寻址方式    mov ecx, msg        ; 将msg的地址赋值给ecx    mov edx, 1          ; 将1赋值给edx    add ecx, 8          ; 将ecx加上8    mov eax, [ecx + edx*2 - 6]  ; 将ecx+edx*2-6所指向的地址的值赋值给eax; 输出字符串    mov eax, 4          ; 系统调用号4代表输出字符串    mov ebx, 1          ; 文件描述符1代表标准输出    mov ecx, msg        ; 要输出的字符串的地址    mov edx, 22         ; 要输出的字符串的长度    int 0x80            ; 调用系统调用; 退出程序    mov eax, 1          ; 系统调用号1代表退出程序    xor ebx, ebx        ; 返回值为0    int 0x80            ; 调用系统调用</code></pre></div><h2 id="立即寻址"><a href="#立即寻址" class="headerlink" title="立即寻址"></a>立即寻址</h2><p>11 + 114504 -1</p><p>eax 值 为 <code>114514</code></p><h2 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h2><p>edx 值为 <code>0x36d</code></p><h2 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h2><p>查看反汇编代码</p><p><img src="/PWN-%E5%9F%BA%E7%A1%80%EF%BC%88%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%EF%BC%89/image-20260524213314763.png" alt="image-20260524213314763"></p><p>将字符串的地址传给 ecx，在.data 段找到 字符串的地址</p><p><img src="/PWN-%E5%9F%BA%E7%A1%80%EF%BC%88%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%EF%BC%89/image-20260524213616895.png" alt="image-20260524213616895"></p><p>ecx 的值为 <code>0x080490E8</code></p><h2 id="寄存器间接寻址"><a href="#寄存器间接寻址" class="headerlink" title="寄存器间接寻址"></a>寄存器间接寻址</h2><p>寄存器间接寻址结束后 eax 的值</p><p><img src="/PWN-%E5%9F%BA%E7%A1%80%EF%BC%88%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%EF%BC%89/image-20260524213920721.png" alt="image-20260524213920721"></p><p>将字符串的地址赋值给 esi ，将 esi地址 的赋值给 eax</p><p>由于是32位寄存器，只能存储四个字节，所以 将 Welc 转换成 16进制就是</p><p><img src="/PWN-%E5%9F%BA%E7%A1%80%EF%BC%88%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%EF%BC%89/image-20260524214202966.png" alt="image-20260524214202966"></p><p>由于x86 是小端序，低位在前，所以 eax 的值为 <code>0x636c6557</code></p><h2 id="寄存器相对寻址"><a href="#寄存器相对寻址" class="headerlink" title="寄存器相对寻址"></a>寄存器相对寻址</h2><p>这里将msg的地址（0x80490E8）+ 4 处所执向的地址的值赋给eax</p><p>也就是“ome_to_CTFshow_PWN”</p><h2 id="基址变址寻址方式"><a href="#基址变址寻址方式" class="headerlink" title="基址变址寻址方式"></a>基址变址寻址方式</h2><p>计算最终也是 [0x80490E8 + 2*2 ] &#x3D; [0X80490EC]</p><h1 id="编译链接"><a href="#编译链接" class="headerlink" title="编译链接"></a>编译链接</h1><ul><li>将汇编代码编译为目标文件</li></ul><div class="code-wrapper"><pre><code class="hljs bash">nasm -f elf ***.asm -o ***.o</code></pre></div><ul><li>将目标文件链接为可执行文件</li></ul><div class="code-wrapper"><pre><code class="hljs bash">ld -m elf_i386 -o *** ***.o</code></pre></div><ul><li>运行程序</li></ul><div class="code-wrapper"><pre><code class="hljs bash">./***</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>二进制漏洞</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>pwn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ThinkPhP-5-RCE-漏洞复现</title>
     <link href="/ThinkPhP-5-RCE-%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     <url>/ThinkPhP-5-RCE-%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
