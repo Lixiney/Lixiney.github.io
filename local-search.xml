@@ -8,7 +8,7 @@
     <link href="/ClickJacking%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/"/>
     <url>/ClickJacking%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/</url>
     
-    <content type="html"><![CDATA[<h1 id="漏洞原理"><a href="#漏洞原理" class="headerlink" title="漏洞原理"></a>漏洞原理</h1><p>攻击者使用一种透明的iframe框架，覆盖在用户想要点击的按钮的位置之上，用户在不知情的情况下，恰好点击了这个iframe，导致攻击者可以窃取用户的个人数据。</p><p>点击劫持攻击和CSRF（跨站脚本攻击）有些相似，都是在用户不知情的情况下完成攻击，但是一旦CSRF出现了与用户的交互界面，则不能完成攻击，点击劫持就不存在这个缺点。</p><h1 id="漏洞挖掘"><a href="#漏洞挖掘" class="headerlink" title="漏洞挖掘"></a>漏洞挖掘</h1><p>漏洞poc</p><p><a href="https://github.com/shifa123/clickjackingpoc">shifa123&#x2F;clickjackingpoc: A Proof of Concept for Clickjacking Attacks</a></p><h1 id="漏洞修复建议"><a href="#漏洞修复建议" class="headerlink" title="漏洞修复建议"></a>漏洞修复建议</h1><ol><li>X-Frame-Options，建议设置为DENY；</li><li>Content-Security-Policy:frame-ancestors ‘self’或‘none’，不适用于Safari和IE</li><li>JS层面：使用iframe的sandbox属性，判断当前页面是否被其他页面嵌套。</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="漏洞原理"><a href="#漏洞原理" class="headerlink" title="漏洞原理"></a>漏洞原理</h1><p>攻击者使用一种透明的iframe框架，覆盖在用户想要点击的按钮的位置之上，用户在不知情的情况下，恰好点击了这个iframe，导致攻击者可以窃取用户的个人数据。</p><p>点击劫持攻击和CSRF（跨站脚本攻击）有些相似，都是在用户不知情的情况下完成攻击，但是一旦CSRF出现了与用户的交互界面，则不能完成攻击，点击劫持就不存在这个缺点。</p><h1 id="漏洞挖掘"><a href="#漏洞挖掘" class="headerlink" title="漏洞挖掘"></a>漏洞挖掘</h1><h2 id="不存在点击劫持的情况"><a href="#不存在点击劫持的情况" class="headerlink" title="不存在点击劫持的情况"></a><strong>不存在点击劫持的情况</strong></h2><ol><li>确认目标</li></ol><p><img src="/ClickJacking%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/image-20260616224705167.png" alt="image-20260616224705167"></p><ol start="2"><li>编写poc，将目标的url放入iframe框架</li></ol><p><img src="/ClickJacking%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/image-20260616224902244.png" alt="image-20260616224902244"></p><p>3.使用浏览器访问，显示拒绝连接</p><p><img src="/ClickJacking%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/image-20260616225012570.png" alt="image-20260616225012570"></p><p><strong>如果iframe正常，则可能存在点击劫持漏洞</strong></p><p>漏洞poc</p><p><a href="https://github.com/shifa123/clickjackingpoc">shifa123&#x2F;clickjackingpoc: A Proof of Concept for Clickjacking Attacks</a></p><h1 id="漏洞修复建议"><a href="#漏洞修复建议" class="headerlink" title="漏洞修复建议"></a>漏洞修复建议</h1><ol><li>X-Frame-Options，建议设置为DENY；</li><li>Content-Security-Policy:frame-ancestors ‘self’或‘none’，不适用于Safari和IE</li><li>JS层面：使用iframe的sandbox属性，判断当前页面是否被其他页面嵌套。</li></ol>]]></content>
     
     
     <categories>
@@ -671,9 +671,9 @@
     
     <tags>
       
-      <tag>CTF</tag>
-      
       <tag>PHP</tag>
+      
+      <tag>CTF</tag>
       
       <tag>代码审计</tag>
       
@@ -740,9 +740,9 @@
     
     <tags>
       
-      <tag>MISC</tag>
-      
       <tag>CTF</tag>
+      
+      <tag>MISC</tag>
       
     </tags>
     
